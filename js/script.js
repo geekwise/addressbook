@@ -50,11 +50,15 @@ document.addEventListener('DOMContentLoaded',function(event){
     for(var i=0; i<26; i++){
         
         create_contact_container_elements('div','abc_container_' + i);
-        
+        abc_container = document.getElementById('abc_container_' + i);
+        var letter_container = document.createElement('p');
+        letter_container.textContent = split_alphabet[i];
+        letter_container.style.color = 'white';
+        letter_container.style.fontSize = '35px';
+        abc_container.appendChild(letter_container); 
     };
     
-    abc_container = document.getElementById('abc_container_' + i);
-    console.log(abc_container);
+   
     
     // for(var i=0; i<26; i++){
         
