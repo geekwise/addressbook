@@ -116,8 +116,16 @@ p[id^=letter_container_]{
     font-weight: bold;
     padding-left: 2rem;
     height:3.5rem;
-    padding-left:1rem;
+    padding-left:2rem;
     text-align: left;
+}
+
+p[id^=full_name_container_]{
+    text-align:left;
+    margin-left: 2rem;
+    border-bottom: 1px solid #B6B5B9;
+    padding:1.5rem 0 1.5rem 0;
+    font-weight:bold;
 }
 
 #right_column_letters_container{
@@ -126,8 +134,8 @@ p[id^=letter_container_]{
     float:right;
     color: #0D7CE3;
     font-size:25px;
-    font-weight: 100;
-    margin-top:2rem;
+    font-weight: 600;
+    margin-top:5.2rem;
 }
 
 /*
@@ -142,7 +150,8 @@ p[id^=letter_container_]{
     width:40rem;
     height:auto;
     text-align: center;
-    display: none;
+    position: relative;
+    top: -3118px;
 }
 
 #second_top_row_container{
@@ -152,8 +161,6 @@ p[id^=letter_container_]{
     font-size:2.2rem;
     border-bottom: 1px solid #7E7D82;
     background-color:#F7F7F7;
-    position: relative;
-    top: -2824px;
 }
 
 #second_top_row_container > span{
@@ -180,3 +187,15 @@ p[id^=letter_container_]{
     color:#BDBDBD;
     font-weight: bold;
 }
+
+input[id^=right_input_]{
+    padding-left: 1rem;   
+    font-size:4rem;
+    width:90%;
+}
+
+
+
+
+
+
