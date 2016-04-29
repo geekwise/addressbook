@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     plus_button.addEventListener('click',function(event){
        
-       new_contact_container.style.display = 'inline-block';
-       if(new_contact_container.style.display === 'inline-block'){
+       new_contact_container.style.visibility = 'visible';
+       if(new_contact_container.style.visibility === 'visible'){
            contact_container.style.visibility = 'hidden';
        };
     });
@@ -209,8 +209,13 @@ document.addEventListener('DOMContentLoaded',function(event){
     done_button.textContent = 'Done';
     
     cancel.addEventListener('click',function(event){
-       new_contact_container.style.display = 'none';
+       
        contact_container.style.visibility = 'visible';
+       
+       if(contact_container.style.visibility === 'visible'){
+           new_contact_container.style.visibility = 'hidden';
+       };
+       
     });
     
     create_second_display_elements('div','input_section_container');
