@@ -1,5 +1,21 @@
+/*
+
+Addressbook | Portfolio
+
+Table of Contents
+
+1.0  Global Selectors
+2.0  All Contact Display Screen
+3.0  New Contact Display Screen
+
+*/
+
+/*
+1.0 Global Selectors
+*/
+
 body{
-    background-color:lightgrey;
+    background-color:navy;
     margin:0 auto;
     text-align:center;
     font-size:65.2%;
@@ -16,15 +32,19 @@ span{
     margin:0;
 }
 
+p{
+    margin:0;
+}
+
+/* 
+2.0  All Contact Display Screen
+*/
+
 #contact_container{
     background-color:white;
     width:40rem;
     height:auto;
     text-align: center;
-}
-
-p{
-    margin:0;
 }
 
 #top_row_container{
@@ -78,6 +98,12 @@ p{
     text-align:center;
 }
 
+#names_container{
+    height:auto;
+    width:96%;
+    float:left;
+}
+
 div[id^=abc_container_]{
     height:auto;
     width:100%;
@@ -92,4 +118,65 @@ p[id^=letter_container_]{
     height:3.5rem;
     padding-left:1rem;
     text-align: left;
+}
+
+#right_column_letters_container{
+    height:100%;
+    width:4%;
+    float:right;
+    color: #0D7CE3;
+    font-size:25px;
+    font-weight: 100;
+    margin-top:2rem;
+}
+
+/*
+3.0  New Contact Display Screen
+*/
+
+
+/* display none for now, will display as inline-block when plus button is clicked */
+
+#new_contact_container{
+    background-color:white;
+    width:40rem;
+    height:auto;
+    text-align: center;
+    display: none;
+}
+
+#second_top_row_container{
+    width:100%;
+    height:5rem;
+    margin-top:0rem;
+    font-size:2.2rem;
+    border-bottom: 1px solid #7E7D82;
+    background-color:#F7F7F7;
+    position: relative;
+    top: -2824px;
+}
+
+#second_top_row_container > span{
+    width:auto;
+    letter-spacing: -2px;
+    background-color:#F7F7F7;
+}
+
+#cancel_button{
+    float:left;
+    margin:1rem 0 0 20px;
+    color:#0D7CE3;
+}
+
+#new_contact{
+    float: none;
+    margin: 1rem -20px 0 0;
+    font-weight:bold;
+}
+
+#done_button{
+    float:right;
+    margin: 15px 2rem 0 2rem;
+    color:#BDBDBD;
+    font-weight: bold;
 }
