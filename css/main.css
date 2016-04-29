@@ -19,26 +19,27 @@ span{
 #contact_container{
     background-color:white;
     width:40rem;
-    height:200rem;
+    height:auto;
     text-align: center;
 }
 
-div[id^=abc_container_]{
-    height:5rem;
-    width:100%;
-    background-color:red;
+p{
+    margin:0;
 }
 
 #top_row_container{
     width:100%;
     height:5rem;
-    margin-top:1rem;
+    margin-top:0rem;
     font-size:2.2rem;
     border-bottom: 1px solid #7E7D82;
+    background-color:#F7F7F7;
 }
 
 #top_row_container > span{
     width:auto;
+    letter-spacing: -2px;
+    background-color:#F7F7F7;
 }
 
 #group_button{
@@ -55,7 +56,40 @@ div[id^=abc_container_]{
 
 #plus_button{
     float:right;
-    margin: -9px 2rem 0 2rem;
-    font-size:4rem;
+    margin: -12px 2rem 0 2rem;
+    font-size:4.5rem;
     color:#0D7CE3;
+}
+
+#search_container{
+    width:100%;
+    height:5.5rem;
+    background-color:#CAC9CE;
+    border-bottom: 1px solid #B6B5B9;
+}
+
+#search{
+    width:95%;
+    height:60%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border:none;
+    font-size: 2rem;
+    text-align:center;
+}
+
+div[id^=abc_container_]{
+    height:auto;
+    width:100%;
+    font-size:3.3rem;
+    padding-bottom: 2rem;
+}
+
+p[id^=letter_container_]{
+    background-color:#F7F7F7;
+    font-weight: bold;
+    padding-left: 2rem;
+    height:3.5rem;
+    padding-left:1rem;
+    text-align: left;
 }
