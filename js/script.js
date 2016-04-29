@@ -118,6 +118,14 @@ document.addEventListener('DOMContentLoaded',function(event){
     contact.textContent = 'All Contacts';
     plus_button.textContent = '+';
     
+    plus_button.addEventListener('click',function(event){
+       
+       new_contact_container.style.display = 'inline-block';
+       if(new_contact_container.style.display === 'inline-block'){
+           contact_container.style.visibility = 'hidden';
+       };
+    });
+    
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     //console.log(alphabet);
     split_alphabet = alphabet.split('');
@@ -199,6 +207,11 @@ document.addEventListener('DOMContentLoaded',function(event){
     cancel.textContent = 'Cancel';
     new_contact.textContent = 'New Contact';
     done_button.textContent = 'Done';
+    
+    cancel.addEventListener('click',function(event){
+       new_contact_container.style.display = 'none';
+       contact_container.style.visibility = 'visible';
+    });
     
     create_second_display_elements('div','input_section_container');
     var input_section_container = document.getElementById('input_section_container');
