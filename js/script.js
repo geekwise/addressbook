@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded',function(event){
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     //console.log(alphabet);
     split_alphabet = alphabet.split('');
-    console.log(split_alphabet);
     
     var abc_container;
-    var letter_container
+    var letter_container;
+    var full_name_container;
     
     for(var i=0; i<26; i++){
         
@@ -92,43 +92,28 @@ document.addEventListener('DOMContentLoaded',function(event){
         juston
     ];
     
-    // for(var i=0; i<abc_container.length; i++){
-    //     var full_name_container = document.createElement('p');
-    //     full_name_container.setAttribute('id','full_name_container_'+i);
-    //     full_name_container.textContent = contact_array[i].first_name + ' ' + contact_array[i].last_name;
-    //     console.log(full_name_container);
-        
-    //     abc_container.appendChild(full_name_container);
-        
-    // };
-    
-    //for the contacts in contact array, find first letter and if it matches (use regular expression?) 
-    //the letter in the letter in the first p tag in the abc_container, then create and append the newly created p tag that
-    //with textContent of: contact_array[i].first_name + ' ' + contact_array[i].last_name, to that particular abc_container
     for(i in contact_array){
-        if(contact_array[i].toString().match(/w/) === letter_container.textContent.toString().match(/w/)){
-        var full_name_container = document.createElement('p');
+        full_name_container = document.createElement('p');
         full_name_container.setAttribute('id','full_name_container_'+i);
         full_name_container.textContent = contact_array[i].first_name + ' ' + contact_array[i].last_name;
-        console.log(full_name_container);
         
-                    abc_container.appendChild(full_name_container);
+        abc_container.appendChild(full_name_container);
+        
+        var current_full_name_container = document.getElementById('full_name_container_' + i);
+        var current_letter_container = document.getElementById('letter_container_' + i);
+        var current_abc_container = document.getElementById('abc_container_' + i);
                     
-                    console.log('--------------------------------------');
-                    
-                    if(
-                        document.getElementById('full_name_container_' + i).textContent[0] === document.getElementById('abc_container_' + i).textContent[0]
-                        
-                        ){
+        if(current_full_name_container.textContent[0] === current_letter_container.textContent[0]){
                             
-                            document.getElementById('abc_container_' + i).appendChild(document.getElementById('full_name_container_' + i));
-                            
-                        }
-                    console.log(document.getElementById('full_name_container_' + i));
-                  //  console.log(document.getElementById('abc_container_0'));
-            };
+            current_abc_container.appendChild(current_full_name_container);
+            //still need to add code to append all current_full_name_container to specific current_abc_container
+            //right now, only Alonzo's full name is working
+        }
+            
+        console.log(current_full_name_container);
+        console.log(current_full_name_container.textContent[0]);
+            
     };
-    
     
 });
 
