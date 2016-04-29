@@ -212,6 +212,12 @@ document.addEventListener('DOMContentLoaded',function(event){
     input_section_container.appendChild(left_input_section_container_div);
     input_section_container.appendChild(right_input_section_container_div);
     
+    var add_photo_circle = document.createElement('span');
+    add_photo_circle.setAttribute('id','add_photo_circle');
+    add_photo_circle.textContent = 'add photo';
+    
+    left_input_section_container_div.appendChild(add_photo_circle);
+    
     for(var i=0; i<3; i++){
         create_right_input_section_elements('input','right_input_'+i);
         var current_right_input = document.getElementById('right_input_'+i);
