@@ -33,6 +33,8 @@ search = document.createElement('input');
 search.setAttribute('id','search');
 search.setAttribute('placeholder','Search');
 
+
+
 names_container = document.createElement('div');
 names_container.setAttribute('id','names_container');
 
@@ -88,6 +90,20 @@ var contact_array = [
     veronica,
     juston
 ];
+// line 94-106 doesn't work...
+// search.addEventListener('keydown',function(event){
+//     if(event.keyCode === 13)
+//         for(var i in split_alphabet){
+//             var current_letter = split_alphabet[i];
+//             if(search.value.match('^' + current_letter) === current_letter[0]){
+//                 for(var i=1; i<26; i++){
+//                     abc_container[i].style.visibility = 'hidden';
+//                 };
+//             };
+            
+//         };
+    
+// });
 
 
 //building a container for the New Contact display screen
@@ -173,29 +189,6 @@ document.addEventListener('DOMContentLoaded',function(event){
         
         right_column_letters_container.appendChild(hashtag);
     };
-    
-    // for(i in contact_array){
-    //     full_name_container = document.createElement('p');
-    //     full_name_container.setAttribute('id','full_name_container_'+i);
-    //     full_name_container.textContent = contact_array[i].first_name + ' ' + contact_array[i].last_name;
-        
-    //     abc_container.appendChild(full_name_container);
-        
-    //     var current_full_name_container = document.getElementById('full_name_container_' + i);
-    //     var current_letter_container = document.getElementById('letter_container_' + i);
-    //     var current_abc_container = document.getElementById('abc_container_' + i);
-                    
-    //     if(current_full_name_container.textContent[0] === current_letter_container.textContent[0]){
-                            
-    //         current_abc_container.appendChild(current_full_name_container);
-    //         //still need to add code to append all current_full_name_container to specific current_abc_container
-    //         //right now, only Alonzo's full name is working
-    //     }
-            
-    //     console.log(current_full_name_container);
-    //     console.log(current_full_name_container.textContent[0]);
-            
-    // };
     
 // create array for all the letter_container id's
 
