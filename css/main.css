@@ -1,0 +1,230 @@
+/*
+
+Addressbook | Portfolio
+
+Table of Contents
+
+1.0  Global Selectors
+2.0  All Contact Display Screen
+3.0  New Contact Display Screen
+
+*/
+
+/*
+1.0 Global Selectors
+*/
+
+body{
+    background-color:#7f8d92;
+    margin:0 auto;
+    text-align:center;
+    font-size:65.2%;
+    font-family: 'Karla', sans-serif;
+}
+
+div{
+    display: inline-block;
+}
+
+span{
+    display:inline-block;
+    padding:0;
+    margin:0;
+}
+
+p{
+    margin:0;
+}
+
+input{
+    border:none;
+}
+
+/* 
+2.0  All Contact Display Screen
+*/
+
+#contact_container{
+    background-color:white;
+    width:40rem;
+    height:auto;
+    text-align: center;
+}
+
+#top_row_container{
+    width:100%;
+    height:5rem;
+    margin-top:0rem;
+    font-size:2.2rem;
+    border-bottom: 1px solid #7E7D82;
+    background-color:#F7F7F7;
+}
+
+#top_row_container > span{
+    width:auto;
+    letter-spacing: -2px;
+    background-color:#F7F7F7;
+}
+
+#group_button{
+    float:left;
+    margin:1rem 0 0 20px;
+    color:#0D7CE3;
+}
+
+#contact{
+    float: none;
+    margin: 1rem 35px 0 0;
+    font-weight:bold;
+}
+
+#plus_button{
+    float:right;
+    margin: -12px 2rem 0 2rem;
+    font-size:4.5rem;
+    color:#0D7CE3;
+}
+
+#search_container{
+    width:100%;
+    height:5.5rem;
+    background-color:#CAC9CE;
+    border-bottom: 1px solid #B6B5B9;
+}
+
+#search{
+    width:95%;
+    height:60%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border:none;
+    font-size: 2rem;
+    text-align:center;
+}
+
+#names_container{
+    height:auto;
+    width:96%;
+    float:left;
+}
+
+div[id^=abc_container_]{
+    height:auto;
+    width:100%;
+    font-size:3.3rem;
+    padding-bottom: 2rem;
+}
+
+p[id^=letter_container_]{
+    background-color:#F7F7F7;
+    font-weight: bold;
+    padding-left: 2rem;
+    height:3.5rem;
+    padding-left:2rem;
+    text-align: left;
+}
+
+p[id^=full_name_container_]{
+    text-align:left;
+    margin-left: 2rem;
+    border-bottom: 1px solid #B6B5B9;
+    padding:1.5rem 0 1.5rem 0;
+    font-weight:bold;
+}
+
+#right_column_letters_container{
+    height:100%;
+    width:4%;
+    float:right;
+    color: #0D7CE3;
+    font-size:25px;
+    font-weight: 600;
+    margin-top:5.2rem;
+}
+
+/*
+3.0  New Contact Display Screen
+*/
+
+
+/* display none for now, will display as inline-block when plus button is clicked */
+
+#new_contact_container{
+    background-color:white;
+    width:40rem;
+    height:auto;
+    text-align: center;
+    position: relative;
+    top: -3118px;
+    display: none;
+}
+
+#second_top_row_container{
+    width:100%;
+    height:5rem;
+    margin-top:0rem;
+    font-size:2.2rem;
+    border-bottom: 1px solid #7E7D82;
+    background-color:#F7F7F7;
+}
+
+#second_top_row_container > span{
+    width:auto;
+    letter-spacing: -2px;
+    background-color:#F7F7F7;
+}
+
+#cancel_button{
+    float:left;
+    margin:1rem 0 0 20px;
+    color:#0D7CE3;
+}
+
+#new_contact{
+    float: none;
+    margin: 1rem -20px 0 0;
+    font-weight:bold;
+}
+
+#done_button{
+    float:right;
+    margin: 15px 2.5rem 0 2rem;
+    color:#BDBDBD;
+    font-weight: bold;
+}
+
+#left_input_section_container_div{
+    width:35%;
+    float: left;
+}
+
+#add_photo_circle{
+    width:7.5rem;
+    height: 6.3rem;
+    border: 2px solid #BDBDBD;
+    border-radius:70px;
+    position:relative;
+    top:25px;
+    left:-20px;
+    font-size:1.8rem;
+    color:#0D7CE3;
+    padding-top:22px;
+}
+
+#right_input_section_container_div{
+    width:65%;
+    float: left;
+}
+
+input[id^=right_input_]{   
+    font-size:3rem;
+    width:100%;
+    border-bottom: 1px solid #7E7D82;
+    padding:1rem 0 1rem 0;
+}
+
+
+
+
+
+
