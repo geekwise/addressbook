@@ -133,6 +133,10 @@ p[id^=full_name_container_]{
     font-weight:bold;
 }
 
+.inner_contact_container{
+    font-size: 2.2rem;
+}
+
 #right_column_letters_container{
     height:100%;
     width:4%;
