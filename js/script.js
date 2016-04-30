@@ -33,8 +33,6 @@ search = document.createElement('input');
 search.setAttribute('id','search');
 search.setAttribute('placeholder','Search');
 
-
-
 names_container = document.createElement('div');
 names_container.setAttribute('id','names_container');
 
