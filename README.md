@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #Geekwise Javascript Advanced JS - web app of the IOS Contacts app
 ### Pure JS Vanila - Foundational Javascript Development
 
@@ -26,6 +25,3 @@
 ##Archived Add Complted:
 
 - 
-=======
-# addressbook
->>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
