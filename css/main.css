@@ -163,8 +163,8 @@ p[id^=full_name_container_]{
     height:auto;
     text-align: center;
     position: relative;
-    top: -2446px;
-    visibility: hidden;
+    top: 0px;
+    display: none;
 }
 
 #second_top_row_container{

@@ -159,9 +159,9 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     plus_button.addEventListener('click',function(event){
        
-       new_contact_container.style.visibility = 'visible';
-       if(new_contact_container.style.visibility === 'visible'){
-           contact_container.style.visibility = 'hidden';
+       new_contact_container.style.display = 'inline-block';
+       if(new_contact_container.style.display === 'inline-block'){
+           contact_container.style.display = 'none';
        };
     });
     
@@ -227,10 +227,10 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     cancel.addEventListener('click',function(event){
        
-       contact_container.style.visibility = 'visible';
+       contact_container.style.display = 'inline-block';
        
-       if(contact_container.style.visibility === 'visible'){
-           new_contact_container.style.visibility = 'hidden';
+       if(contact_container.style.display === 'inline-block'){
+           new_contact_container.style.display = 'none';
        };
        
     });
