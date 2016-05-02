@@ -277,32 +277,36 @@ document.addEventListener('DOMContentLoaded',function(event){
     
 // add phone container elements: green circle plus sign and add phone text
 
-var create_two_spans_in_a_container = function(){
-    var create_elements_in_second_display_elements = function(element_type,element_id){
-    var element = document.createElement(element_type);
-    element.setAttribute('id',element_id);
-    add_more_info_container.appendChild(element);
-    };
-    
-    for (var i=0; i<2; i++){
-        create_elements_in_second_display_elements('span','inner_add_more_info_container_'+i);
-        var inner_add_more_info_container = document.getElementById('inner_add_more_info_container_'+i);
-        // green_plus_container.textContent = '+';
-        // var add_phone_container = document.getElementById('inner_add_more_info_container_1');
-        // add_phone_container.textContent = 'add phone';
+    var create_two_elements_in_a_container = function(){
+        var create_elements_in_second_display_elements = function(element_type,element_class){
+        var element = document.createElement(element_type);
+        element.setAttribute('class',element_class);
+        add_more_info_container.appendChild(element);
         };
-    
-    
-};
+        
+        create_elements_in_second_display_elements('span','green_plus_container');
+        
+        create_elements_in_second_display_elements('input','add_info_container');
+       
+    };
 
-    
 
     for (var i=0; i<2; i++){
         create_second_display_elements('div','add_more_info_container_'+i);
         var add_more_info_container = document.getElementById('add_more_info_container_'+i);
         
-        create_two_spans_in_a_container();
-};
+        create_two_elements_in_a_container();
+        var green_plus_container = document.getElementsByClassName('green_plus_container');
+        
+        green_plus_container.textContent = '+';
+        console.log(green_plus_container.textContent);
+    };
+    
+        var add_info_container = document.getElementsByClassName('add_info_container');
+        
+        add_info_container[0].setAttribute('placeholder','add phone');
+        add_info_container[1].setAttribute('placeholder','add email');
+    
     
     
 });

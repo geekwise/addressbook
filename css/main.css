@@ -237,21 +237,25 @@ input[id^=right_input_]{
 div[id^=add_more_info_container_]{
     width:100%;
     height:5rem;
-    background-color:yellow;
+    font-size:2.5rem;
 }
 
-span[id^=inner_add_more_info_container_]:nth-child(1){
-    width:20%;
-    height:100%;
-    background-color:pink;
+.green_plus_container{
+    width:10%;
+    height:80%;
+    background-color:#4FD669;
     float:left;
+    border-radius:40px;
+    color: white;
+    margin:2px;
 }
 
-span[id^=inner_add_more_info_container_]:nth-child(2){
+.add_info_container{
     width:80%;
     height:100%;
-    background-color:green;
+    background-color:gold;
     float:left;
+    font-size:2.5rem;
 }
 
 
