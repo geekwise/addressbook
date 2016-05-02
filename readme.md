@@ -1,6 +1,7 @@
 #Geekwise Javascript Advanced JS - web app of the IOS Contacts app
 ### Pure JS Vanila - Foundational Javascript Development
 
+##Last Updated @ 05-02-2016
 
 ##To Do:
  
