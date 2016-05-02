@@ -15,7 +15,7 @@ Table of Contents
 */
 
 body{
-    background-color:navy;
+    background-color:#E8E4E4;
     margin:0 auto;
     text-align:center;
     font-size:65.2%;
@@ -49,7 +49,8 @@ input{
     width:40rem;
     height:auto;
     text-align: center;
-    margin:0 5rem 0 5rem;
+    margin:0 5rem 2rem 5rem;
+    box-shadow: 3px 3px 5px 3px grey;
 }
 
 #top_row_container{
@@ -165,6 +166,8 @@ p[id^=full_name_container_]{
     position: relative;
     top: 0px;
     display: none;
+    margin:0 5rem 2rem 5rem;
+    box-shadow: 3px 3px 5px 3px grey;
 }
 
 #second_top_row_container{
@@ -230,6 +233,27 @@ input[id^=right_input_]{
     border-bottom: 1px solid #7E7D82;
     padding:1rem 0 1rem 0;
 }
+
+div[id^=add_more_info_container_]{
+    width:100%;
+    height:5rem;
+    background-color:yellow;
+}
+
+span[id^=inner_add_more_info_container_]:nth-child(1){
+    width:20%;
+    height:100%;
+    background-color:pink;
+    float:left;
+}
+
+span[id^=inner_add_more_info_container_]:nth-child(2){
+    width:80%;
+    height:100%;
+    background-color:green;
+    float:left;
+}
+
 
 
 
