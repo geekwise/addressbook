@@ -15,11 +15,7 @@ Table of Contents
 */
 
 body{
-<<<<<<< HEAD
     background-color:#E8E4E4;
-=======
-    background-color:#7f8d92;
->>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
     margin:0 auto;
     text-align:center;
     font-size:65.2%;
@@ -53,11 +49,8 @@ input{
     width:40rem;
     height:auto;
     text-align: center;
-<<<<<<< HEAD
     margin:0 5rem 2rem 5rem;
     box-shadow: 3px 3px 5px 3px grey;
-=======
->>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
 }
 
 #top_row_container{
@@ -121,11 +114,7 @@ div[id^=abc_container_]{
     height:auto;
     width:100%;
     font-size:3.3rem;
-<<<<<<< HEAD
     padding-bottom: .5rem;
-=======
-    padding-bottom: 2rem;
->>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
 }
 
 p[id^=letter_container_]{
@@ -145,7 +134,6 @@ p[id^=full_name_container_]{
     font-weight:bold;
 }
 
-<<<<<<< HEAD
 .inner_contact_container{
     text-align: left;
     margin: 1rem 0 0 2rem;
@@ -153,8 +141,6 @@ p[id^=full_name_container_]{
     padding-bottom: 1.5rem;
 }
 
-=======
->>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
 #right_column_letters_container{
     height:100%;
     width:4%;
@@ -178,15 +164,10 @@ p[id^=full_name_container_]{
     height:auto;
     text-align: center;
     position: relative;
-<<<<<<< HEAD
     top: 0px;
     display: none;
     margin:0 5rem 2rem 5rem;
     box-shadow: 3px 3px 5px 3px grey;
-=======
-    top: -3118px;
-    display: none;
->>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
 }
 
 #second_top_row_container{
@@ -253,7 +234,6 @@ input[id^=right_input_]{
     padding:1rem 0 1rem 0;
 }
 
-<<<<<<< HEAD
 div[id^=add_more_info_container_]{
     width:100%;
     height:5rem;
@@ -279,8 +259,6 @@ div[id^=add_more_info_container_]{
 }
 
 
-=======
->>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
 
 
 
