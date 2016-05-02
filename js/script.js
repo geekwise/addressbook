@@ -18,7 +18,10 @@ var abc_container;
 var letter_container;
 var full_name_container;
 
+<<<<<<< HEAD
 var add_more_info_container;
+=======
+>>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
 
 //building a container for the All Contacts display screen
 
@@ -72,12 +75,16 @@ var contact_information = function(first_name,last_name,company,phone,email){
 };
 
 // create the default contact information
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
 var alonzo = new contact_information('Alonzo','Yrigollen','EDC','(559) 111-1111','geekwise.alonzo.yrigollen@gmail.com');
 var j = new contact_information('J','Tablett','EDC','(559) 111-1112','geekwise.jennifer.tablett@gmail.com');
 var tiffany = new contact_information('Tiffany','Ranish','EDC','(559) 111-1113','geekwise.tiffany.ranish@gmail.com');
 var nicole = new contact_information('Nicole','Deltoro','EDC','(559) 111-1114','geekwise.nicole.deltoro@gmail.com');
 var veronica = new contact_information('Veronica','Chavez','EDC','(559) 111-1115','geekwise.veronica.chavez@gmail.com');
+<<<<<<< HEAD
 var juston = new contact_information('Juston','Miller','EDC','(559) 111-1116','geekwise.juston.miller@gmail.com');
 
 // create an array for all the default contacts
@@ -103,6 +110,28 @@ var contact_array = [
 //                 };
 //         };
 // });
+=======
+var juston = new contact_information('Juston','Miller','EDC','(559) 111-1116','geekwise.juston.miller@gmail.com'); 
+var mark = new contact_information('Mark','Thomas','EDC','(559) 111-1116','mark.thomas.miller@gmail.com'); 
+var bob = new contact_information('Bob','Brettson','EDC','(559) 111-1116','mark.thomas.miller@gmail.com'); 
+var sarah = new contact_information('Sarah','Smith','EDC','(559) 111-1116','mark.thomas.miller@gmail.com'); 
+
+
+// create an array for all the default contacts
+var contact_array = [
+    alonzo,
+    juston,
+    tiffany,
+    nicole,
+    veronica,
+    j,
+    mark,
+    bob,
+    sarah
+];
+
+
+>>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
 
 
 //building a container for the New Contact display screen
@@ -132,8 +161,11 @@ var create_right_input_section_elements = function(element_type,element_id){
 };
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
 //When DOM is loaded
 
 document.addEventListener('DOMContentLoaded',function(event){
@@ -164,7 +196,11 @@ document.addEventListener('DOMContentLoaded',function(event){
        
        new_contact_container.style.display = 'inline-block';
        if(new_contact_container.style.display === 'inline-block'){
+<<<<<<< HEAD
            contact_container.style.display = 'none';
+=======
+           contact_container.style.visibility = 'hidden';
+>>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
        };
     });
     
@@ -172,23 +208,69 @@ document.addEventListener('DOMContentLoaded',function(event){
     //console.log(alphabet);
     split_alphabet = alphabet.split('');
     
+<<<<<<< HEAD
 // create the left side letters and containers for the contacts 
     for(var i=0; i<26; i++){
+=======
+    
+// create the left side letters and containers for the contacts    
+     for(var i=0; i<alphabet.length; i++){
+>>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
         create_contact_container_elements('div','abc_container_' + i);
         abc_container = document.getElementById('abc_container_' + i);
         letter_container = document.createElement('p');
         letter_container.setAttribute('id','letter_container_'+i);
         letter_container.textContent = split_alphabet[i];
+<<<<<<< HEAD
         
         abc_container.appendChild(letter_container); 
     };
     
+=======
+        abc_container.appendChild(letter_container); 
+    };   
+    
+
+    
+// create array for all the letter_container id's
+    for(i in split_alphabet){
+         var current_letter = split_alphabet[i];
+         var current_letter_container = document.getElementById('letter_container_'+i);
+         
+         for(i in contact_array){
+             
+             current_letter = current_letter.toLowerCase();
+             var regex_pattern = new RegExp('^'+current_letter+'.*|\w','gi')
+            
+                if(
+                    contact_array[i].first_name.match(regex_pattern)
+                ){
+                    console.log(true);
+                    console.log(contact_array[i].first_name);
+                 
+                var inner_contact_container = document.createElement('p');
+                 inner_contact_container.setAttribute('class','inner_contact_container')
+                 inner_contact_container.style.fontSize = '2.3rem';
+                 inner_contact_container.textContent = contact_array[i].first_name + ' ' + contact_array[i].last_name;
+                 current_letter_container.appendChild(inner_contact_container);
+             
+                }else{
+                    console.log(false);
+                };
+        };
+};    
+    
+    
+        
+// create the left side alphabet
+>>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
     for(var i=0; i<26; i++){
         create_right_column_letters('p','right_column_letters_'+i);
         var letters = document.getElementById('right_column_letters_'+i);
         letters.textContent = split_alphabet[i];
         
         right_column_letters_container.appendChild(hashtag);
+<<<<<<< HEAD
     };
     
 // create array for all the letter_container id's
@@ -210,6 +292,11 @@ document.addEventListener('DOMContentLoaded',function(event){
             };
         };
     };
+=======
+
+};
+    
+>>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
     
 // Creating New Contact display screen
 
@@ -229,6 +316,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     done_button.textContent = 'Done';
     
     cancel.addEventListener('click',function(event){
+<<<<<<< HEAD
        
        contact_container.style.display = 'inline-block';
        
@@ -236,17 +324,24 @@ document.addEventListener('DOMContentLoaded',function(event){
            new_contact_container.style.display = 'none';
        };
        
+=======
+       new_contact_container.style.display = 'none';
+       contact_container.style.visibility = 'visible';
+>>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
     });
     
     create_second_display_elements('div','input_section_container');
     var input_section_container = document.getElementById('input_section_container');
     
+<<<<<<< HEAD
     create_second_display_elements('div','add_phone_container');
     var add_phone_container = document.getElementById('add_phone_container');
     
     create_second_display_elements('div','add_email_container');
     var add_email_container = document.getElementById('add_email_container');
     
+=======
+>>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
     left_input_section_container_div = document.createElement('div');
     left_input_section_container_div.setAttribute('id','left_input_section_container_div');
     
@@ -275,6 +370,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     right_input_last_name.setAttribute('placeholder','Last');
     right_input_company_name.setAttribute('placeholder','Company');
     
+<<<<<<< HEAD
 // add phone container elements: green circle plus sign and add phone text
 
     var create_two_elements_in_a_container = function(){
@@ -309,6 +405,8 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     
     
+=======
+>>>>>>> 2a0c6f3433c6e0a70cc13ff108dd521cc5d98c60
 });
 
 
