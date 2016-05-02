@@ -50,7 +50,8 @@ input{
     height:auto;
     text-align: center;
     margin:0 5rem 2rem 5rem;
-    box-shadow: 3px 3px 5px 3px grey;
+    border:1px solid #b1b0b2;
+    box-shadow: 0 10px 6px -6px #777;
 }
 
 #top_row_container{
