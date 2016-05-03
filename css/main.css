@@ -50,8 +50,7 @@ input{
     height:auto;
     text-align: center;
     margin:0 5rem 2rem 5rem;
-    border:1px solid #b1b0b2;
-    box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 3px 3px 5px 3px grey;
 }
 
 #top_row_container{
@@ -242,23 +241,53 @@ div[id^=add_more_info_container_]{
 }
 
 .green_plus_container{
-    width:10%;
-    height:80%;
+    width:8%;
+    height:58%;
     background-color:#4FD669;
     float:left;
     border-radius:40px;
     color: white;
-    margin:2px;
+    margin:15px 9px 9px 9px;
+    padding-bottom: 7px;
 }
 
 .add_info_container{
     width:80%;
     height:100%;
-    background-color:gold;
     float:left;
     font-size:2.5rem;
+    padding-left:1rem;
 }
 
+/* ugly way to change color to text for input attribute */
+
+input[placeholder='add phone'].add_info_container::-webkit-input-placeholder{
+    color:#0D7CE3;
+}
+input[placeholder='add phone'].add_info_container::-moz-placeholder{
+    color:#0D7CE3;
+}
+input[placeholder='add phone'].add_info_container::-ms-input-placeholder{
+    color:#0D7CE3;
+}
+input[placeholder='add phone'].add_info_container:moz-input-placeholder{
+    color:#0D7CE3;
+}
+
+/* ugly way to change color to text for input attribute */
+
+input[placeholder='add email'].add_info_container::-webkit-input-placeholder{
+    color:#0D7CE3;
+}
+input[placeholder='add email'].add_info_container::-moz-placeholder{
+    color:#0D7CE3;
+}
+input[placeholder='add email'].add_info_container::-ms-input-placeholder{
+    color:#0D7CE3;
+}
+input[placeholder='add email'].add_info_container:moz-input-placeholder{
+    color:#0D7CE3;
+}
 
 
 
