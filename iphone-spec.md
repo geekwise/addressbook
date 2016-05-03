@@ -1,5 +1,5 @@
-![](http://i.imgur.com/KEIaYGk.gifv)
+![](https://media.giphy.com/media/3o7qDMqq3yp1rDKnKw/giphy.gif)
 
-![](http://i.imgur.com/9aXEUVo.gifv)
+![](https://media.giphy.com/media/3o7qDG1XGoVvpc1aoM/giphy.gif)
 
 
