@@ -20,6 +20,9 @@ var full_name_container;
 
 var add_more_info_container;
 
+var inner_contact_container;
+var current_abc_container;
+
 //building a container for the All Contacts display screen
 
 contact_container = document.createElement('div');
@@ -63,15 +66,50 @@ var create_right_column_letters = function(letter_element,letter_element_id){
     right_column_letters_container.appendChild(right_column_letters);
 };
 
+
+// attempting to merge two files
+
+// var data_urls = window.location.origin+'/js/data_urls.js';
+// var load_js_library = 'https://cdnjs.cloudflare.com/ajax/libs/load.js/1316434407/load-min.js';
+
+// var load_scripts = function(){
+//     load(data_urls).thenRun(function(){
+//       load(contact_first_name_url,contact_last_name_url).thenRun(function(){
+//           console.log(first_name); 
+//           console.log(last_name);
+//           inner_contact_container.textContent = first_name + ' ' + last_name;
+                
+//           current_abc_container.appendChild(inner_contact_container);
+//       })
+//     })
+// }
+
+// var attach_script = function(url, callback) {
+	
+// 	var script_element = document.createElement('script');
+// 	var first_script = document.getElementsByTagName('script')[0];
+	
+// 	script_element.src = url;
+	
+//   	if(callback){
+// 		script_element.addEventListener('load',function(event){
+// 				callback(null, event);
+// 		},false);
+// 	}
+	
+// 	first_script.parentNode.insertBefore(script_element,first_script);
+
+// }
 var contact_information = function(first_name,last_name,company,phone,email){
     this.first_name = first_name;
     this.last_name = last_name;
     this.company = company;
     this.phone = phone;
     this.email = email;
+    console.log(this);
 };
 
-// create the default contact information
+//create the default contact information
 
 var alonzo = new contact_information('Alonzo','Yrigollen','EDC','(559) 111-1111','geekwise.alonzo.yrigollen@gmail.com');
 var j = new contact_information('J','Tablett','EDC','(559) 111-1112','geekwise.jennifer.tablett@gmail.com');
@@ -84,7 +122,7 @@ var bob = new contact_information('Bob','Brettson','EDC','(559) 111-1116','mark.
 var sarah = new contact_information('Sarah','Smith','EDC','(559) 111-1116','mark.thomas.miller@gmail.com'); 
 
 
-// create an array for all the default contacts
+//create an array for all the default contacts
 var contact_array = [
     alonzo,
     juston,
@@ -125,6 +163,26 @@ var create_right_input_section_elements = function(element_type,element_id){
     element.setAttribute('id',element_id);
     right_input_section_container_div.appendChild(element);
 };
+
+//scrolling window
+// names_container.onscroll = function(){
+//     var stack_abc_containers = function(){
+//         for(var i=0; i<letter_container.length; i++){
+//           var fixed_header = document.getElementById('letter_container_'+i);
+//           console.log(names_container);
+//         //   var header = letter_container[i];
+         
+//         //   var next_letter_container=letter_container[i+1];
+        
+//         //   var holder = letter_container(header)[0];
+          
+//         //   if(names_container.pageYOffset>findPosY(holder)){};
+        
+//         };    
+//     };        
+// };  
+
+
 
 
 
@@ -189,14 +247,14 @@ document.addEventListener('DOMContentLoaded',function(event){
 
     for(i in split_alphabet){
         var current_letter = split_alphabet[i];
-        var current_abc_container = document.getElementById('abc_container_'+i);
+        current_abc_container = document.getElementById('abc_container_'+i);
         
         for(i in contact_array){
             current_letter = current_letter.toLowerCase();
             var regex_pattern = new RegExp('^' + current_letter + '.*|\w','gi')
             
             if(contact_array[i].first_name.match(regex_pattern)){
-                var inner_contact_container = document.createElement('p');
+                inner_contact_container = document.createElement('p');
                 inner_contact_container.setAttribute('class','inner_contact_container');
                 inner_contact_container.textContent = contact_array[i].first_name + ' ' + contact_array[i].last_name;
                 
@@ -284,7 +342,6 @@ document.addEventListener('DOMContentLoaded',function(event){
        
     };
 
-
     for (var i=0; i<2; i++){
         create_second_display_elements('div','add_more_info_container_'+i);
         var add_more_info_container = document.getElementById('add_more_info_container_'+i);
@@ -301,8 +358,13 @@ document.addEventListener('DOMContentLoaded',function(event){
         add_info_container[0].setAttribute('placeholder','add phone');
         add_info_container[1].setAttribute('placeholder','add email');
     
-    
-    
+// attempt to merge the two files
+
+    // attach_script(load_js_library,function(){
+                    
+    //                 console.log('load.js ready');
+    //                 load_scripts();
+    // });
 });
 
 
