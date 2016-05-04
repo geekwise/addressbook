@@ -20,6 +20,10 @@ var full_name_container;
 
 var add_more_info_container;
 
+
+
+
+
 //building a container for the All Contacts display screen
 
 contact_container = document.createElement('div');
@@ -193,7 +197,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         
         for(i in contact_array){
             current_letter = current_letter.toLowerCase();
-            var regex_pattern = new RegExp('^' + current_letter + '.*|\w','gi')
+            var regex_pattern = new RegExp('^' + current_letter + '.*|\w','gi');
             
             if(contact_array[i].first_name.match(regex_pattern)){
                 var inner_contact_container = document.createElement('p');
@@ -204,6 +208,74 @@ document.addEventListener('DOMContentLoaded',function(event){
             };
         };
     };
+    
+    // attempt to merge app.js code to script.js pulling data from external source
+
+    var data_urls = window.location.origin+'/js/data_urls.js';
+    var load_js_library = 'https://cdnjs.cloudflare.com/ajax/libs/load.js/1316434407/load-min.js';
+    
+    var load_scripts = function(){
+        load(data_urls).thenRun(function(){
+           load(contact_first_name_url,contact_last_name_url).thenRun(function(){
+               
+                var contact_first_name_url_one = contact_first_name_url;
+                var contact_last_name_url_two = contact_last_name_url;
+                var contact_first_name = first_name;
+                var contact_last_name = last_name;
+                       console.log(contact_first_name); 
+                       console.log(contact_last_name);
+                       
+                for(i in split_alphabet){
+                    var current_letter = split_alphabet[i];
+                    var current_abc_container = document.getElementById('abc_container_'+i);
+                    
+                    for(i in contact_first_name_url){
+                        current_letter = current_letter.toLowerCase();
+                        var first_name_regex_pattern = new RegExp('^' + current_letter + '.*|\w','gi');
+                        
+                        if(first_name.match(first_name_regex_pattern)){
+                        var my_inner_contact_container = document.createElement('p');
+                        my_inner_contact_container.setAttribute('class','inner_contact_container');
+                        my_inner_contact_container.textContent = first_name;
+                        
+                        current_abc_container.appendChild(inner_contact_container);
+                        };
+                    
+                    var my_inner_contact_container = document.createElement('p');
+                    my_inner_contact_container.setAttribute('class','inner_contact_container');
+                    my_inner_contact_container.textContent = first_name + ' ' + last_name;
+                    
+                    current_abc_container.appendChild(inner_contact_container);
+                    };
+                };
+        });
+    });
+    
+    };
+
+    var attach_script = function(url, callback) {
+    	
+    	var script_element = document.createElement('script');
+    	var first_script = document.getElementsByTagName('script')[0];
+    	
+    	script_element.src = url;
+    	
+      	if(callback){
+    		script_element.addEventListener('load',function(event){
+    				callback(null, event);
+    		},false);
+    	}
+    	
+    	first_script.parentNode.insertBefore(script_element,first_script);
+    
+    }
+    
+    attach_script(load_js_library,function(){
+                    
+                    console.log('load.js ready');
+                    load_scripts();
+
+            });
     
 // Creating New Contact display screen
 
