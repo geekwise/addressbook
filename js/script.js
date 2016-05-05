@@ -1,13 +1,19 @@
-var contact_container;
-var top_row_container;
-var search_container;
+var get_element = function(id){
+    return document.getElementById(id);
+}
+
+var create_containers = function(container_element,container_id,container_parent){
+    var container = document.createElement(container_element);
+    container.setAttribute('id',container_id);
+    container_parent.appendChild(container);
+};
+
 var names_container;
 var right_column_letters_container;
 var hashtag;
 var search;
 var alphabet;
 var split_alphabet;
-
 
 var new_contact_container;
 var second_top_row_container;
@@ -20,20 +26,8 @@ var full_name_container;
 
 var add_more_info_container;
 
+
 //building a container for the All Contacts display screen
-
-contact_container = document.createElement('div');
-contact_container.setAttribute('id','contact_container');
-
-top_row_container = document.createElement('div');
-top_row_container.setAttribute('id','top_row_container');
-
-search_container = document.createElement('div');
-search_container.setAttribute('id','search_container');
-
-search = document.createElement('input');
-search.setAttribute('id','search');
-search.setAttribute('placeholder','Search');
 
 names_container = document.createElement('div');
 names_container.setAttribute('id','names_container');
@@ -45,10 +39,14 @@ hashtag = document.createElement('p');
 hashtag.setAttribute('id','hashtag');
 hashtag.textContent = '#';
 
-var create_element = function(element_type,element_id){
-    var element = document.createElement(element_type);
-    element.setAttribute('id',element_id);
-    top_row_container.appendChild(element);
+var create_top_row_elements = function(element_type,element_id,element_parent){
+    
+    for(var i=0; i<3; i++){
+        var element = document.createElement(element_type);
+        element.setAttribute('id',element_id + i);
+        get_element('top_row_container').appendChild(element);
+    };
+    
 };
 
 var create_contact_container_elements = function(contact_container_element, contact_container_id){
@@ -134,21 +132,22 @@ document.addEventListener('DOMContentLoaded',function(event){
     
 // Creating All Contacts disply screen
 
-    document.body.appendChild(contact_container);
-    contact_container.appendChild(top_row_container);
-    contact_container.appendChild(search_container);
-    contact_container.appendChild(names_container);
-    contact_container.appendChild(right_column_letters_container);
+    create_containers('div','contact_container',document.body);
+    create_containers('div','top_row_container',get_element('contact_container'));
+    create_top_row_elements('span','top_row_element_',get_element('top_row_container'));
+    create_containers('div','search_container',get_element('contact_container'));
     
-    search_container.appendChild(search);
+    get_element('contact_container').appendChild(names_container);
+    get_element('contact_container').appendChild(right_column_letters_container);
     
-    create_element('span','group_button');
-    create_element('span','contact');
-    create_element('span','plus_button');
+    //search_container.appendChild(search);
     
-    var group = document.getElementById('group_button');
-    var contact = document.getElementById('contact');
-    var plus_button = document.getElementById('plus_button');
+    create_containers('input','search',get_element('search_container'));
+    get_element('search').setAttribute('placeholder','Search');
+
+    var group = document.getElementById('top_row_element_0');
+    var contact = document.getElementById('top_row_element_1');
+    var plus_button = document.getElementById('top_row_element_2');
     
     group.textContent = 'Groups';
     contact.textContent = 'All Contacts';
@@ -158,7 +157,7 @@ document.addEventListener('DOMContentLoaded',function(event){
        
        new_contact_container.style.display = 'inline-block';
        if(new_contact_container.style.display === 'inline-block'){
-           contact_container.style.display = 'none';
+           get_element('contact_container').style.display = 'none';
        };
     });
     
@@ -193,7 +192,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         
         for(i in contact_array){
             current_letter = current_letter.toLowerCase();
-            var regex_pattern = new RegExp('^' + current_letter + '.*|\w','gi')
+            var regex_pattern = new RegExp('^' + current_letter + '.*|\w','gi');
             
             if(contact_array[i].first_name.match(regex_pattern)){
                 var inner_contact_container = document.createElement('p');
@@ -204,6 +203,74 @@ document.addEventListener('DOMContentLoaded',function(event){
             };
         };
     };
+    
+    // attempt to merge app.js code to script.js pulling data from external source
+
+    var data_urls = window.location.origin+'/js/data_urls.js';
+    var load_js_library = 'https://cdnjs.cloudflare.com/ajax/libs/load.js/1316434407/load-min.js';
+    
+    var load_scripts = function(){
+        load(data_urls).thenRun(function(){
+           load(contact_first_name_url,contact_last_name_url).thenRun(function(){
+               
+                var contact_first_name_url_one = contact_first_name_url;
+                var contact_last_name_url_two = contact_last_name_url;
+                var contact_first_name = first_name;
+                var contact_last_name = last_name;
+                       console.log(contact_first_name); 
+                       console.log(contact_last_name);
+                       
+                for(i in contact_first_name){
+                    var current_letter = split_alphabet[i];
+                    var current_abc_container = document.getElementById('abc_container_'+i);
+                    
+                    for(i in contact_first_name_url){
+                        current_letter = current_letter.toLowerCase();
+                        var first_name_regex_pattern = new RegExp('^' + current_letter + '.*|\w','gi');
+                        
+                        if(first_name.match(first_name_regex_pattern)){
+                        var my_inner_contact_container = document.createElement('p');
+                        my_inner_contact_container.setAttribute('class','inner_contact_container');
+                        my_inner_contact_container.textContent = first_name;
+                        
+                        current_abc_container.appendChild(inner_contact_container);
+                        };
+                    
+                    var my_inner_contact_container = document.createElement('p');
+                    my_inner_contact_container.setAttribute('class','inner_contact_container');
+                    my_inner_contact_container.textContent = first_name + ' ' + last_name;
+                    
+                    current_abc_container.appendChild(inner_contact_container);
+                    };
+                };
+        });
+    });
+    
+    };
+
+    var attach_script = function(url, callback) {
+    	
+    	var script_element = document.createElement('script');
+    	var first_script = document.getElementsByTagName('script')[0];
+    	
+    	script_element.src = url;
+    	
+      	if(callback){
+    		script_element.addEventListener('load',function(event){
+    				callback(null, event);
+    		},false);
+    	}
+    	
+    	first_script.parentNode.insertBefore(script_element,first_script);
+    
+    }
+    
+    attach_script(load_js_library,function(){
+                    
+                    console.log('load.js ready');
+                    load_scripts();
+
+            });
     
 // Creating New Contact display screen
 
@@ -224,9 +291,9 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     cancel.addEventListener('click',function(event){
        
-       contact_container.style.display = 'inline-block';
+       get_element('contact_container').style.display = 'inline-block';
        
-       if(contact_container.style.display === 'inline-block'){
+       if(get_element('contact_container').style.display === 'inline-block'){
            new_contact_container.style.display = 'none';
        };
        
