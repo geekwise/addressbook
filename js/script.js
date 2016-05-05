@@ -1,5 +1,21 @@
-var contact_container;
-var top_row_container;
+var create_contact_container = function(){
+     var container = document.createElement('div');
+     container.setAttribute('id','contact_container');
+     document.body.appendChild(container);
+};
+
+var get_element = function(id){
+    return document.getElementById(id);
+}
+
+var create_containers = function(container_element,container_id,container_parent){
+    var container = document.createElement(container_element);
+    container.setAttribute('id',container_id);
+    container_parent.appendChild(container);
+};
+
+
+//var top_row_container;
 var search_container;
 var names_container;
 var right_column_letters_container;
@@ -26,11 +42,8 @@ var add_more_info_container;
 
 //building a container for the All Contacts display screen
 
-contact_container = document.createElement('div');
-contact_container.setAttribute('id','contact_container');
-
-top_row_container = document.createElement('div');
-top_row_container.setAttribute('id','top_row_container');
+//top_row_container = document.createElement('div');
+//top_row_container.setAttribute('id','top_row_container');
 
 search_container = document.createElement('div');
 search_container.setAttribute('id','search_container');
@@ -52,7 +65,7 @@ hashtag.textContent = '#';
 var create_element = function(element_type,element_id){
     var element = document.createElement(element_type);
     element.setAttribute('id',element_id);
-    top_row_container.appendChild(element);
+    get_element('top_row_container').appendChild(element);
 };
 
 var create_contact_container_elements = function(contact_container_element, contact_container_id){
@@ -138,17 +151,22 @@ document.addEventListener('DOMContentLoaded',function(event){
     
 // Creating All Contacts disply screen
 
-    document.body.appendChild(contact_container);
-    contact_container.appendChild(top_row_container);
-    contact_container.appendChild(search_container);
-    contact_container.appendChild(names_container);
-    contact_container.appendChild(right_column_letters_container);
+    create_contact_container();
     
-    search_container.appendChild(search);
-    
+    create_containers('div','top_row_container',get_element('contact_container'));
     create_element('span','group_button');
     create_element('span','contact');
     create_element('span','plus_button');
+    
+    get_element('contact_container').appendChild(search_container);
+    get_element('contact_container').appendChild(names_container);
+    get_element('contact_container').appendChild(right_column_letters_container);
+    
+    search_container.appendChild(search);
+    
+    create_containers('input','search',get_element('contact_container'));
+    
+    
     
     var group = document.getElementById('group_button');
     var contact = document.getElementById('contact');
@@ -225,7 +243,7 @@ document.addEventListener('DOMContentLoaded',function(event){
                        console.log(contact_first_name); 
                        console.log(contact_last_name);
                        
-                for(i in split_alphabet){
+                for(i in contact_first_name){
                     var current_letter = split_alphabet[i];
                     var current_abc_container = document.getElementById('abc_container_'+i);
                     
