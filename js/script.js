@@ -1,9 +1,3 @@
-var create_contact_container = function(){
-     var container = document.createElement('div');
-     container.setAttribute('id','contact_container');
-     document.body.appendChild(container);
-};
-
 var get_element = function(id){
     return document.getElementById(id);
 }
@@ -14,16 +8,12 @@ var create_containers = function(container_element,container_id,container_parent
     container_parent.appendChild(container);
 };
 
-
-//var top_row_container;
-var search_container;
 var names_container;
 var right_column_letters_container;
 var hashtag;
 var search;
 var alphabet;
 var split_alphabet;
-
 
 var new_contact_container;
 var second_top_row_container;
@@ -37,20 +27,7 @@ var full_name_container;
 var add_more_info_container;
 
 
-
-
-
 //building a container for the All Contacts display screen
-
-//top_row_container = document.createElement('div');
-//top_row_container.setAttribute('id','top_row_container');
-
-search_container = document.createElement('div');
-search_container.setAttribute('id','search_container');
-
-search = document.createElement('input');
-search.setAttribute('id','search');
-search.setAttribute('placeholder','Search');
 
 names_container = document.createElement('div');
 names_container.setAttribute('id','names_container');
@@ -62,10 +39,14 @@ hashtag = document.createElement('p');
 hashtag.setAttribute('id','hashtag');
 hashtag.textContent = '#';
 
-var create_element = function(element_type,element_id){
-    var element = document.createElement(element_type);
-    element.setAttribute('id',element_id);
-    get_element('top_row_container').appendChild(element);
+var create_top_row_elements = function(element_type,element_id,element_parent){
+    
+    for(var i=0; i<3; i++){
+        var element = document.createElement(element_type);
+        element.setAttribute('id',element_id + i);
+        get_element('top_row_container').appendChild(element);
+    };
+    
 };
 
 var create_contact_container_elements = function(contact_container_element, contact_container_id){
@@ -151,26 +132,22 @@ document.addEventListener('DOMContentLoaded',function(event){
     
 // Creating All Contacts disply screen
 
-    create_contact_container();
-    
+    create_containers('div','contact_container',document.body);
     create_containers('div','top_row_container',get_element('contact_container'));
-    create_element('span','group_button');
-    create_element('span','contact');
-    create_element('span','plus_button');
+    create_top_row_elements('span','top_row_element_',get_element('top_row_container'));
+    create_containers('div','search_container',get_element('contact_container'));
     
-    get_element('contact_container').appendChild(search_container);
     get_element('contact_container').appendChild(names_container);
     get_element('contact_container').appendChild(right_column_letters_container);
     
-    search_container.appendChild(search);
+    //search_container.appendChild(search);
     
-    create_containers('input','search',get_element('contact_container'));
-    
-    
-    
-    var group = document.getElementById('group_button');
-    var contact = document.getElementById('contact');
-    var plus_button = document.getElementById('plus_button');
+    create_containers('input','search',get_element('search_container'));
+    get_element('search').setAttribute('placeholder','Search');
+
+    var group = document.getElementById('top_row_element_0');
+    var contact = document.getElementById('top_row_element_1');
+    var plus_button = document.getElementById('top_row_element_2');
     
     group.textContent = 'Groups';
     contact.textContent = 'All Contacts';
@@ -180,7 +157,7 @@ document.addEventListener('DOMContentLoaded',function(event){
        
        new_contact_container.style.display = 'inline-block';
        if(new_contact_container.style.display === 'inline-block'){
-           contact_container.style.display = 'none';
+           get_element('contact_container').style.display = 'none';
        };
     });
     
@@ -314,9 +291,9 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     cancel.addEventListener('click',function(event){
        
-       contact_container.style.display = 'inline-block';
+       get_element('contact_container').style.display = 'inline-block';
        
-       if(contact_container.style.display === 'inline-block'){
+       if(get_element('contact_container').style.display === 'inline-block'){
            new_contact_container.style.display = 'none';
        };
        

@@ -68,19 +68,19 @@ input{
     background-color:#F7F7F7;
 }
 
-#group_button{
+#top_row_element_0{
     float:left;
     margin:1rem 0 0 20px;
     color:#0D7CE3;
 }
 
-#contact{
+#top_row_element_1{
     float: none;
     margin: 1rem 35px 0 0;
     font-weight:bold;
 }
 
-#plus_button{
+#top_row_element_2{
     float:right;
     margin: -12px 2rem 0 2rem;
     font-size:4.5rem;
