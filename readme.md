@@ -1,17 +1,25 @@
 #Geekwise Javascript Advanced JS - web app of the IOS Contacts app
 ### Pure JS Vanila - Foundational Javascript Development
 
+##Table of Contents
+| Title | Location |
+|-------|----------|
+| To Do |   15     |
+| Layout|   60     |
+|       |          |
+
+
+
+
+```
 ##Last Updated @ 05-02-2016
+```
+|   ##To Do:               |  ##Completion     |     ##Details    |
+|   -------------------    |-------------------|------------------| 
+| ###Create   CRUD         |                   |                  |
+| ###Read     CRUD         |                   |                
 
-##To Do:
  
-###Create
- - **C**RUD
- - 
- - `Add Contact`
-	 - WebAPI Camera for CRUD of 
-
-###Read 
  - C**R**UD
  - `Search For Contact`
 
@@ -26,3 +34,13 @@
 ##Archived Add Complted:
 
 - 
+
+```
+##Create 
+     - **C**RUD
+     - 
+     - 
+     - `Add Contact`
+	  - WebAPI Camera for CRUD of 
+```
+
