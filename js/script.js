@@ -8,36 +8,12 @@ var create_containers = function(container_element,container_id,container_parent
     container_parent.appendChild(container);
 };
 
-var names_container;
-var right_column_letters_container;
-var hashtag;
-var search;
-var alphabet;
-var split_alphabet;
-
-var new_contact_container;
-var second_top_row_container;
 var left_input_section_container_div;
 var right_input_section_container_div;
 
-var abc_container;
-var letter_container;
-var full_name_container;
-
 var add_more_info_container;
 
-
 //building a container for the All Contacts display screen
-
-names_container = document.createElement('div');
-names_container.setAttribute('id','names_container');
-
-right_column_letters_container = document.createElement('div');
-right_column_letters_container.setAttribute('id','right_column_letters_container');
-
-hashtag = document.createElement('p');
-hashtag.setAttribute('id','hashtag');
-hashtag.textContent = '#';
 
 var create_top_row_elements = function(element_type,element_id,element_parent){
     
@@ -47,18 +23,6 @@ var create_top_row_elements = function(element_type,element_id,element_parent){
         get_element('top_row_container').appendChild(element);
     };
     
-};
-
-var create_contact_container_elements = function(contact_container_element, contact_container_id){
-    var contact_container_element = document.createElement(contact_container_element);
-    contact_container_element.setAttribute('id',contact_container_id);
-    names_container.appendChild(contact_container_element);
-};
-
-var create_right_column_letters = function(letter_element,letter_element_id){
-    var right_column_letters = document.createElement(letter_element);
-    right_column_letters.setAttribute('id',letter_element_id);
-    right_column_letters_container.appendChild(right_column_letters);
 };
 
 var contact_information = function(first_name,last_name,company,phone,email){
@@ -95,27 +59,18 @@ var contact_array = [
     sarah
 ];
 
-
-
-
 //building a container for the New Contact display screen
-
-new_contact_container = document.createElement('div');
-new_contact_container.setAttribute('id','new_contact_container');
-
-second_top_row_container = document.createElement('div');
-second_top_row_container.setAttribute('id','second_top_row_container');
 
 var create_second_top_row_element = function(element_type,element_id){
     var element = document.createElement(element_type);
     element.setAttribute('id',element_id);
-    second_top_row_container.appendChild(element);
+    get_element('second_top_row_container').appendChild(element);
 };
 
 var create_second_display_elements = function(element_type,element_id){
     var element = document.createElement(element_type);
     element.setAttribute('id',element_id);
-    new_contact_container.appendChild(element);
+    get_element('new_contact_container').appendChild(element);
 };
 
 var create_right_input_section_elements = function(element_type,element_id){
@@ -123,8 +78,6 @@ var create_right_input_section_elements = function(element_type,element_id){
     element.setAttribute('id',element_id);
     right_input_section_container_div.appendChild(element);
 };
-
-
 
 //When DOM is loaded
 
@@ -136,11 +89,8 @@ document.addEventListener('DOMContentLoaded',function(event){
     create_containers('div','top_row_container',get_element('contact_container'));
     create_top_row_elements('span','top_row_element_',get_element('top_row_container'));
     create_containers('div','search_container',get_element('contact_container'));
-    
-    get_element('contact_container').appendChild(names_container);
-    get_element('contact_container').appendChild(right_column_letters_container);
-    
-    //search_container.appendChild(search);
+    create_containers('div','names_container',get_element('contact_container'));
+    create_containers('div','right_column_letters_container',get_element('contact_container'));
     
     create_containers('input','search',get_element('search_container'));
     get_element('search').setAttribute('placeholder','Search');
@@ -155,21 +105,20 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     plus_button.addEventListener('click',function(event){
        
-       new_contact_container.style.display = 'inline-block';
-       if(new_contact_container.style.display === 'inline-block'){
+       get_element('new_contact_container').style.display = 'inline-block';
+       if(get_element('new_contact_container').style.display === 'inline-block'){
            get_element('contact_container').style.display = 'none';
        };
     });
     
-    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    //console.log(alphabet);
-    split_alphabet = alphabet.split('');
+    var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var split_alphabet = alphabet.split('');
     
 // create the left side letters and containers for the contacts 
     for(var i=0; i<26; i++){
-        create_contact_container_elements('div','abc_container_' + i);
-        abc_container = document.getElementById('abc_container_' + i);
-        letter_container = document.createElement('p');
+        create_containers('div','abc_container_' + i,get_element('names_container'));
+        var abc_container = document.getElementById('abc_container_' + i);
+        var letter_container = document.createElement('p');
         letter_container.setAttribute('id','letter_container_'+i);
         letter_container.textContent = split_alphabet[i];
         
@@ -177,12 +126,13 @@ document.addEventListener('DOMContentLoaded',function(event){
     };
     
     for(var i=0; i<26; i++){
-        create_right_column_letters('p','right_column_letters_'+i);
+        create_containers('p','right_column_letters_'+i,get_element('right_column_letters_container'));
         var letters = document.getElementById('right_column_letters_'+i);
         letters.textContent = split_alphabet[i];
-        
-        right_column_letters_container.appendChild(hashtag);
     };
+    
+    create_containers('p','hastag',get_element('right_column_letters_container'));
+    get_element('hastag').textContent = '#';
     
 // create array for all the letter_container id's
 
@@ -274,8 +224,9 @@ document.addEventListener('DOMContentLoaded',function(event){
     
 // Creating New Contact display screen
 
-    document.body.appendChild(new_contact_container);
-    new_contact_container.appendChild(second_top_row_container);
+    create_containers('div','new_contact_container',document.body);
+    create_containers('div','second_top_row_container',get_element('new_contact_container'));
+
     
     create_second_top_row_element('span','cancel_button');
     create_second_top_row_element('span','new_contact');
@@ -294,7 +245,7 @@ document.addEventListener('DOMContentLoaded',function(event){
        get_element('contact_container').style.display = 'inline-block';
        
        if(get_element('contact_container').style.display === 'inline-block'){
-           new_contact_container.style.display = 'none';
+           get_element('new_contact_container').style.display = 'none';
        };
        
     });
@@ -351,7 +302,6 @@ document.addEventListener('DOMContentLoaded',function(event){
        
     };
 
-
     for (var i=0; i<2; i++){
         create_second_display_elements('div','add_more_info_container_'+i);
         var add_more_info_container = document.getElementById('add_more_info_container_'+i);
@@ -367,8 +317,6 @@ document.addEventListener('DOMContentLoaded',function(event){
         
         add_info_container[0].setAttribute('placeholder','add phone');
         add_info_container[1].setAttribute('placeholder','add email');
-    
-    
     
 });
 
