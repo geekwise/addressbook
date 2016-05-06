@@ -14,16 +14,22 @@ var right_input_section_container_div;
 var add_more_info_container;
 
 //building a container for the All Contacts display screen
-
-var create_top_row_elements = function(element_type,element_id,element_parent){
-    
-    for(var i=0; i<3; i++){
-        var element = document.createElement(element_type);
-        element.setAttribute('id',element_id + i);
-        get_element('top_row_container').appendChild(element);
+var create_top_row_elements = function(number_of_top_row_element){
+    for(var i=0; i<number_of_top_row_element; i++){
+        create_containers('span','top_row_element_'+i,get_element('top_row_container'));
     };
     
 };
+
+// var create_top_row_elements = function(element_type,element_id,element_parent){
+    
+//     for(var i=0; i<3; i++){
+//         var element = document.createElement(element_type);
+//         element.setAttribute('id',element_id + i);
+//         get_element('top_row_container').appendChild(element);
+//     };
+    
+// };
 
 var contact_information = function(first_name,last_name,company,phone,email){
     this.first_name = first_name;
@@ -95,12 +101,11 @@ document.addEventListener('DOMContentLoaded',function(event){
     create_containers('input','search',get_element('search_container'));
     get_element('search').setAttribute('placeholder','Search');
 
-    var group = document.getElementById('top_row_element_0');
-    var contact = document.getElementById('top_row_element_1');
-    var plus_button = document.getElementById('top_row_element_2');
-    
-    group.textContent = 'Groups';
-    contact.textContent = 'All Contacts';
+    create_top_row_elements(3);
+
+    get_element('top_row_element_0').textContent = 'Groups';;
+    get_element('top_row_element_1').textContent = 'All Contacts';;
+    var plus_button = get_element('top_row_element_2');
     plus_button.textContent = '+';
     
     plus_button.addEventListener('click',function(event){
