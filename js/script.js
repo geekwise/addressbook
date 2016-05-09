@@ -8,9 +8,6 @@ var create_containers = function(container_element,container_id,container_parent
     container_parent.appendChild(container);
 };
 
-// var left_input_section_container_div;
-// var right_input_section_container_div;
-
 var add_more_info_container;
 
 //building a container for the All Contacts display screen
@@ -240,29 +237,49 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     create_multi_elements(3,'input','right_input_',get_element('right_input_section_container_div'));
     
-    var right_input_first_name = get_element('right_input_0');
-    var right_input_last_name = get_element('right_input_1');
-    var right_input_company_name = get_element('right_input_2');
+    var change_input_attributes = function(id,new_id,attribute_value){
+        get_element(id).setAttribute('placeholder',attribute_value);
+        get_element(id).setAttribute('class',new_id);
+    };
     
-    right_input_first_name.setAttribute('placeholder','First');
-    right_input_last_name.setAttribute('placeholder','Last');
-    right_input_company_name.setAttribute('placeholder','Company');
+    change_input_attributes('right_input_0','first_last_company','First');
+    change_input_attributes('right_input_1','first_last_company','Last');
+    change_input_attributes('right_input_2','first_last_company','Company');
     
 // add phone container elements for: green circle plus sign and add phone text
 
     create_containers('div','add_other_info_container',get_element('new_contact_container'));
     create_multi_elements(2,'div','add_more_info_container_',get_element('add_other_info_container'));
     
-    create_containers('div','green_plus_container_one',get_element('add_more_info_container_0'));
-    create_containers('input','add_phone_container',get_element('add_more_info_container_0'));
+    var create_plus_containers = function(){
+        for(var i=0; i<get_element('add_other_info_container').childElementCount; i++){
+            console.log(i);
+            create_containers('div','green_plus_container_'+i,get_element('add_more_info_container_'+i));
+            get_element('green_plus_container_'+i).setAttribute('class','green_plus');
+            get_element('green_plus_container_'+i).textContent = '+';
+        };
+    };
     
-    create_containers('div','green_plus_container_two',get_element('add_more_info_container_1'));
-    create_containers('input','add_email_container',get_element('add_more_info_container_1'));
-        
-    get_element('add_phone_container').setAttribute('placeholder','add phone');
-    get_element('add_email_container').setAttribute('placeholder','add email');
-    get_element('green_plus_container_one').textContent = '+';
-    get_element('green_plus_container_two').textContent = '+';
+    create_plus_containers();
+    
+    var create_new_input_containers = function(){
+        for(var i=0; i<get_element('add_other_info_container').childElementCount; i++){
+            console.log(i);
+            create_containers('input','input_container_'+i,get_element('add_more_info_container_'+i));
+            get_element('input_container_'+i).setAttribute('class','input_container');
+        };
+    };
+    
+    create_new_input_containers();
+    //get_element('input_container_0').
+    //create_containers('input','add_phone_container',get_element('add_more_info_container_0'));
+    
+    //create_containers('input','add_email_container',get_element('add_more_info_container_1'));
+    
+    get_element('input_container_0').setAttribute('placeholder','add phone');
+    get_element('input_container_1').setAttribute('placeholder','add email');
+    // get_element('green_plus_container_one').textContent = '+';
+    // get_element('green_plus_container_two').textContent = '+';
     
 });
 
