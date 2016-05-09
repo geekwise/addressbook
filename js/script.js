@@ -54,26 +54,6 @@ var contact_array = [
     sarah
 ];
 
-//building a container for the New Contact display screen
-
-// var create_second_top_row_element = function(element_type,element_id){
-//     var element = document.createElement(element_type);
-//     element.setAttribute('id',element_id);
-//     get_element('second_top_row_container').appendChild(element);
-// };
-
-// var create_second_display_elements = function(element_type,element_id){
-//     var element = document.createElement(element_type);
-//     element.setAttribute('id',element_id);
-//     get_element('new_contact_container').appendChild(element);
-// };
-
-// var create_right_input_section_elements = function(element_type,element_id){
-//     var element = document.createElement(element_type);
-//     element.setAttribute('id',element_id);
-//     right_input_section_container_div.appendChild(element);
-// };
-
 //When DOM is loaded
 
 document.addEventListener('DOMContentLoaded',function(event){
@@ -213,7 +193,6 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     attach_script(load_js_library,function(){
                     
-                    console.log('load.js ready');
                     load_scripts();
 
             });
@@ -230,21 +209,25 @@ document.addEventListener('DOMContentLoaded',function(event){
 
     create_multi_elements(3,'span','second_top_row_element_',get_element('second_top_row_container'));
     
-    var cancel_button = get_element('second_top_row_element_0');
-    get_element('second_top_row_element_1').textContent = 'New Contact';
-    var done_button = get_element('second_top_row_element_2');
+    var update_element_properties = function(id,text_content,new_id){
+        get_element(id).textContent = text_content;
+        get_element(id).setAttribute('id',new_id);
+    };
     
-    cancel_button.textContent = 'Cancel';
-    done_button.textContent = 'Done';
+    update_element_properties('second_top_row_element_0','Cancel','cancel_button');
+    update_element_properties('second_top_row_element_1','New Contact','new_contact');
+    update_element_properties('second_top_row_element_2','Done','done_button');
     
-    cancel_button.addEventListener('click',function(event){
-       
+    var cancel_button = function(){
+        return get_element('cancel_button');
+    };
+
+    cancel_button().textContent = 'Cancel';
+    cancel_button().addEventListener('click',function(event){
        get_element('contact_container').style.display = 'inline-block';
-       
        if(get_element('contact_container').style.display === 'inline-block'){
            get_element('new_contact_container').style.display = 'none';
        };
-       
     });
     
     var add_photo_circle = document.createElement('span');
@@ -278,6 +261,8 @@ document.addEventListener('DOMContentLoaded',function(event){
         
     get_element('add_phone_container').setAttribute('placeholder','add phone');
     get_element('add_email_container').setAttribute('placeholder','add email');
+    get_element('green_plus_container_one').textContent = '+';
+    get_element('green_plus_container_two').textContent = '+';
     
 });
 

@@ -185,19 +185,19 @@ p[id^=full_name_container_]{
     background-color:#F7F7F7;
 }
 
-#second_top_row_element_0{
+#cancel_button{
     float:left;
     margin:1rem 0 0 20px;
     color:#0D7CE3;
 }
 
-#second_top_row_element_1{
+#new_contact{
     float: none;
     margin: 1rem -20px 0 0;
     font-weight:bold;
 }
 
-#second_top_row_element_2{
+#done_button{
     float:right;
     margin: 15px 2.5rem 0 2rem;
     color:#BDBDBD;
@@ -244,29 +244,19 @@ input[id^=right_input_]{
 div[id^=add_more_info_container_]{
     margin-top:58px;
     border-bottom: 1px solid #7E7D82;
-    width:100%;
+    width:94%;
+    float:right;
 }
 
-#green_plus_container_one{
-    width:9%;
+div[id^=green_plus_container_]{
+    width:8%;
     height:58%;
     background-color:#4FD669;
     float:left;
     border-radius:30px;
     color: white;
-    margin:15px 9px 9px -38px;
-    padding-bottom: 44px;
-}
-
-#green_plus_container_two{
-    width:9%;
-    height:58%;
-    background-color:#4FD669;
-    float:left;
-    border-radius:30px;
-    color: white;
-    margin:15px 9px 9px -38px;
-    padding-bottom: 44px;
+    margin:15px 9px 9px -11px;
+    padding-bottom: 4px;
 }
 
 #add_phone_container{
