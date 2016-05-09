@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 
             attach_script(load_js_library,function(){
                     
-                    console.log('load.js ready');
+                    //console.log('load.js ready');
                     load_scripts();
 
             });        
