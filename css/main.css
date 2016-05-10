@@ -324,18 +324,53 @@ input[placeholder='add email'][id^=input_container_]:moz-input-placeholder{
     color:#0D7CE3;
 }
 
-/*media query iphone 6 portrait*/
+/* j media query iphone 6 portrait*/
 @media only screen 
-and (max-width : 700px) {
+and (max-width : 400px) {
  #contact_container{
     width:100%;
+    
+ }
+ #top_row_container{
+     font-size:1.2rem;
+ }
+ #top_row_element_0{
+     margin:2rem 0 0 20px;
+ }
+ #top_row_element_1{
+        margin: 2rem 55px 0 0;
+ }
+
+ 
+ #top_row_element_2{
+     font-size:200%;
+     margin:17px 1.2rem 0 0rem;
+ }
+ #search{
+    margin:.5rem;
+    height:80%;
  }
  #new_contact_container{
     width:100%;
  }
     
 }
-/*for landscape iphone 6and (max-device-width : 667px)*/
+/*for landscape iphone 6and (max-device-width : 1080px)*/
+@media only screen 
+and (min-width : 660px){
+    #contact_container{
+    width:39.8%;
+    float:left;
+    border-right:solid .2px #A9A9A9;
+    }
+   #new_contact_container{
+    display:inline-block;
+    width:60%;
+    box-shadow:none;
+   } 
+}
+
+
 
 /*media querry iphone 5
 @media only screen 
