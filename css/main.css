@@ -49,7 +49,6 @@ input{
     width:40rem;
     height:auto;
     text-align: center;
-    margin:0 5rem 2rem 5rem;
     box-shadow: 3px 3px 5px 3px grey;
 }
 
@@ -106,7 +105,7 @@ input{
         -moz-transition:    width .5s ease;
         -ms-transition:     width .5s ease;
         -o-transition:      width .5s ease;
-        -webkit-transition  width .5s ease;
+        -webkit-transition:  width .5s ease;
 }
 #search_cancel{
     width:15%;
@@ -184,7 +183,6 @@ p[id^=full_name_container_]{
     position: relative;
     top: 0px;
     display: none;
-    margin:0 5rem 2rem 5rem;
     box-shadow: 3px 3px 5px 3px grey;
 }
 
@@ -328,13 +326,16 @@ input[placeholder='add email'][id^=input_container_]:moz-input-placeholder{
 
 /*media query iphone 6 portrait*/
 @media only screen 
-and (max-width : 575px) {
+and (max-width : 700px) {
  #contact_container{
     width:100%;
-}
+ }
+ #new_contact_container{
+    width:100%;
+ }
     
 }
-/*and (max-device-width : 667px)*/
+/*for landscape iphone 6and (max-device-width : 667px)*/
 
 /*media querry iphone 5
 @media only screen 
