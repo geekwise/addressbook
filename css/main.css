@@ -102,8 +102,26 @@ input{
     border:none;
     font-size: 2rem;
     text-align:center;
+    transition:             width .5s ease;
+        -moz-transition:    width .5s ease;
+        -ms-transition:     width .5s ease;
+        -o-transition:      width .5s ease;
+        -webkit-transition  width .5s ease;
 }
-
+#search_cancel{
+    width:15%;
+    height:60%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border:none;
+    text-align:center;
+    font-size:2rem;
+    color:#0D7CE3;
+    display:none;
+    transition:             opacity .5;
+        -moz-transition:    opacity .5;
+        -ms-transition:     opacity .5;
+}
 #names_container{
     height:auto;
     width:96%;
@@ -307,3 +325,20 @@ input[placeholder='add email'][id^=input_container_]::-ms-input-placeholder{
 input[placeholder='add email'][id^=input_container_]:moz-input-placeholder{
     color:#0D7CE3;
 }
+
+/*media query iphone 6 portrait*/
+@media only screen 
+and (max-width : 575px) {
+ #contact_container{
+    width:100%;
+}
+    
+}
+/*and (max-device-width : 667px)*/
+
+/*media querry iphone 5
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) {}*/
+
+/*
