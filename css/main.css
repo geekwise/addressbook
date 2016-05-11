@@ -112,7 +112,7 @@ input{
 #search_icon { 
     position: absolute;
     top: 112px;
-    left: 102px;
+    left: 12px;
     font-size: 26px;
     color: #A9A9A9;
 }
@@ -285,14 +285,20 @@ div[id^=add_more_info_container_]{
 }
 
 .green_plus{
-    width:8%;
-    height:58%;
-    background-color:#4FD669;
+  
     float:left;
-    border-radius:30px;
-    color: white;
+    
+    
     margin:15px 9px 9px -11px;
     padding-bottom: 2px;
+}
+.fa-plus-circle:before {
+    content: "\f055";
+    font-weight: 100;
+    font-style: oblique;
+    color: green;
+    top:5px;
+    left:5px;
 }
 
 input[id^=input_container_]{
@@ -395,10 +401,10 @@ and (max-width : 400px) {
   .first_last_company{
       font-size:1rem;
   }
-  #green_plus{
-    width:14%;
-    height:10%;
-  }
+  /*#green_plus{*/
+  /*  width:14%;*/
+  /*  height:10%;*/
+  /*}*/
 }
 /*for landscape galaxy  (max-device-width : 1080px)*/
 @media only screen 

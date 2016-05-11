@@ -258,8 +258,8 @@ document.addEventListener('DOMContentLoaded',function(event){
         for(var i=0; i<get_element('add_other_info_container').childElementCount; i++){
             console.log(i);
             create_containers('div','green_plus_container_'+i,get_element('add_more_info_container_'+i));
-            get_element('green_plus_container_'+i).setAttribute('class','green_plus');
-            get_element('green_plus_container_'+i).textContent = '+';
+            get_element('green_plus_container_'+i).setAttribute('class','green_plus fa fa-plus-circle');
+            
         };
     };
     
