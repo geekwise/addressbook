@@ -156,6 +156,7 @@ p[id^=full_name_container_]{
     margin: 1rem 0 0 2rem;
     border-bottom: 1px solid #B6B5B9;
     padding-bottom: 1.5rem;
+    font-size:2.5rem;
 }
 
 #right_column_letters_container{
@@ -163,9 +164,12 @@ p[id^=full_name_container_]{
     width:4%;
     float:right;
     color: #0D7CE3;
-    font-size:25px;
+    font-size:14px;
     font-weight: 600;
-    margin-top:5.2rem;
+    margin-top:6rem;
+    position:fixed;
+    right:3%;
+    
 }
 
 /*
@@ -193,6 +197,11 @@ p[id^=full_name_container_]{
     font-size:2.2rem;
     border-bottom: 1px solid #7E7D82;
     background-color:#F7F7F7;
+}
+
+#second_screen_input_section_container{
+    width:100%;
+    height:25%;
 }
 
 #second_top_row_container > span{
@@ -226,16 +235,17 @@ p[id^=full_name_container_]{
 }
 
 #add_photo_circle{
-    width:7.5rem;
-    height: 6.3rem;
+    width:6rem;
+    height:6rem;
     border: 2px solid #BDBDBD;
-    border-radius:70px;
+    border-radius:100%;
     position:relative;
     top:25px;
-    left:-20px;
-    font-size:1.8rem;
+    left:-10px;
+    font-size:21px;
+    line-height: 25px;
+    text-align: center;
     color:#0D7CE3;
-    padding-top:22px;
 }
 
 #right_input_section_container_div{
@@ -353,7 +363,28 @@ and (max-width : 400px) {
  #new_contact_container{
     width:100%;
  }
-    
+  #second_top_row_container{
+      font-size:1.2rem;
+  } 
+  #cancel_button{
+      margin:2rem 0 0 20px;
+  }
+  #new_contact{
+       margin: 2rem 10px 0 0;
+  }
+  #done_button{
+    margin:33px 2.2rem 0 0rem;  
+  }
+  #add_photo_circle{
+    width: 4rem;
+    height: 4rem;
+    font-size: 14px;
+    line-height: 2em;
+    text-align: center;;
+  }
+  .first_last_company{
+      font-size:1rem;
+  }
 }
 /*for landscape iphone 6and (max-device-width : 1080px)*/
 @media only screen 

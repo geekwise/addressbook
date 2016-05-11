@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded',function(event){
    get_element('search_cancel').addEventListener('click',function(){
        
        this.style.display = 'none';
-       get_element('search').style.width = '100%';
+       get_element('search').style.width = '95%';
     });
     
 });
