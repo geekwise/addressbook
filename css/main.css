@@ -49,7 +49,6 @@ input{
     width:40rem;
     height:auto;
     text-align: center;
-    margin:0 5rem 2rem 5rem;
     box-shadow: 3px 3px 5px 3px grey;
 }
 
@@ -102,8 +101,26 @@ input{
     border:none;
     font-size: 2rem;
     text-align:center;
+    transition:             width .5s ease;
+        -moz-transition:    width .5s ease;
+        -ms-transition:     width .5s ease;
+        -o-transition:      width .5s ease;
+        -webkit-transition:  width .5s ease;
 }
-
+#search_cancel{
+    width:15%;
+    height:60%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border:none;
+    text-align:center;
+    font-size:2rem;
+    color:#0D7CE3;
+    display:none;
+    transition:             opacity .5;
+        -moz-transition:    opacity .5;
+        -ms-transition:     opacity .5;
+}
 #names_container{
     height:auto;
     width:96%;
@@ -166,7 +183,6 @@ p[id^=full_name_container_]{
     position: relative;
     top: 0px;
     display: none;
-    margin:0 5rem 2rem 5rem;
     box-shadow: 3px 3px 5px 3px grey;
 }
 
@@ -307,3 +323,58 @@ input[placeholder='add email'][id^=input_container_]::-ms-input-placeholder{
 input[placeholder='add email'][id^=input_container_]:moz-input-placeholder{
     color:#0D7CE3;
 }
+
+/* j media query iphone 6 portrait*/
+@media only screen 
+and (max-width : 400px) {
+ #contact_container{
+    width:100%;
+    
+ }
+ #top_row_container{
+     font-size:1.2rem;
+ }
+ #top_row_element_0{
+     margin:2rem 0 0 20px;
+ }
+ #top_row_element_1{
+        margin: 2rem 55px 0 0;
+ }
+
+ 
+ #top_row_element_2{
+     font-size:200%;
+     margin:17px 1.2rem 0 0rem;
+ }
+ #search{
+    margin:.5rem;
+    height:80%;
+ }
+ #new_contact_container{
+    width:100%;
+ }
+    
+}
+/*for landscape iphone 6and (max-device-width : 1080px)*/
+@media only screen 
+and (min-width : 660px){
+    #contact_container{
+    width:39.8%;
+    float:left;
+    border-right:solid .2px #A9A9A9;
+    }
+   #new_contact_container{
+    display:inline-block;
+    width:60%;
+    box-shadow:none;
+   } 
+}
+
+
+
+/*media querry iphone 5
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) {}*/
+
+/*

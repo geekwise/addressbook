@@ -281,6 +281,26 @@ document.addEventListener('DOMContentLoaded',function(event){
     // get_element('green_plus_container_one').textContent = '+';
     // get_element('green_plus_container_two').textContent = '+';
     
+    
+    create_containers('div','search_cancel',get_element('search_container'));
+     get_element('search_cancel').textContent = 'Cancel';
+    
+    //search input animation
+    get_element( 'search' ).addEventListener( 'click', function() {
+        
+        this.style.width = '50%';
+        this.style.float = 'left';
+        get_element('search_cancel').style.display = 'inline-block';
+        // get_element[id^=abc_container_].style.backgroundColor = '#dcdcdd';
+         
+    }); 
+    
+   get_element('search_cancel').addEventListener('click',function(){
+       
+       this.style.display = 'none';
+       get_element('search').style.width = '100%';
+    });
+    
 });
 
 
