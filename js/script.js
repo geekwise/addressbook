@@ -60,15 +60,18 @@ document.addEventListener('DOMContentLoaded',function(event){
     create_containers('div','contact_container',document.body);
     create_containers('div','top_row_container',get_element('contact_container'));
     
-    create_multi_elements(3,'span','top_row_element_',get_element('top_row_container'));
     
+    create_multi_elements(3,'span','top_row_element_',get_element('top_row_container'));
     create_containers('div','search_container',get_element('contact_container'));
     create_containers('div','names_container',get_element('contact_container'));
     create_containers('div','right_column_letters_container',get_element('contact_container'));
     
+    create_containers('span','search_icon',get_element('search_container'));
+    get_element('search_icon').setAttribute('class','fa fa-search');
     create_containers('input','search',get_element('search_container'));
+    
     get_element('search').setAttribute('placeholder','Search');
-
+    
     get_element('top_row_element_0').textContent = 'Groups';;
     get_element('top_row_element_1').textContent = 'All Contacts';;
     var plus_button = get_element('top_row_element_2');

@@ -4,7 +4,7 @@ Addressbook | Portfolio
 
 Table of Contents
 
-1.0  Global Selectors
+1.0  Global Selectors_
 2.0  All Contact Display Screen
 3.0  New Contact Display Screen
 
@@ -13,6 +13,8 @@ Table of Contents
 /*
 1.0 Global Selectors
 */
+
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 
 body{
     background-color:#E8E4E4;
@@ -107,6 +109,14 @@ input{
         -o-transition:      width .5s ease;
         -webkit-transition:  width .5s ease;
 }
+#search_icon { 
+    position: absolute;
+    top: 112px;
+    left: 102px;
+    font-size: 26px;
+    color: #A9A9A9;
+}
+
 #search_cancel{
     width:15%;
     height:60%;
@@ -384,6 +394,10 @@ and (max-width : 400px) {
   }
   .first_last_company{
       font-size:1rem;
+  }
+  #green_plus{
+    width:14%;
+    height:10%;
   }
 }
 /*for landscape galaxy  (max-device-width : 1080px)*/
