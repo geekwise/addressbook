@@ -156,6 +156,15 @@ user = age 50     font-size = 25px
 user = age 30     font-size = 15px
 ```
 
+break points needing media querry
+```
+320px-360px portrait for most smart phones occasionally 390px
+412px-432px portrait for apple iphone6,motorola nexus6,microsoft lumia 1520
+361-480px  landscape for most smart phones
+***Blackberry needs specifics for unusual screen sizes***
+
+
+```
 
 
 
