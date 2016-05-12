@@ -352,7 +352,6 @@ input[placeholder='add email'][id^=input_container_]:moz-input-placeholder{
 
 /* media querry smartphone portrait*/
 @media only screen 
-and (min-width : 320px)
 and (max-width : 400px) {
  #contact_container{
     width:auto;
@@ -412,7 +411,6 @@ and (max-width : 400px) {
 
 /*for portrait*/
 @media only screen 
-and (min-width : 401px)
 and (max-width : 432px){
    #contact_container{
     width:auto;
@@ -480,11 +478,73 @@ and (max-width : 432px){
   }
 }
 
-/*media querry smart phone land scape(max-device-width : 1080px)*/
+/*media querry font fix*/
+@media only screen
+and (max-width : 760px){
+    /*font-size change*/
+}
+
+/*media querry font fix*/
+@media only screen
+and (max-width : 900px){
+     #top_row_element_0{
+    font-size:1rem;
+    }
+    #top_row_element_1{
+    font-size:1rem;
+    margin: 1rem -22px 0 0;
+    }
+    #top_row_element_2{
+    font-size:2.5rem;
+    }
+}
+
+/*media querry font fix*/
+@media only screen
+and (max-width : 965px){
+    #top_row_element_0{
+    font-size:1.3rem;
+    }
+    #top_row_element_1{
+    font-size:1.3rem;
+    }
+    #top_row_element_2{
+    font-size:3rem;
+    }
+}
+
+/*media querry font fix*/
+@media only screen
+and (max-width : 1250px){
+    #top_row_container{
+    font-size:1.5rem;
+   }
+   #top_row_element_0{
+       font-size:1.5rem;
+       position: relative;
+       top:30%;
+       right:3%;
+   }
+   #top_row_element_1{
+       font-size:1.5rem;
+       position: relative;
+       top:30%;
+       right:3%;
+   }
+   #top_row_element_2{
+       font-size:3.5rem;
+       position: relative;
+       top:34%;
+       right:-5%;
+   }
+}
+
+/*media querry side by side fix*/
 @media only screen 
-and (min-width : 480px){
+and (max-width : 1280px){
     #contact_container{
     width:39.8%;
+    height: auto;
     float:left;
     border-right:solid .2px #A9A9A9;
     }
