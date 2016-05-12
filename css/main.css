@@ -209,7 +209,7 @@ p[id^=full_name_container_]{
     float: left;
 }
 
-#add_photo_circle{
+#camera_input{
     width:7.5rem;
     height: 6.3rem;
     border: 2px solid #BDBDBD;
