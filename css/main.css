@@ -407,10 +407,7 @@ and (max-width : 400px) {
   .first_last_company{
       font-size:1rem;
   }
-  /*#green_plus{*/
-  /*  width:14%;*/
-  /*  height:10%;*/
-  /*}*/
+ 
 }
 
 /*for portrait*/
@@ -474,12 +471,13 @@ and (max-width : 432px){
         left:8%;
     }
     #add_photo_circle{
-        width:4rem;
-        height:4rem;
-        position: relative;
-        top:10%;
-        left:5%;
+        width:6rem;
+        height:6rem;
+        margin:-14% 0 0 2%;
     }
+     .first_last_company{
+      font-size:1rem;
+  }
 }
 
 /*media querry smart phone land scape(max-device-width : 1080px)*/
