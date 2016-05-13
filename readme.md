@@ -3,7 +3,7 @@
 
 Table of Contents
 --------------------------------------
-### Last Updated @ 05-02-2016
+### Last Updated @ 05-10-2016
 
 
 1. To Do List
@@ -11,7 +11,7 @@ Table of Contents
 3. Design Layout Technical Notes
 4. Function Technical Notes
 5. Outside Frameworks
-6. General Technical Notes
+6. General Technical Notes and New Ideas
 7. Device Testing
 8. Team Information
 
@@ -21,28 +21,32 @@ To Do
 ### Last Updated @ 05-06-2016
 
 
-1. [] [Create CRUD]
-    [] - add `Contact`
-    [] - add `Groups`
-	 []   - WebAPI Camera for CRUD
-2.[] [CRUD]
-   [] - search for `contacts`
-   [] - search for `phone number`
-    []- search for `email`    
-3. [] [Update CRUD]
-   [] - edit `contacts`
-    []- edit `photos
-    []- edit `groups
-4. [] [Refactoring]
-    []- refactor current javascript using functions
-5. [] [README]
-    []- **MAINTAIN TO DO LIST**
-    []- add links to table of content
-6. [] [Add Scroll]
-    []- sticky header for each letter navigation **A-Z**
-    []- each `navigation` header slides under previous header when scroll reaches top
-    []- `contact name` slides under header
-
+1. [ ] [Create CRUD]
+    [ ] - add `Contact`
+    [ ] - add `Groups`
+	 [ ]   - WebAPI Camera for CRUD
+2.[ ] [CRUD]
+   [ ] - search for `contacts`
+   [ ] - search for `phone number`
+    [ ]- search for `email`    
+3. [ ] [Update CRUD]
+   [ ] - edit `contacts`
+    [ ]- edit `photos
+    [ ]- edit `groups
+4. [ ] [Refactoring]
+    [ ]- refactor current javascript using functions
+5. [ ] [README]
+    [ ]- **MAINTAIN TO DO LIST**
+    [ ]- add links to table of content
+6. [ ] [Add Scroll]
+    [x]- sticky header for each letter navigation **A-Z**
+    [x]- each `navigation` header slides under previous header when scroll reaches top
+    [ ]- `contact name` slides under header
+7. [ ]- media querry
+    [x]-combine contact to front page during landscape
+    [ ]-font size front page
+    [ ]-font size contact page
+    [ ]-nav bar realligned
 
 APP Features
 --------------------------------------
@@ -62,6 +66,7 @@ User can catagorize and search `contacts` using the `group` button
   battery level will display by tracking your battery level if devise battery is present
  User can `share` `contact` with others through messaging or `social media`
  User can `textmessage` from `contact`
+ **Font size may be set using Facebook to determine age**
 ```
 
 
@@ -138,8 +143,30 @@ Function Technical Notes
 Outside Frameworks
 -----------------
 
-General Technical Notes
+General Technical Notes and New Ideas
 -----------------
+Font Size based on age
+```
+User can log into Facebook or other social media. The device will detect the age of the user.
+The age will then be divided by 2. The sum will determine the font-size for the app making the design
+easier on the eyes during use, otherwise font-size is preset.
+
+**example**  
+user = age 50     font-size = 25px
+user = age 30     font-size = 15px
+```
+
+break points needing media querry
+```
+320px-360px portrait for most smart phones occasionally 390px
+412px-432px portrait for apple iphone6,motorola nexus6,microsoft lumia 1520
+361-480px  landscape for most smart phones
+***Blackberry needs specifics for unusual screen sizes***
+
+
+```
+
+
 
 
 Device Testing
