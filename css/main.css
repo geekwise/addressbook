@@ -244,15 +244,9 @@ p[id^=full_name_container_]{
     float: left;
 }
 
-<<<<<<< HEAD
-#camera_input{
+#add_photo_circle{
     width:7.5rem;
     height: 6.3rem;
-=======
-#add_photo_circle{
-    width:6rem;
-    height:6rem;
->>>>>>> a7c1b3283bea9ed6cb2229929a61637ebcad9280
     border: 2px solid #BDBDBD;
     border-radius:100%;
     position:relative;
