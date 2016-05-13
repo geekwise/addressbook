@@ -4,7 +4,7 @@ Addressbook | Portfolio
 
 Table of Contents
 
-1.0  Global Selectors
+1.0  Global Selectors_
 2.0  All Contact Display Screen
 3.0  New Contact Display Screen
 
@@ -13,6 +13,8 @@ Table of Contents
 /*
 1.0 Global Selectors
 */
+
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 
 body{
     background-color:#E8E4E4;
@@ -49,13 +51,12 @@ input{
     width:40rem;
     height:auto;
     text-align: center;
-    margin:0 5rem 2rem 5rem;
     box-shadow: 3px 3px 5px 3px grey;
 }
 
 #top_row_container{
     width:100%;
-    height:5rem;
+    height:25%;
     margin-top:0rem;
     font-size:2.2rem;
     border-bottom: 1px solid #7E7D82;
@@ -70,26 +71,26 @@ input{
 
 #top_row_element_0{
     float:left;
-    margin:1rem 0 0 20px;
+    margin:4% 0 0 2%;
     color:#0D7CE3;
 }
 
 #top_row_element_1{
     float: none;
-    margin: 1rem 35px 0 0;
+    margin: 4% 10% 0 0;
     font-weight:bold;
 }
 
 #top_row_element_2{
     float:right;
-    margin: -12px 2rem 0 2rem;
-    font-size:4.5rem;
+    margin: -0 2% 0 2%;
+    font-size:4rem;
     color:#0D7CE3;
 }
 
 #search_container{
     width:100%;
-    height:5.5rem;
+    height:3.5rem;
     background-color:#CAC9CE;
     border-bottom: 1px solid #B6B5B9;
 }
@@ -97,13 +98,39 @@ input{
 #search{
     width:95%;
     height:60%;
-    margin-top: 1rem;
+    margin-top: 1.5%;
     border-radius: 10px;
     border:none;
     font-size: 2rem;
     text-align:center;
+    transition:             width .5s ease;
+        -moz-transition:    width .5s ease;
+        -ms-transition:     width .5s ease;
+        -o-transition:      width .5s ease;
+        -webkit-transition:  width .5s ease;
+}
+#search_icon { 
+    position: absolute;
+    top: 9.8%;
+    left: 31%;
+    font-size: 22px;
+    color: #A9A9A9;
 }
 
+#search_cancel{
+    width:15%;
+    height:60%;
+    margin-top: 1%;
+    border-radius: 10px;
+    border:none;
+    text-align:center;
+    font-size:2rem;
+    color:#0D7CE3;
+    display:none;
+    transition:             opacity .5;
+        -moz-transition:    opacity .5;
+        -ms-transition:     opacity .5;
+}
 #names_container{
     height:auto;
     width:96%;
@@ -139,6 +166,7 @@ p[id^=full_name_container_]{
     margin: 1rem 0 0 2rem;
     border-bottom: 1px solid #B6B5B9;
     padding-bottom: 1.5rem;
+    font-size:2.5rem;
 }
 
 #right_column_letters_container{
@@ -146,9 +174,12 @@ p[id^=full_name_container_]{
     width:4%;
     float:right;
     color: #0D7CE3;
-    font-size:25px;
+    font-size:20px;
     font-weight: 600;
-    margin-top:5.2rem;
+    margin-top:4%;
+    position:fixed;
+    right:28.5%;
+    
 }
 
 /*
@@ -166,7 +197,6 @@ p[id^=full_name_container_]{
     position: relative;
     top: 0px;
     display: none;
-    margin:0 5rem 2rem 5rem;
     box-shadow: 3px 3px 5px 3px grey;
 }
 
@@ -177,6 +207,11 @@ p[id^=full_name_container_]{
     font-size:2.2rem;
     border-bottom: 1px solid #7E7D82;
     background-color:#F7F7F7;
+}
+
+#second_screen_input_section_container{
+    width:100%;
+    height:25%;
 }
 
 #second_top_row_container > span{
@@ -210,16 +245,17 @@ p[id^=full_name_container_]{
 }
 
 #add_photo_circle{
-    width:7.5rem;
-    height: 6.3rem;
+    width:6rem;
+    height:6rem;
     border: 2px solid #BDBDBD;
-    border-radius:70px;
+    border-radius:100%;
     position:relative;
     top:25px;
-    left:-20px;
-    font-size:1.8rem;
+    left:-10px;
+    font-size:21px;
+    line-height: 25px;
+    text-align: center;
     color:#0D7CE3;
-    padding-top:22px;
 }
 
 #right_input_section_container_div{
@@ -249,14 +285,20 @@ div[id^=add_more_info_container_]{
 }
 
 .green_plus{
-    width:8%;
-    height:58%;
-    background-color:#4FD669;
+  
     float:left;
-    border-radius:30px;
-    color: white;
+    
+    
     margin:15px 9px 9px -11px;
     padding-bottom: 2px;
+}
+.fa-plus-circle:before {
+    content: "\f055";
+    font-weight: 100;
+    font-style: oblique;
+    color: green;
+    top:5px;
+    left:5px;
 }
 
 input[id^=input_container_]{
@@ -307,3 +349,289 @@ input[placeholder='add email'][id^=input_container_]::-ms-input-placeholder{
 input[placeholder='add email'][id^=input_container_]:moz-input-placeholder{
     color:#0D7CE3;
 }
+
+/*media querry side by side fix*/
+@media only screen 
+and (max-width : 1280px){
+    #contact_container{
+    width:39.8%;
+    height: auto;
+    float:left;
+    border-right:solid .2px #A9A9A9;
+    }
+    #top_row_element_0{
+       position: relative;
+       top:6%;
+       right:1%;
+   }
+   #top_row_element_1{
+       position: relative;
+       top:30%;
+       right:3%;
+   }
+   #top_row_element_2{
+       position: relative;
+       top:34%;
+       right:0%;
+   }
+   #right_column_letters_container{
+       right:59%;
+   }
+   #new_contact_container{
+    display:inline-block;
+    width:60%;
+    box-shadow:none;
+   } 
+}
+
+/*media querry font fix*/
+@media only screen
+and (max-width : 1250px){
+    #top_row_container{
+    font-size:1rem;
+   }
+   #top_row_element_0{
+       font-size:1rem;
+       position: relative;
+       top:30%;
+       right:3%;
+   }
+   #top_row_element_1{
+       font-size:1rem;
+       position: relative;
+       top:30%;
+       right:3%;
+   }
+   #top_row_element_2{
+       font-size:3.5rem;
+       position: relative;
+       top:34%;
+       right:-5%;
+   }
+}
+
+/*media querry font fix*/
+@media only screen
+and (max-width : 965px){
+    #top_row_element_0{
+    font-size:1rem;
+    }
+    #top_row_element_1{
+    font-size:1rem;
+    }
+    #top_row_element_2{
+    font-size:3rem;
+    }
+}
+
+/*media querry font fix*/
+@media only screen
+and (max-width : 900px){
+     #top_row_element_0{
+    font-size:1rem;
+    }
+    #top_row_element_1{
+    font-size:1rem;
+    margin: 1rem -22px 0 0;
+    }
+    #top_row_element_2{
+    font-size:2.5rem;
+    }
+}
+
+/*for portrait*/
+@media only screen 
+and (max-width : 500px){
+   #contact_container{
+    width:auto;
+    height:auto;
+}
+    
+    #top_row_container{
+    font-size:1.5rem;
+    position:relative;
+    top:25%;
+    }
+     #top_row_element_0{
+     margin:5% 0 0 4%;
+ }
+ #top_row_element_1{
+        position: relative;
+        right: 1%;
+        top:44%;
+ }
+
+ 
+ #top_row_element_2{
+     font-size:200%;
+     position: relative;
+     left:5%;
+     top:44%;
+ }
+ #search{
+    margin:.5rem;
+    height:80%;
+ }
+    #right_column_letters_container{
+        top:2%;
+        left:96%;
+        font-size:12px;
+    }
+    #new_contact_container{
+        width:auto;
+        height:auto;
+    }
+    #second_top_row_container{
+        font-size:1.4rem;
+    }
+    #cancel_button{
+        position:relative;
+        top:30%;
+        right:4%;
+    }
+    #new_contact{
+        position: relative;
+        top:30%;
+    }
+    #done_button{
+        position: relative;
+        top:30%;
+        left:8%;
+    }
+    #add_photo_circle{
+        width:6rem;
+        height:6rem;
+        margin:-14% 0 0 2%;
+    }
+     .first_last_company{
+      font-size:1rem;
+  }
+}
+
+/* media querry smartphone portrait*/
+@media only screen 
+and (max-width : 400px) {
+ #contact_container{
+    width:auto;
+    height:auto;
+    
+ }
+ #top_row_container{
+     font-size:1.2rem;
+ }
+ #top_row_element_0{
+     margin:4% 0 0 5%;
+ }
+ #top_row_element_1{
+        margin: 4% 0 0 0;
+ }
+
+ 
+ #top_row_element_2{
+     font-size:200%;
+     margin:0 2rem 0 0;
+ }
+ #search{
+    margin:.3rem;
+    height:80%;
+ }
+ #search_icon{
+     left:3%;
+     top:14%;
+ }
+ #new_contact_container{
+    width:100%;
+ }
+  #right_column_letters_container{
+       right:0%;
+       margin-top: 5.7rem;
+   }
+  #second_top_row_container{
+      font-size:1.2rem;
+  } 
+  #cancel_button{
+      margin:2rem 0 0 20px;
+  }
+  #new_contact{
+       margin: 2rem 10px 0 0;
+  }
+  #done_button{
+    margin:33px 2.2rem 0 0rem;  
+  }
+  #add_photo_circle{
+    width: 4rem;
+    height: 4rem;
+    font-size: 14px;
+    line-height: 2em;
+    text-align: center;;
+  }
+  .first_last_company{
+      font-size:1rem;
+  }
+ 
+}
+
+@media only screen 
+and (max-width : 250px){
+   #top_row_element_0{
+     margin:6% 0 0 5%;
+     
+ }
+ #top_row_element_1{
+    margin: 6% 5% 0 0;
+ }
+
+ 
+ #top_row_element_2{
+     font-size:200%;
+     margin:-2% 8% 0 0;
+ } 
+ #search{
+     margin-top:2%;
+     font-size:22px;
+ }
+ #search_icon{
+     top:12%;
+     left:4%;
+     font-size:24px;
+ }
+ #search_cancel{
+     margin:5% 0 0 -5%;
+     font-size:23px;
+ }
+ #right_column_letters_container{
+     font-size:20px;
+     top:2%;
+     left:92%;
+ }
+ #cancel_button{
+     top:12%;
+     left:-5%;
+ }
+ #new_contact{
+     top:12%;
+     left:2%;
+ }
+ #done_button{
+     top:12%;
+     right: 2%;
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*media querry iphone 5
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) {}*/
+
+/*
