@@ -73,33 +73,6 @@ var create_element = function (element_name, element_attributes) {
     
 }
 
-// var attach_element = function(element_id,element_parent){
-         
-//     if(element_parent !== null){
-//         var child = document.getElementById(element_id);
-
-        
-//         if(child.classList.contains('offscreen')){
-//             child.classList.remove('offscreen');
-//             if(child.classList.length === 0){
-//                 child.classList.add('empty');
-//             }
-//             document.body.appendChild(child);
-//         }
-        
-//         else{
-            
-//             var parent = document.getElementById(element_parent);
-//             if(child.classList.contains('offscreen')){
-//                 child.classList.remove('offscreen');       
-//             }
-//             parent.appendChild(child); 
-            
-//         };
-//     };
-// };
-
-
 var get_keys = function(object){
     return Object.keys(object);
 }
@@ -320,11 +293,9 @@ document.addEventListener('DOMContentLoaded',function(event){
        };
     });
     
-    // var add_photo_circle = document.createElement('span');
-    // add_photo_circle.setAttribute('id','add_photo_circle');
-    // add_photo_circle.textContent = 'add photo';
-    
-    // get_element('left_input_section_container_div').appendChild(add_photo_circle);
+    create_containers('label','add_photo_label',get_element('left_input_section_container_div'));
+    get_element('add_photo_label').setAttribute('for','camera_input');
+    get_element('add_photo_label').textContent = 'add photo';
     
     create_element('input',{id:'camera_input'});    
         

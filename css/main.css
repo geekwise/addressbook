@@ -244,6 +244,22 @@ p[id^=full_name_container_]{
     float: left;
 }
 
+#add_photo_label{
+    width:7rem;
+    height:6rem;
+    display: inline-block;
+    margin-top:18px;
+    border-radius:100%;
+    border: 2px solid #BDBDBD;
+    color:#0D7CE3;
+    font-size: 26px;
+    padding-top: 17px;
+}
+
+#camera_input{
+    display: none;
+}
+
 #add_photo_circle{
     width:7.5rem;
     height: 6.3rem;
