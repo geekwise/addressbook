@@ -56,7 +56,7 @@ input{
 
 #top_row_container{
     width:100%;
-    height:5rem;
+    height:25%;
     margin-top:0rem;
     font-size:2.2rem;
     border-bottom: 1px solid #7E7D82;
@@ -71,20 +71,20 @@ input{
 
 #top_row_element_0{
     float:left;
-    margin:1rem 0 0 20px;
+    margin:4% 0 0 2%;
     color:#0D7CE3;
 }
 
 #top_row_element_1{
     float: none;
-    margin: 1rem 35px 0 0;
+    margin: 4% 10% 0 0;
     font-weight:bold;
 }
 
 #top_row_element_2{
     float:right;
-    margin: -12px 2rem 0 2rem;
-    font-size:4.5rem;
+    margin: -0 2% 0 2%;
+    font-size:4rem;
     color:#0D7CE3;
 }
 
@@ -98,7 +98,7 @@ input{
 #search{
     width:95%;
     height:60%;
-    margin-top: 3.5%;
+    margin-top: 1.5%;
     border-radius: 10px;
     border:none;
     font-size: 2rem;
@@ -111,8 +111,8 @@ input{
 }
 #search_icon { 
     position: absolute;
-    top: 35%;
-    left: 1%;
+    top: 9.8%;
+    left: 31%;
     font-size: 22px;
     color: #A9A9A9;
 }
@@ -120,7 +120,7 @@ input{
 #search_cancel{
     width:15%;
     height:60%;
-    margin-top: 1rem;
+    margin-top: 1%;
     border-radius: 10px;
     border:none;
     text-align:center;
@@ -174,11 +174,11 @@ p[id^=full_name_container_]{
     width:4%;
     float:right;
     color: #0D7CE3;
-    font-size:14px;
+    font-size:20px;
     font-weight: 600;
-    margin-top:6rem;
+    margin-top:4%;
     position:fixed;
-    right:3%;
+    right:28.5%;
     
 }
 
