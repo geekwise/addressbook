@@ -439,82 +439,10 @@ and (max-width : 900px){
     }
 }
 
-/*for portrait*/
-@media only screen 
-and (max-width : 500px){
-   #contact_container{
-    width:auto;
-    height:auto;
-}
-    
-    #top_row_container{
-    font-size:1.5rem;
-    position:relative;
-    top:25%;
-    }
-     #top_row_element_0{
-     margin:5% 0 0 4%;
- }
- #top_row_element_1{
-        position: relative;
-        right: 1%;
-        top:44%;
- }
-
- 
- #top_row_element_2{
-     font-size:200%;
-     position: relative;
-     left:0%;
-     top:44%;
- }
- #search{
-    margin:.3rem;
-    height:80%;
- }
- #search_icon{
-     top:1%;
-     left:1%;
- }
-    #right_column_letters_container{
-        top:20%;
-        left:96%;
-        font-size:12px;
-    }
-    #new_contact_container{
-        width:auto;
-        height:auto;
-    }
-    #second_top_row_container{
-        font-size:1.4rem;
-    }
-    #cancel_button{
-        position:relative;
-        top:30%;
-        right:4%;
-    }
-    #new_contact{
-        position: relative;
-        top:30%;
-    }
-    #done_button{
-        position: relative;
-        top:30%;
-        left:8%;
-    }
-    #add_photo_circle{
-        width:6rem;
-        height:6rem;
-        margin:-14% 0 0 2%;
-    }
-     .first_last_company{
-      font-size:1rem;
-  }
-}
 
 /* media querry smartphone portrait*/
 @media only screen 
-and (max-width : 400px) {
+and (max-width : 500px) {
  #contact_container{
     width:auto;
     height:auto;
@@ -541,7 +469,7 @@ and (max-width : 400px) {
  }
  #search_icon{
      left:3%;
-     top:14%;
+     top:10%;
  }
  #new_contact_container{
     width:100%;
@@ -595,7 +523,7 @@ and (max-width : 250px){
      font-size:22px;
  }
  #search_icon{
-     top:12%;
+     top:9%;
      left:4%;
      font-size:24px;
  }

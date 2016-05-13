@@ -304,6 +304,19 @@ document.addEventListener('DOMContentLoaded',function(event){
        get_element('search').style.width = '95%';
     });
     
+    //sticky header
+    abc_container.onscroll = function(){
+        abc_container.stickyheader();
+        console.log(this);
+    };
+    
+    abc_container.stickyheader = function(){
+        stickyheader=document.getElementsByClassName('stickyheader');
+         for(i=0; i<stickyheader.length; i++)
+    };
+    
+    
+    
 });
 
 
