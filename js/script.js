@@ -60,15 +60,18 @@ document.addEventListener('DOMContentLoaded',function(event){
     create_containers('div','contact_container',document.body);
     create_containers('div','top_row_container',get_element('contact_container'));
     
-    create_multi_elements(3,'span','top_row_element_',get_element('top_row_container'));
     
+    create_multi_elements(3,'span','top_row_element_',get_element('top_row_container'));
     create_containers('div','search_container',get_element('contact_container'));
     create_containers('div','names_container',get_element('contact_container'));
     create_containers('div','right_column_letters_container',get_element('contact_container'));
     
+    create_containers('span','search_icon',get_element('search_container'));
+    get_element('search_icon').setAttribute('class','fa fa-search');
     create_containers('input','search',get_element('search_container'));
+    
     get_element('search').setAttribute('placeholder','Search');
-
+    
     get_element('top_row_element_0').textContent = 'Groups';;
     get_element('top_row_element_1').textContent = 'All Contacts';;
     var plus_button = get_element('top_row_element_2');
@@ -255,8 +258,8 @@ document.addEventListener('DOMContentLoaded',function(event){
         for(var i=0; i<get_element('add_other_info_container').childElementCount; i++){
             console.log(i);
             create_containers('div','green_plus_container_'+i,get_element('add_more_info_container_'+i));
-            get_element('green_plus_container_'+i).setAttribute('class','green_plus');
-            get_element('green_plus_container_'+i).textContent = '+';
+            get_element('green_plus_container_'+i).setAttribute('class','green_plus fa fa-plus-circle');
+            
         };
     };
     
@@ -280,6 +283,26 @@ document.addEventListener('DOMContentLoaded',function(event){
     get_element('input_container_1').setAttribute('placeholder','add email');
     // get_element('green_plus_container_one').textContent = '+';
     // get_element('green_plus_container_two').textContent = '+';
+    
+    
+    create_containers('div','search_cancel',get_element('search_container'));
+     get_element('search_cancel').textContent = 'Cancel';
+    
+    //search input animation
+    get_element( 'search' ).addEventListener( 'click', function() {
+        
+        this.style.width = '50%';
+        this.style.float = 'left';
+        get_element('search_cancel').style.display = 'inline-block';
+        // get_element[id^=abc_container_].style.backgroundColor = '#dcdcdd';
+         
+    }); 
+    
+   get_element('search_cancel').addEventListener('click',function(){
+       
+       this.style.display = 'none';
+       get_element('search').style.width = '95%';
+    });
     
 });
 
