@@ -465,15 +465,19 @@ and (max-width : 500px){
  #top_row_element_2{
      font-size:200%;
      position: relative;
-     left:5%;
+     left:0%;
      top:44%;
  }
  #search{
-    margin:.5rem;
+    margin:.3rem;
     height:80%;
  }
+ #search_icon{
+     top:1%;
+     left:1%;
+ }
     #right_column_letters_container{
-        top:2%;
+        top:20%;
         left:96%;
         font-size:12px;
     }
