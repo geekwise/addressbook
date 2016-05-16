@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         var abc_container = document.getElementById('abc_container_' + i);
         var letter_container = document.createElement('p');
         letter_container.setAttribute('id','letter_container_'+i);
+        letter_container.setAttribute('class','fixed_header');
         letter_container.textContent = split_alphabet[i];
         
         abc_container.appendChild(letter_container); 
@@ -304,37 +305,140 @@ document.addEventListener('DOMContentLoaded',function(event){
        get_element('search').style.width = '95%';
     });
     
+   
     //sticky header
-    var stickyheader
+   // try a toggle to make first letter_container.style.position = 'fixed';
+   // when letter_container_i reaches next_letter_container toggle first one off and toggle next_letter_container on (&&)
+
+  //  set the toggle function
+//   var sticky_header = function(){
+//       this.classList.toggle('on');
+//       this.classList.toggle('off');
+//     };
     
-    abc_container.onscroll = function(){
-        abc_container.stickyheader();
-        //console.log(this);
-    };
     
-    window.abc_container=function(){
-    letter_container=document.getElementsByClassName('letter_container');
-    for(i=0;i<letter_container.length;i++){
-        var header = letter_container;
-        var next_header = letter_container[i+1];
-        var holder= letter_container(header)[0];  
-        if(window.pageYOffset(holder)){
-            if(typeof next_header! = 'undefined'){
-                var difference = letter_container(next_header)-window.pageYOffset;
-                if(difference<header.offsetHeight){
+   
+    
+//      window.onscroll = function(){
+//         for(var i=0; i<abc_container.length; i++){
+        
+//         var header = ('letter_container_'+i)
+//         header.style.position = 'fixed';
+//         header.classList.add('on');
+//         header.style.position = 'static';
+//         header.classList.add('off');
+        
+//     //if(trigger = sticky)
+//         if(header.getAttribute('class') === 'on'){
+//             this.setAttribute('class','off');
+//             this.parentElement.children[1].setAttribute('class','on');
+//         }else{
+//                     this.setAttribute('class','on');
+//                     this.parentElement.children[1].setAttribute('class','off');
+//             }
+                      
+//                                             event.preventDefault();
+
+//                       console.log(this);;
+//       };     
+//      };                 
+          
+        window.onscroll=function(){
+    window.sticky_header();
+};
+
+window.sticky_header=function(){
+    var fixed_heads=document.getElementsByClassName('fixed_header');
+    for(i=0;i<fixed_heads.length;i++){
+        var header=fixed_heads[i];
+        var next_header=fixed_heads[i+1];
+        var holder=getPrevNext(header)[0];  
+        if(window.pageYOffset>findPosY(holder)){
+        
+            if(typeof next_header!='undefined'){
+          
+                var differance=findPosY(next_header)-window.pageYOffset;
+               
+                if(differance<header.offsetHeight){
+                   
                     header.style.position="fixed";
-                    header.style.top='-'+(header.offsetHeight-difference)+'px';
-                 }else{
-                    console.log(header)
+                    header.style.top='-'+(header.offsetHeight-differance)+'px';
+                    
+                }
+                else{
+                    
                     holder.style.height=header.offsetHeight+'px';
                     header.style.position="fixed";
                     header.style.top="0px";
                 }
                 
             }
-        }
+             
+            else{
+                                    
+                holder.style.height=header.offsetHeight+'px';
+                
+                header.style.position="fixed";
+                header.style.top="0px";
+            }
+           
             
-    };        
+        }
+        else{
+            holder.style.height='0px';
+            
+            header.style.position='static';
+            header.style.removeProperty('top');
+        }
+        
+    }
+};
+function getPrevNext(el){
+    var els=document.getElementsByTagName('*');
+    for(j=0;j<els.length;j++){
+        if(els[j]==el){
+            return [els[j-1],els[j+1]];
+        }
+    }
+    return false;
+}
+
+function findPosX(obj)
+  {
+    var curleft = 0;
+    if(obj.offsetParent)
+        while(1) 
+        {
+          curleft += obj.offsetLeft;
+          if(!obj.offsetParent)
+            break;
+          obj = obj.offsetParent;
+        }
+    else if(obj.x)
+        curleft += obj.x;
+    return curleft;
+  }
+
+  function findPosY(obj)
+  {
+    var curtop = 0;
+    if(obj.offsetParent)
+        while(1)
+        {
+          curtop += obj.offsetTop;
+          if(!obj.offsetParent)
+            break;
+          obj = obj.offsetParent;
+        }
+    else if(obj.y)
+        curtop += obj.y;
+    return curtop;
+  }  
+
+      
+         
+        
+      
                 
             
              
