@@ -111,7 +111,30 @@ var set_value = function(element_id,element_attributes){
     
 }  // end of code to use laptop camera 
 
-
+var add_info_array = [
+        'add phone',
+        'add email',
+        'Ringtone  Default',
+        'Vibration  Default',
+        'Text Tone  Default',
+        'Vibration  Default',
+        'add url',
+        'add address',
+        'add birthday',
+        'add date',
+        'add related name',
+        'add social profile',
+        'add instant message',
+        '',
+        'add field'
+    ];
+    
+    var add_text_content = function (){
+        for(var i=0; i<add_info_array.length; i++){
+            get_element('input_container_'+i).textContent = add_info_array[i];
+            
+        };
+    };
 
 
 //When DOM is loaded
@@ -322,11 +345,10 @@ document.addEventListener('DOMContentLoaded',function(event){
 // add phone container elements for: green circle plus sign and add phone text
 
     create_containers('div','add_other_info_container',get_element('new_contact_container'));
-    create_multi_elements(2,'div','add_more_info_container_',get_element('add_other_info_container'));
+    create_multi_elements(15,'div','add_more_info_container_',get_element('add_other_info_container'));
     
     var create_plus_containers = function(){
         for(var i=0; i<get_element('add_other_info_container').childElementCount; i++){
-            console.log(i);
             create_containers('div','green_plus_container_'+i,get_element('add_more_info_container_'+i));
             get_element('green_plus_container_'+i).setAttribute('class','green_plus fa fa-plus-circle');
             
@@ -337,17 +359,17 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     var create_new_input_containers = function(){
         for(var i=0; i<get_element('add_other_info_container').childElementCount; i++){
-            console.log(i);
-            create_containers('input','input_container_'+i,get_element('add_more_info_container_'+i));
+            create_containers('div','input_container_'+i,get_element('add_more_info_container_'+i));
             get_element('input_container_'+i).setAttribute('class','input_container');
         };
     };
     
     create_new_input_containers();
     
-    get_element('input_container_0').setAttribute('placeholder','add phone');
-    get_element('input_container_1').setAttribute('placeholder','add email');
+    add_text_content(); // function to add text content for the add more info containers, eg. add phone
     
+    create_containers('input','note_container',get_element('input_container_13'));
+    get_element('note_container').setAttribute('placeholder','Note');
     
     create_containers('div','search_cancel',get_element('search_container'));
      get_element('search_cancel').textContent = 'Cancel';
