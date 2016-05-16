@@ -136,10 +136,7 @@ var add_info_array = [
         };
     };
     
-    //Listen for orientation changes
-    window.addEventListener("orientationchange", function() {
-    alert("the orientation of the device is now " + screen.orientation.angle);
-});
+
 
 //When DOM is loaded
 
@@ -390,13 +387,23 @@ document.addEventListener('DOMContentLoaded',function(event){
          
     }); 
     
-   get_element('search_cancel').addEventListener('click',function(){
+    get_element('search_cancel').addEventListener('click',function(){
        
        this.style.display = 'none';
        get_element('search').style.width = '95%';
     });
     
-
+    //Listen for orientation changes
+    
+    var orientation_change = function(){
+        if( /Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent) === false){
+            window.addEventListener("orientationchange", function() {
+                prompt("the orientation of the device is now " + screen.orientation.angle);
+            });
+        };
+    };
+    
+    orientation_change();
     
     // var updateOrientation = function(){
     //     var displayStr = "Orientation : ";
