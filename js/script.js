@@ -305,16 +305,40 @@ document.addEventListener('DOMContentLoaded',function(event){
     });
     
     //sticky header
+    var stickyheader
+    
     abc_container.onscroll = function(){
         abc_container.stickyheader();
-        console.log(this);
+        //console.log(this);
     };
     
-    abc_container.stickyheader = function(){
-        stickyheader=document.getElementsByClassName('stickyheader');
-         for(i=0; i<stickyheader.length; i++)
-    };
-    
+    window.abc_container=function(){
+    letter_container=document.getElementsByClassName('letter_container');
+    for(i=0;i<letter_container.length;i++){
+        var header = letter_container;
+        var next_header = letter_container[i+1];
+        var holder= letter_container(header)[0];  
+        if(window.pageYOffset(holder)){
+            if(typeof next_header! = 'undefined'){
+                var difference = letter_container(next_header)-window.pageYOffset;
+                if(difference<header.offsetHeight){
+                    header.style.position="fixed";
+                    header.style.top='-'+(header.offsetHeight-difference)+'px';
+                 }else{
+                    console.log(header)
+                    holder.style.height=header.offsetHeight+'px';
+                    header.style.position="fixed";
+                    header.style.top="0px";
+                }
+                
+            }
+        }
+            
+    };        
+                
+            
+             
+           
     
     
 });
