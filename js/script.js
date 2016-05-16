@@ -176,12 +176,12 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var split_alphabet = alphabet.split('');
-    var letter_container;
+    
 // create the left side letters and containers for the contacts 
     for(var i=0; i<26; i++){
         create_containers('div','abc_container_' + i,get_element('names_container'));
         var abc_container = document.getElementById('abc_container_' + i);
-        letter_container = document.createElement('p');
+        var letter_container = document.createElement('p');
         letter_container.setAttribute('id','letter_container_'+i);
         letter_container.textContent = split_alphabet[i];
         
@@ -399,7 +399,6 @@ document.addEventListener('DOMContentLoaded',function(event){
         if( /Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent) === false){
             window.addEventListener("orientationchange", function() {
                 prompt("the orientation of the device is now ", screen.orientation.angle);
-                letter_container.style.backgroundColor = 'yellow';
             });
         };
     };
