@@ -399,6 +399,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         if( /Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent) === false){
             window.addEventListener("orientationchange", function() {
                 prompt("the orientation of the device is now ", screen.orientation.angle);
+                abc_container.style.backgroundColor = 'yellow';
             });
         };
     };
