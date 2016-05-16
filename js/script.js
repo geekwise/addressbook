@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     // 	alert(window.orientation);
     // }, false);
     
-    var orientation_change = function updateOrientation(){
+    var updateOrientation = function(){
         var displayStr = "Orientation : ";
 
         switch(window.orientation)
@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         alert(displayStr);
     }
     
-    orientation_change();
+    updateOrientation();
     
 });
 
