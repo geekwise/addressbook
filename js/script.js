@@ -398,32 +398,33 @@ document.addEventListener('DOMContentLoaded',function(event){
     // 	alert(window.orientation);
     // }, false);
     
-    function updateOrientation()
-            {
-                var displayStr = "Orientation : ";
- 
-                switch(window.orientation)
-                {
-                    case 0:
-                        displayStr += "Portrait";
-                    break;
- 
-                    case -90:
-                        displayStr += "Landscape (right, screen turned clockwise)";
-                    break;
- 
-                    case 90:
-                        displayStr += "Landscape (left, screen turned counterclockwise)";
-                    break;
- 
-                    case 180:
-                        displayStr += "Portrait (upside-down portrait)";
-                    break;
- 
-                }
-                // document.getElementById("output").innerHTML = displayStr;
-                alert(displayStr);
-            }
+    var orientation_change = function updateOrientation(){
+        var displayStr = "Orientation : ";
+
+        switch(window.orientation)
+        {
+            case 0:
+                displayStr += "Portrait";
+            break;
+
+            case -90:
+                displayStr += "Landscape (right, screen turned clockwise)";
+            break;
+
+            case 90:
+                displayStr += "Landscape (left, screen turned counterclockwise)";
+            break;
+
+            case 180:
+                displayStr += "Portrait (upside-down portrait)";
+            break;
+
+        }
+        // document.getElementById("output").innerHTML = displayStr;
+        alert(displayStr);
+    }
+    
+    orientation_change();
     
 });
 
