@@ -135,7 +135,11 @@ var add_info_array = [
             
         };
     };
-
+    
+    //Listen for orientation changes
+    window.addEventListener("orientationchange", function() {
+    alert("the orientation of the device is now " + screen.orientation.angle);
+});
 
 //When DOM is loaded
 
@@ -392,11 +396,7 @@ document.addEventListener('DOMContentLoaded',function(event){
        get_element('search').style.width = '95%';
     });
     
-//Listen for orientation changes
-    window.addEventListener("orientationchange", function() {
-    	// Announce the new orientation number
-    	alert(window.orientation);
-    }, false);
+
     
     // var updateOrientation = function(){
     //     var displayStr = "Orientation : ";
