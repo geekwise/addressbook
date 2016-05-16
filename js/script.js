@@ -392,39 +392,39 @@ document.addEventListener('DOMContentLoaded',function(event){
        get_element('search').style.width = '95%';
     });
     
-// Listen for orientation changes
-    // window.addEventListener("orientationchange", function() {
-    // 	// Announce the new orientation number
-    // 	alert(window.orientation);
-    // }, false);
+//Listen for orientation changes
+    window.addEventListener("orientationchange", function() {
+    	// Announce the new orientation number
+    	alert(window.orientation);
+    }, false);
     
-    var updateOrientation = function(){
-        var displayStr = "Orientation : ";
+    // var updateOrientation = function(){
+    //     var displayStr = "Orientation : ";
 
-        switch(window.orientation)
-        {
-            case 0:
-                displayStr += "Portrait";
-            break;
+    //     switch(window.orientation)
+    //     {
+    //         case 0:
+    //             displayStr += "Portrait";
+    //         break;
 
-            case -90:
-                displayStr += "Landscape (right, screen turned clockwise)";
-            break;
+    //         case -90:
+    //             displayStr += "Landscape (right, screen turned clockwise)";
+    //         break;
 
-            case 90:
-                displayStr += "Landscape (left, screen turned counterclockwise)";
-            break;
+    //         case 90:
+    //             displayStr += "Landscape (left, screen turned counterclockwise)";
+    //         break;
 
-            case 180:
-                displayStr += "Portrait (upside-down portrait)";
-            break;
+    //         case 180:
+    //             displayStr += "Portrait (upside-down portrait)";
+    //         break;
 
-        }
-        // document.getElementById("output").innerHTML = displayStr;
-        alert(displayStr);
-    }
+    //     }
+    //     // document.getElementById("output").innerHTML = displayStr;
+    //     alert(displayStr);
+    // }
     
-    updateOrientation();
+    // updateOrientation();
     
 });
 
