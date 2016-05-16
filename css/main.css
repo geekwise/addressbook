@@ -151,6 +151,7 @@ p[id^=letter_container_]{
     height:3.5rem;
     padding-left:2rem;
     text-align: left;
+    width:99%;
 }
 
 p[id^=full_name_container_]{
