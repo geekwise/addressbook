@@ -368,6 +368,8 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     add_text_content(); // function to add text content for the add more info containers, eg. add phone
     
+    create_containers('span','')
+    
     create_containers('input','note_container',get_element('input_container_13'));
     get_element('note_container').setAttribute('placeholder','Note');
     
@@ -389,6 +391,12 @@ document.addEventListener('DOMContentLoaded',function(event){
        this.style.display = 'none';
        get_element('search').style.width = '95%';
     });
+    
+// Listen for orientation changes
+    window.addEventListener("orientationchange", function() {
+    	// Announce the new orientation number
+    	alert(window.orientation);
+    }, false);
     
 });
 
