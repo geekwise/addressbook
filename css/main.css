@@ -311,7 +311,6 @@ div[id^=add_more_info_container_]{
 .fa-plus-circle:before {
     content: "\f055";
     font-weight: 100;
-    font-style: oblique;
     color: green;
     top:5px;
     left:5px;
@@ -380,8 +379,11 @@ div[id^=add_more_info_container_]{
     width:35%;
 }
 
-.fa-minus-circle{
+.minus_container{
     color:red;
+    position: relative;
+    top: 0px;
+    left: -10px;
 }
 
 .fa-chevron-right{
@@ -398,6 +400,7 @@ div[id^=add_more_info_container_]{
     border-bottom: none;
     border-left:1px solid #7E7D82;
     padding-left:45px;
+    font-size:1rem;
 }
 
 
@@ -481,6 +484,9 @@ and (max-width : 1250px){
 /*media querry font fix*/
 @media only screen
 and (max-width : 965px){
+    #add_more_info_container_0{
+    font-size:1rem;
+}
     #top_row_element_0{
     font-size:1rem;
     }
@@ -490,6 +496,12 @@ and (max-width : 965px){
     #top_row_element_2{
     font-size:3rem;
     }
+    #phone_input{
+        
+        padding-left:27px;
+        font-size:1rem;
+    }
+    
 }
 
 /*media querry font fix*/

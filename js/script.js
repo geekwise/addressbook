@@ -363,8 +363,9 @@ document.addEventListener('DOMContentLoaded',function(event){
     create_containers('input','phone_input',get_element('home_and_input_container_1'));
     create_multi_elements(3,'div','minus_home_chevron_container_',get_element('home_and_input_container_0'));
     
-    get_element('home_and_input_container_0').setAttribute('class','home_and_input_left_container fa fa-minus-circle');
+    get_element('home_and_input_container_0').setAttribute('class','home_and_input_left_container');
     get_element('home_and_input_container_1').setAttribute('class','home_and_input_right_container');
+    get_element('minus_home_chevron_container_0').setAttribute('class','minus_container fa fa-minus-circle');
     get_element('minus_home_chevron_container_1').textContent = 'home';
     get_element('minus_home_chevron_container_2').setAttribute('class','fa fa-chevron-right');
     get_element('phone_input').setAttribute('placeholder','Phone');
