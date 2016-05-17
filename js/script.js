@@ -230,8 +230,8 @@ document.addEventListener('DOMContentLoaded',function(event){
                 var contact_last_name_url_two = contact_last_name_url;
                 var contact_first_name = first_name;
                 var contact_last_name = last_name;
-                       console.log(contact_first_name); 
-                       console.log(contact_last_name);
+                    //   console.log(contact_first_name); 
+                    //   console.log(contact_last_name);
                        
                 for(i in contact_first_name){
                     var current_letter = split_alphabet[i];
@@ -356,6 +356,25 @@ document.addEventListener('DOMContentLoaded',function(event){
         };
     };
     
+//create containers after clicking on add phone
+
+    create_containers('div','home_phone_container',get_element('add_more_info_container_0'));
+    create_multi_elements(2,'div','home_and_input_container_',get_element('home_phone_container'));
+    create_containers('input','phone_input',get_element('home_and_input_container_1'));
+    create_multi_elements(3,'div','minus_home_chevron_container_',get_element('home_and_input_container_0'));
+    
+    get_element('home_and_input_container_0').setAttribute('class','home_and_input_left_container fa fa-minus-circle');
+    get_element('home_and_input_container_1').setAttribute('class','home_and_input_right_container');
+    get_element('minus_home_chevron_container_1').textContent = 'home';
+    get_element('minus_home_chevron_container_2').setAttribute('class','fa fa-chevron-right');
+    get_element('phone_input').setAttribute('placeholder','Phone');
+    get_element('phone_input').setAttribute('class','first_last_company');
+    
+    get_element('add_more_info_container_0').addEventListener('click',function(event) {
+      
+    });
+    
+    
     create_plus_containers();
     
     var create_new_input_containers = function(){
@@ -375,7 +394,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     get_element('note_container').setAttribute('placeholder','Note');
     
     create_containers('div','search_cancel',get_element('search_container'));
-     get_element('search_cancel').textContent = 'Cancel';
+    get_element('search_cancel').textContent = 'Cancel';
     
     //search input animation
     get_element( 'search' ).addEventListener( 'click', function() {
@@ -392,46 +411,6 @@ document.addEventListener('DOMContentLoaded',function(event){
        this.style.display = 'none';
        get_element('search').style.width = '95%';
     });
-    
-    //Listen for orientation changes
-    
-    var orientation_change = function(){
-        if( /Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent) === false){
-            window.addEventListener("orientationchange", function() {
-                prompt("the orientation of the device is now ", screen.orientation.angle);
-            });
-        };
-    };
-    
-    orientation_change();
-    
-    // var updateOrientation = function(){
-    //     var displayStr = "Orientation : ";
-
-    //     switch(window.orientation)
-    //     {
-    //         case 0:
-    //             displayStr += "Portrait";
-    //         break;
-
-    //         case -90:
-    //             displayStr += "Landscape (right, screen turned clockwise)";
-    //         break;
-
-    //         case 90:
-    //             displayStr += "Landscape (left, screen turned counterclockwise)";
-    //         break;
-
-    //         case 180:
-    //             displayStr += "Portrait (upside-down portrait)";
-    //         break;
-
-    //     }
-    //     // document.getElementById("output").innerHTML = displayStr;
-    //     alert(displayStr);
-    // }
-    
-    // updateOrientation();
     
 });
 

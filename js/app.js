@@ -25,9 +25,9 @@ var load_scripts = function(){
        
        load(papa_parse_js_library,contact_first_name_url,contact_last_name_url).thenRun(function(){
            
-                  console.log(first_name); 
-                  console.log(last_name);
-                  console.log(Papa);
+                //   console.log(first_name); 
+                //   console.log(last_name);
+                //   console.log(Papa);
                   //load_csv_data(csv_data);
                   load_csv_data('https://rawgit.com/geekwise/951f5d5c1033d7128576/raw/a88f47d666df13c29da5232a092a80756ffc784d/app_data.csv');
                   

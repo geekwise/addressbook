@@ -371,6 +371,40 @@ div[id^=add_more_info_container_]{
     color:#0D7CE3;
     text-align: left;
 }
+
+#home_phone_container{
+    border-bottom: 1px solid #7E7D82;
+}
+
+.home_and_input_left_container{
+    width:35%;
+}
+
+.fa-minus-circle{
+    color:red;
+}
+
+.fa-chevron-right{
+    color:#A9A9A9;
+    padding-left: 15px;
+}
+
+
+.home_and_input_right_container{
+    width:55%;
+}
+
+#phone_input{
+    border-bottom: none;
+    border-left:1px solid #7E7D82;
+    padding-left:45px;
+}
+
+
+#home_phone_container{
+    width:100%;
+}
+
 #green_plus_container_2,
 #green_plus_container_3,
 #green_plus_container_4,
