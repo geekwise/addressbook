@@ -344,12 +344,12 @@ div[id^=add_more_info_container_]{
     text-align: left;
 }
 
-#home_phone_container{
+div[id^=main_label_container_]{
     border-bottom: 1px solid #7E7D82;
-    display:none;
+    width:100%;
 }
 
-.home_and_input_left_container{
+.label_and_input_left_container{
     width:35%;
 }
 
@@ -366,11 +366,11 @@ div[id^=add_more_info_container_]{
 }
 
 
-.home_and_input_right_container{
+.label_and_input_right_container{
     width:55%;
 }
 
-#phone_input{
+.phone_input{
     border-bottom: none;
     border-left:1px solid #7E7D82;
     padding-left:45px;
@@ -378,9 +378,7 @@ div[id^=add_more_info_container_]{
 }
 
 
-#home_phone_container{
-    width:100%;
-}
+
 
 #green_plus_container_2,
 #green_plus_container_3,

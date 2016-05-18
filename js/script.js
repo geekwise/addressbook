@@ -361,21 +361,66 @@ document.addEventListener('DOMContentLoaded',function(event){
     
 //create containers after clicking on add phone
 
-    create_containers('div','home_phone_container',get_element('add_more_info_container_0'));
-    create_multi_elements(2,'div','home_and_input_container_',get_element('home_phone_container'));
-    create_containers('input','phone_input',get_element('home_and_input_container_1'));
-    create_multi_elements(3,'div','minus_home_chevron_container_',get_element('home_and_input_container_0'));
+    var label_array = [
+        'home',
+        'work',
+        'iphone',
+        'mobile',
+        'main',
+        'home fax',
+        'work fax',
+        'pager',
+        'other'
+    ];
     
-    get_element('home_and_input_container_0').setAttribute('class','home_and_input_left_container');
-    get_element('home_and_input_container_1').setAttribute('class','home_and_input_right_container');
-    get_element('minus_home_chevron_container_0').setAttribute('class','minus_container fa fa-minus-circle');
-    get_element('minus_home_chevron_container_1').textContent = 'home';
-    get_element('minus_home_chevron_container_2').setAttribute('class','fa fa-chevron-right');
-    get_element('phone_input').setAttribute('placeholder','Phone');
-    get_element('phone_input').setAttribute('class','first_last_company');
+    
+    var create_label_containers = function(label_type){
+        
+        for(var i=0; i<9; i++){
+            create_containers('div','main_label_container_'+i,get_element('add_more_info_container_0'));
+            
+            create_containers('div','label_and_input_left_container_'+i,get_element('main_label_container_'+i));
+            create_containers('div','label_and_input_right_container_'+i,get_element('main_label_container_'+i));
+            
+            create_containers('input','phone_input_'+i,get_element('label_and_input_right_container_'+i));
+            
+            create_containers('div','minus_container_'+i,get_element('label_and_input_left_container_'+i));
+            create_containers('div','label_container_'+i,get_element('label_and_input_left_container_'+i));
+            create_containers('div','chevron_container_'+i,get_element('label_and_input_left_container_'+i));
+            
+            get_element('minus_container_'+i).setAttribute('class','minus_container fa fa-minus-circle');
+            get_element('chevron_container_'+i).setAttribute('class','fa fa-chevron-right');
+            get_element('phone_input_'+i).setAttribute('placeholder','Phone');
+            get_element('phone_input_'+i).setAttribute('class','first_last_company phone_input');
+            
+            get_element('label_and_input_left_container_'+i).setAttribute('class','label_and_input_left_container');
+            get_element('label_and_input_right_container_'+i).setAttribute('class','label_and_input_right_container');
+            
+         };
+        
+        
+        
+        // get_element('minus_label_chevron_container_1').textContent = label_type;
+        
+    };
+    
+    create_label_containers();
+
+    // create_containers('div','home_phone_container',get_element('add_more_info_container_0'));
+    // create_multi_elements(2,'div','home_and_input_container_',get_element('home_phone_container'));
+    // create_containers('input','phone_input',get_element('home_and_input_container_1'));
+    // create_multi_elements(3,'div','minus_home_chevron_container_',get_element('home_and_input_container_0'));
+    
+    // get_element('home_and_input_container_0').setAttribute('class','home_and_input_left_container');
+    // get_element('home_and_input_container_1').setAttribute('class','home_and_input_right_container');
+    // get_element('minus_home_chevron_container_0').setAttribute('class','minus_container fa fa-minus-circle');
+    // get_element('minus_home_chevron_container_1').textContent = 'home';
+    // get_element('minus_home_chevron_container_2').setAttribute('class','fa fa-chevron-right');
+    // get_element('phone_input').setAttribute('placeholder','Phone');
+    // get_element('phone_input').setAttribute('class','first_last_company');
     
     get_element('add_more_info_container_0').addEventListener('click',function(event) {
-      
+        //get_element('home_phone_container').style.display = 'inline-block';
     });
     
     create_plus_containers();
