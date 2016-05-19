@@ -70,7 +70,8 @@ document.addEventListener('DOMContentLoaded',function(event){
     get_element('search_icon').setAttribute('class','fa fa-search');
     create_containers('input','search',get_element('search_container'));
     
-    get_element('search').setAttribute('placeholder','Search');
+     get_element('search').setAttribute('placeholder','Search');
+     get_element('search').setAttribute('data-filter','services');
     
     get_element('top_row_element_0').textContent = 'Groups';;
     get_element('top_row_element_1').textContent = 'All Contacts';;
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         var abc_container = document.getElementById('abc_container_' + i);
         var letter_container = document.createElement('p');
         letter_container.setAttribute('id','letter_container_'+i);
+        letter_container.setAttribute('class','fixed_header');
         letter_container.textContent = split_alphabet[i];
         
         abc_container.appendChild(letter_container); 
@@ -303,6 +305,131 @@ document.addEventListener('DOMContentLoaded',function(event){
        this.style.display = 'none';
        get_element('search').style.width = '95%';
     });
+    
+   
+    //trying to make the search work
+ 
+    var find_names = function(){
+	  var input_filter = get_element('search');
+      input_filter.addEventListener("keyup", function(){
+  	    var input_value = this.value, i;
+  	    console.log(input_value);
+        var filter_list = document.getElementById(this.dataset.filter);
+        var filter_item = filter_list.querySelectorAll("p");
+        for (i = 0; i < filter_item.length; i++) {
+    		var _this = filter_item[i];
+            var phrase = _this.textContent + _this.id; 
+        	if (phrase.search(new RegExp(input_value, "i")) < 0) {
+        	_this.style.display = "none";
+            } else {
+            	_this.style.display = "block";
+             }
+           }
+         });
+    };
+    
+          
+        window.onscroll=function(){
+    window.sticky_header();
+};
+
+window.sticky_header=function(){
+    var fixed_heads=document.getElementsByClassName('fixed_header');
+    for(i=0;i<fixed_heads.length;i++){
+        var header=fixed_heads[i];
+        var next_header=fixed_heads[i+1];
+        var holder=getPrevNext(header)[0];  
+        if(window.pageYOffset>findPosY(holder)){
+        
+            if(typeof next_header!='undefined'){
+          
+                var differance=findPosY(next_header)-window.pageYOffset;
+               
+                if(differance<header.offsetHeight){
+                   
+                    header.style.position="fixed";
+                    header.style.top='-'+(header.offsetHeight-differance)+'px';
+                    
+                }
+                else{
+                    
+                    holder.style.height=header.offsetHeight+'px';
+                    header.style.position="fixed";
+                    header.style.top="0px";
+                }
+                
+            }
+             
+            else{
+                                    
+                holder.style.height=header.offsetHeight+'px';
+                
+                header.style.position="fixed";
+                header.style.top="0px";
+            }
+           
+            
+        }
+        else{
+            holder.style.height='0px';
+            
+            header.style.position='static';
+            header.style.removeProperty('top');
+        }
+        
+    }
+};
+function getPrevNext(el){
+    var els=document.getElementsByTagName('*');
+    for(j=0;j<els.length;j++){
+        if(els[j]==el){
+            return [els[j-1],els[j+1]];
+        }
+    }
+    return false;
+}
+
+function findPosX(obj)
+  {
+    var curleft = 0;
+    if(obj.offsetParent)
+        while(1) 
+        {
+          curleft += obj.offsetLeft;
+          if(!obj.offsetParent)
+            break;
+          obj = obj.offsetParent;
+        }
+    else if(obj.x)
+        curleft += obj.x;
+    return curleft;
+  }
+
+  function findPosY(obj)
+  {
+    var curtop = 0;
+    if(obj.offsetParent)
+        while(1)
+        {
+          curtop += obj.offsetTop;
+          if(!obj.offsetParent)
+            break;
+          obj = obj.offsetParent;
+        }
+    else if(obj.y)
+        curtop += obj.y;
+    return curtop;
+  }  
+
+      
+         
+        
+      
+                
+            
+             
+           
+    
     
 });
 
