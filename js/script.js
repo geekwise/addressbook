@@ -310,15 +310,16 @@ document.addEventListener('DOMContentLoaded',function(event){
     //trying to make the search work
  
     var find_names = function(){
-	  var inputFilter = document.querySelector("[data-filter]");
-      inputFilter.addEventListener("keyup", function(){
-  	    var inputValue = this.value, i;
-        var filterList = document.getElementById(this.dataset.filter);
-        var filterItem = filterList.querySelectorAll("p");
-        for (i = 0; i < filterItem.length; i++) {
-    		var _this = filterItem[i];
+	  var input_filter = get_element('search');
+      input_filter.addEventListener("keyup", function(){
+  	    var input_value = this.value, i;
+  	    console.log(input_value);
+        var filter_list = document.getElementById(this.dataset.filter);
+        var filter_item = filter_list.querySelectorAll("p");
+        for (i = 0; i < filter_item.length; i++) {
+    		var _this = filter_item[i];
             var phrase = _this.textContent + _this.id; 
-        	if (phrase.search(new RegExp(inputValue, "i")) < 0) {
+        	if (phrase.search(new RegExp(input_value, "i")) < 0) {
         	_this.style.display = "none";
             } else {
             	_this.style.display = "block";
