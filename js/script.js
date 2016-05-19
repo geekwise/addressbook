@@ -70,7 +70,8 @@ document.addEventListener('DOMContentLoaded',function(event){
     get_element('search_icon').setAttribute('class','fa fa-search');
     create_containers('input','search',get_element('search_container'));
     
-    get_element('search').setAttribute('placeholder','Search');
+     get_element('search').setAttribute('placeholder','Search');
+     get_element('search').setAttribute('data-filter','services');
     
     get_element('top_row_element_0').textContent = 'Groups';;
     get_element('top_row_element_1').textContent = 'All Contacts';;
@@ -306,42 +307,26 @@ document.addEventListener('DOMContentLoaded',function(event){
     });
     
    
-    //sticky header
-   // try a toggle to make first letter_container.style.position = 'fixed';
-   // when letter_container_i reaches next_letter_container toggle first one off and toggle next_letter_container on (&&)
-
-  //  set the toggle function
-//   var sticky_header = function(){
-//       this.classList.toggle('on');
-//       this.classList.toggle('off');
-//     };
+    //trying to make the search work
+ 
+    var find_names = function(){
+	  var inputFilter = document.querySelector("[data-filter]");
+      inputFilter.addEventListener("keyup", function(){
+  	    var inputValue = this.value, i;
+        var filterList = document.getElementById(this.dataset.filter);
+        var filterItem = filterList.querySelectorAll("p");
+        for (i = 0; i < filterItem.length; i++) {
+    		var _this = filterItem[i];
+            var phrase = _this.textContent + _this.id; 
+        	if (phrase.search(new RegExp(inputValue, "i")) < 0) {
+        	_this.style.display = "none";
+            } else {
+            	_this.style.display = "block";
+             }
+           }
+         });
+    };
     
-    
-   
-    
-//      window.onscroll = function(){
-//         for(var i=0; i<abc_container.length; i++){
-        
-//         var header = ('letter_container_'+i)
-//         header.style.position = 'fixed';
-//         header.classList.add('on');
-//         header.style.position = 'static';
-//         header.classList.add('off');
-        
-//     //if(trigger = sticky)
-//         if(header.getAttribute('class') === 'on'){
-//             this.setAttribute('class','off');
-//             this.parentElement.children[1].setAttribute('class','on');
-//         }else{
-//                     this.setAttribute('class','on');
-//                     this.parentElement.children[1].setAttribute('class','off');
-//             }
-                      
-//                                             event.preventDefault();
-
-//                       console.log(this);;
-//       };     
-//      };                 
           
         window.onscroll=function(){
     window.sticky_header();
