@@ -360,9 +360,14 @@ div[id^=main_label_container_]{
     left: -10px;
 }
 
+.label_container{
+    font-size:1rem;
+}
+
 .fa-chevron-right{
     color:#A9A9A9;
     padding-left: 15px;
+    float: right;
 }
 
 
