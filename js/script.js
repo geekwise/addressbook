@@ -348,12 +348,13 @@ document.addEventListener('DOMContentLoaded',function(event){
     create_containers('div','add_other_info_container',get_element('new_contact_container'));
     create_multi_elements(15,'div','add_more_info_container_',get_element('add_other_info_container'));
     
-    var append_element_before = function(){
-        for(var i=0; i<1000; i++){
-            get_element('add_more_info_container_'+i).parentNode.insertAfter(get_element('add_more_info_container_'+i),get_element('infinite_container_'+i))
-        };
+    // var append_element_after = function(){
+    //     for(var i=0; i<1000; i++){
+    //         get_element('add_more_info_container_'+i).parentNode.insertBefore(get_element('add_more_info_container_'+i),
+    //         get_element('add_more_info_container_'+i).parentNode.lastChild);
+    //     };
         
-    };
+    // };
     
     var create_plus_containers = function(){
         for(var i=0; i<get_element('add_other_info_container').childElementCount; i++){
@@ -396,14 +397,15 @@ document.addEventListener('DOMContentLoaded',function(event){
             create_containers('div','label_container_'+i,get_element('label_and_input_left_container_'+i));
             create_containers('div','chevron_container_'+i,get_element('label_and_input_left_container_'+i));
             
+            get_element('label_and_input_left_container_'+i).setAttribute('class','label_and_input_left_container');
+            get_element('label_and_input_right_container_'+i).setAttribute('class','label_and_input_right_container');
+            get_element('main_label_container_'+i).setAttribute('class','main_label_container');
             get_element('minus_container_'+i).setAttribute('class','minus_container fa fa-minus-circle');
             get_element('chevron_container_'+i).setAttribute('class','fa fa-chevron-right');
             get_element('phone_input_'+i).setAttribute('placeholder','Phone');
             get_element('phone_input_'+i).setAttribute('class','first_last_company phone_input');
             get_element('label_container_'+i).textContent = label_array[i];
             
-            get_element('label_and_input_left_container_'+i).setAttribute('class','label_and_input_left_container');
-            get_element('label_and_input_right_container_'+i).setAttribute('class','label_and_input_right_container');
             get_element('label_container_'+i).setAttribute('class','label_container');
             
          };
@@ -423,34 +425,39 @@ document.addEventListener('DOMContentLoaded',function(event){
     var click = 0;
     var add_phone_button = get_element('plus_and_add_containers_0');
     add_phone_button.addEventListener("click", function (event) {
-    click++;
-    for(var i=0; i<100; i++){
-        if(click == i+1){
-    		get_element('main_label_container_'+i).style.display = 'inline-block';
-        }else if(click == i+10) {
-            
-            create_containers('div','infinite_container_'+i,get_element('add_more_info_container_0'));
-            
-    		create_containers('div','infinite_left_container_'+i,get_element('infinite_container_'+i));
-            create_containers('div','infinite_right_container_'+i,get_element('infinite_container_'+i));
-            
-            create_containers('input','infinte_phone_input_'+i,get_element('infinite_right_container_'+i));
-            
-            create_containers('div','infinite_minus_container_'+i,get_element('infinite_left_container_'+i));
-            create_containers('div','infinte_label_container_'+i,get_element('infinite_left_container_'+i));
-            create_containers('div','infinte_chevron_container_'+i,get_element('infinite_left_container_'+i));
-            
-            get_element('infinite_minus_container_'+i).setAttribute('class','minus_container fa fa-minus-circle');
-            get_element('infinte_chevron_container_'+i).setAttribute('class','fa fa-chevron-right');
-            get_element('infinte_phone_input_'+i).setAttribute('placeholder','Phone');
-            get_element('infinite_phone_input_'+i).setAttribute('class','first_last_company phone_input');
-            get_element('infinte_label_container_'+i).textContent = 'home';
-    
+        
+        click++;
+        
+        for(var i=0; i<1000; i++){
+            if(click == i+1){
+        		get_element('main_label_container_'+i).style.display = 'inline-block';
+            }else if(click == i+10) {
+                
+                create_containers('div','infinite_container_'+i,get_element('add_more_info_container_0'));
+                
+                get_element('infinite_container_'+i).parentNode.insertBefore(get_element('infinite_container_'+i),get_element('plus_and_add_containers_0'));
+                
+        		create_containers('div','infinite_left_container_'+i,get_element('infinite_container_'+i));
+                create_containers('div','infinite_right_container_'+i,get_element('infinite_container_'+i));
+                
+                create_containers('input','infinite_phone_input_'+i,get_element('infinite_right_container_'+i));
+                
+                create_containers('div','infinite_minus_container_'+i,get_element('infinite_left_container_'+i));
+                create_containers('div','infinite_label_container_'+i,get_element('infinite_left_container_'+i));
+                create_containers('div','infinite_chevron_container_'+i,get_element('infinite_left_container_'+i));
+                
+                get_element('infinite_left_container_'+i).setAttribute('class','label_and_input_left_container');
+                get_element('infinite_right_container_'+i).setAttribute('class','label_and_input_right_container');
+                get_element('infinite_container_'+i).setAttribute('class','main_label_container');
+                get_element('infinite_minus_container_'+i).setAttribute('class','minus_container fa fa-minus-circle');
+                get_element('infinite_chevron_container_'+i).setAttribute('class','fa fa-chevron-right');
+                get_element('infinite_phone_input_'+i).setAttribute('placeholder','Phone');
+                get_element('infinite_phone_input_'+i).setAttribute('class','first_last_company phone_input');
+                get_element('infinite_label_container_'+i).textContent = label_array[0];
+        
+            };
         };
-    };
-    
-    
-});
+    });
         
     
     
