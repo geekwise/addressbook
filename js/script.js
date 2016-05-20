@@ -51,6 +51,93 @@ var contact_array = [
     sarah
 ];
 
+// code to create add photo element and make a feature to take a picture with the laptop camera
+
+var create_element = function (element_name, element_attributes) {
+    var element = document.createElement(element_name);
+    
+    if(element_attributes.hasOwnProperty('id')){
+        element.setAttribute('id',element_attributes.id);
+    }
+    
+    if(element_attributes.hasOwnProperty('class')){
+        for(i in element_attributes.class){
+            if(element_attributes.class[i] !== '' || null || undefined){
+                element.classList.add(element_attributes.class[i]);
+            }
+        }
+    }
+    element.classList.add('offscreen');
+    //document.body.appendChild(element);
+    get_element('left_input_section_container_div').appendChild(element);
+    
+}
+
+var get_keys = function(object){
+    return Object.keys(object);
+}
+
+var get_values = function(object){
+    var values = [];
+    for(i in object){
+        values.push(object[i]);
+    }
+    return values;
+}
+
+
+var set_value = function(element_id,element_attributes){
+    
+    var element = document.getElementById(element_id);
+    var element_attributes_keys = Object.keys(element_attributes);
+    
+    var keys = get_keys(element_attributes);
+    var values = get_values(element_attributes);
+    
+    for(var i=0;i<keys.length;i++){
+        var current_key = keys[i];
+        var current_value = values[i];
+    
+        console.log(current_key);
+        console.log(current_value);
+        
+        if(current_key === 'textContent'){
+            element.textContent = current_value;
+        }else{
+            element.setAttribute(current_key,current_value);
+        }
+    }
+    
+    
+}  // end of code to use laptop camera 
+
+var add_info_array = [
+        'add phone',
+        'add email',
+        'Ringtone  Default',
+        'Vibration  Default',
+        'Text Tone  Default',
+        'Vibration  Default',
+        'add url',
+        'add address',
+        'add birthday',
+        'add date',
+        'add related name',
+        'add social profile',
+        'add instant message',
+        '',
+        'add field'
+    ];
+    
+    var add_text_content = function (){
+        for(var i=0; i<add_info_array.length; i++){
+            get_element('add_container_'+i).textContent = add_info_array[i];
+            
+        };
+    };
+    
+
+
 //When DOM is loaded
 
 document.addEventListener('DOMContentLoaded',function(event){
@@ -144,8 +231,8 @@ document.addEventListener('DOMContentLoaded',function(event){
                 var contact_last_name_url_two = contact_last_name_url;
                 var contact_first_name = first_name;
                 var contact_last_name = last_name;
-                       console.log(contact_first_name); 
-                       console.log(contact_last_name);
+                    //   console.log(contact_first_name); 
+                    //   console.log(contact_last_name);
                        
                 for(i in contact_first_name){
                     var current_letter = split_alphabet[i];
@@ -231,11 +318,18 @@ document.addEventListener('DOMContentLoaded',function(event){
        };
     });
     
-    var add_photo_circle = document.createElement('span');
-    add_photo_circle.setAttribute('id','add_photo_circle');
-    add_photo_circle.textContent = 'add photo';
+    create_containers('label','add_photo_label',get_element('left_input_section_container_div'));
+    get_element('add_photo_label').setAttribute('for','camera_input');
+    get_element('add_photo_label').textContent = 'add photo';
     
-    get_element('left_input_section_container_div').appendChild(add_photo_circle);
+    create_element('input',{id:'camera_input'});    
+        
+    set_value('camera_input',{
+                                  
+        placeholder:'insert photo',
+        type:'file',
+        accept:'audio/*;capture=microphone'
+    });
     
 // Creating input elements for:  First Name, Last Name, and Company    
     
@@ -253,41 +347,138 @@ document.addEventListener('DOMContentLoaded',function(event){
 // add phone container elements for: green circle plus sign and add phone text
 
     create_containers('div','add_other_info_container',get_element('new_contact_container'));
-    create_multi_elements(2,'div','add_more_info_container_',get_element('add_other_info_container'));
+    create_multi_elements(15,'div','add_more_info_container_',get_element('add_other_info_container'));
+    
+    // var append_element_after = function(){
+    //     for(var i=0; i<1000; i++){
+    //         get_element('add_more_info_container_'+i).parentNode.insertBefore(get_element('add_more_info_container_'+i),
+    //         get_element('add_more_info_container_'+i).parentNode.lastChild);
+    //     };
+        
+    // };
     
     var create_plus_containers = function(){
         for(var i=0; i<get_element('add_other_info_container').childElementCount; i++){
-            console.log(i);
-            create_containers('div','green_plus_container_'+i,get_element('add_more_info_container_'+i));
+            create_containers('div','plus_and_add_containers_'+i,get_element('add_more_info_container_'+i));
+            create_containers('div','green_plus_container_'+i,get_element('plus_and_add_containers_'+i));
+            create_containers('div','add_container_'+i,get_element('plus_and_add_containers_'+i));
+            
             get_element('green_plus_container_'+i).setAttribute('class','green_plus fa fa-plus-circle');
             
         };
+        
     };
     
-    create_plus_containers();
+//create containers after clicking on add phone
+
+    var label_array = [
+        'home',
+        'work',
+        'iphone',
+        'mobile',
+        'main',
+        'home fax',
+        'work fax',
+        'pager',
+        'other'
+    ];
     
-    var create_new_input_containers = function(){
-        for(var i=0; i<get_element('add_other_info_container').childElementCount; i++){
-            console.log(i);
-            create_containers('input','input_container_'+i,get_element('add_more_info_container_'+i));
-            get_element('input_container_'+i).setAttribute('class','input_container');
+    
+    var create_label_containers = function(label_type){
+        
+        for(var i=0; i<9; i++){
+            create_containers('div','main_label_container_'+i,get_element('add_more_info_container_0'));
+            
+            create_containers('div','label_and_input_left_container_'+i,get_element('main_label_container_'+i));
+            create_containers('div','label_and_input_right_container_'+i,get_element('main_label_container_'+i));
+            
+            create_containers('input','phone_input_'+i,get_element('label_and_input_right_container_'+i));
+            
+            create_containers('div','minus_container_'+i,get_element('label_and_input_left_container_'+i));
+            create_containers('div','label_container_'+i,get_element('label_and_input_left_container_'+i));
+            create_containers('div','chevron_container_'+i,get_element('label_and_input_left_container_'+i));
+            
+            get_element('label_and_input_left_container_'+i).setAttribute('class','label_and_input_left_container');
+            get_element('label_and_input_right_container_'+i).setAttribute('class','label_and_input_right_container');
+            get_element('main_label_container_'+i).setAttribute('class','main_label_container');
+            get_element('minus_container_'+i).setAttribute('class','minus_container fa fa-minus-circle');
+            get_element('chevron_container_'+i).setAttribute('class','fa fa-chevron-right');
+            get_element('phone_input_'+i).setAttribute('placeholder','Phone');
+            get_element('phone_input_'+i).setAttribute('class','first_last_company phone_input');
+            get_element('label_container_'+i).textContent = label_array[i];
+            
+            get_element('label_container_'+i).setAttribute('class','label_container');
+            
+         };
+    };
+    
+    create_label_containers();
+    
+    var display_none_main_label_container = function(){
+        for(var i=0; i<get_element('add_more_info_container_0').childElementCount; i++){
+            get_element('main_label_container_'+i).style.display = 'none';
         };
     };
     
-    create_new_input_containers();
-    //get_element('input_container_0').
-    //create_containers('input','add_phone_container',get_element('add_more_info_container_0'));
+    display_none_main_label_container();
+    create_plus_containers();
     
-    //create_containers('input','add_email_container',get_element('add_more_info_container_1'));
+    var click = 0;
+    var add_phone_button = get_element('plus_and_add_containers_0');
+    add_phone_button.addEventListener("click", function (event) {
+        
+        click++;
+        
+        for(var i=0; i<1000; i++){
+            if(click == i+1){
+        		get_element('main_label_container_'+i).style.display = 'inline-block';
+            }else if(click == i+10) {
+                
+                create_containers('div','infinite_container_'+i,get_element('add_more_info_container_0'));
+                
+                get_element('infinite_container_'+i).parentNode.insertBefore(get_element('infinite_container_'+i),get_element('plus_and_add_containers_0'));
+                
+        		create_containers('div','infinite_left_container_'+i,get_element('infinite_container_'+i));
+                create_containers('div','infinite_right_container_'+i,get_element('infinite_container_'+i));
+                
+                create_containers('input','infinite_phone_input_'+i,get_element('infinite_right_container_'+i));
+                
+                create_containers('div','infinite_minus_container_'+i,get_element('infinite_left_container_'+i));
+                create_containers('div','infinite_label_container_'+i,get_element('infinite_left_container_'+i));
+                create_containers('div','infinite_chevron_container_'+i,get_element('infinite_left_container_'+i));
+                
+                get_element('infinite_left_container_'+i).setAttribute('class','label_and_input_left_container');
+                get_element('infinite_right_container_'+i).setAttribute('class','label_and_input_right_container');
+                get_element('infinite_container_'+i).setAttribute('class','main_label_container');
+                get_element('infinite_minus_container_'+i).setAttribute('class','minus_container fa fa-minus-circle');
+                get_element('infinite_chevron_container_'+i).setAttribute('class','fa fa-chevron-right');
+                get_element('infinite_phone_input_'+i).setAttribute('placeholder','Phone');
+                get_element('infinite_phone_input_'+i).setAttribute('class','first_last_company phone_input');
+                get_element('infinite_label_container_'+i).textContent = label_array[0];
+        
+            };
+        };
+    });
+        
     
-    get_element('input_container_0').setAttribute('placeholder','add phone');
-    get_element('input_container_1').setAttribute('placeholder','add email');
-    // get_element('green_plus_container_one').textContent = '+';
-    // get_element('green_plus_container_two').textContent = '+';
     
+    add_text_content(); // function to add text content for the add more info containers, eg. add phone
+    
+    //****************** event listener (click) to display container for phone entry, for add phone only, then make it dynamic
+    
+    // get_element('plus_and_add_containers_0').addEventListener('click',function(event) {
+        
+    //         get_element('home_phone_container').style.display = 'inline-block';
+        
+    // })
+    
+    create_containers('span','')
+    
+    create_containers('input','note_container',get_element('input_container_13'));
+    get_element('note_container').setAttribute('placeholder','Note');
     
     create_containers('div','search_cancel',get_element('search_container'));
-     get_element('search_cancel').textContent = 'Cancel';
+    get_element('search_cancel').textContent = 'Cancel';
     
     //search input animation
     get_element( 'search' ).addEventListener( 'click', function() {
@@ -299,7 +490,7 @@ document.addEventListener('DOMContentLoaded',function(event){
          
     }); 
     
-   get_element('search_cancel').addEventListener('click',function(){
+    get_element('search_cancel').addEventListener('click',function(){
        
        this.style.display = 'none';
        get_element('search').style.width = '95%';
