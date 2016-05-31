@@ -24,6 +24,14 @@ body{
     font-family: 'Karla', sans-serif;
 }
 
+/* start of HTML p tag */
+
+p[data-name=default]{
+    display:none;
+}
+
+/* end of HTML p tag */
+
 div{
     display: inline-block;
 }
@@ -151,7 +159,6 @@ p[id^=letter_container_]{
     height:3.5rem;
     padding-left:2rem;
     text-align: left;
-    width:99%;
 }
 
 p[id^=full_name_container_]{
@@ -245,9 +252,25 @@ p[id^=full_name_container_]{
     float: left;
 }
 
-#add_photo_circle{
-    width:6rem;
+#add_photo_label{
+    width:7rem;
     height:6rem;
+    display: inline-block;
+    margin-top:18px;
+    border-radius:100%;
+    border: 2px solid #BDBDBD;
+    color:#0D7CE3;
+    font-size: 26px;
+    padding-top: 17px;
+}
+
+#camera_input{
+    display: none;
+}
+
+#add_photo_circle{
+    width:7.5rem;
+    height: 6.3rem;
     border: 2px solid #BDBDBD;
     border-radius:100%;
     position:relative;
@@ -275,7 +298,6 @@ p[id^=full_name_container_]{
     width:100%;
     height:auto;
     font-size:2.5rem;
-    
 }
 
 div[id^=add_more_info_container_]{
@@ -296,32 +318,20 @@ div[id^=add_more_info_container_]{
 .fa-plus-circle:before {
     content: "\f055";
     font-weight: 100;
-    font-style: oblique;
     color: green;
     top:5px;
     left:5px;
 }
 
-input[id^=input_container_]{
-    width:80%;
+#plus_and_add_containers_0{
+    width:100%;
     height:100%;
     float:left;
     font-size:2.5rem;
-    padding-left:1rem;
-    margin-top:13px;
-}
-/*
-#add_email_container{
-    width:80%;
-    height:100%;
-    float:left;
-    font-size:2.5rem;
-    padding-left:1rem;
     margin-top:13px;
 }
 
-*/
-/* ugly way to change color to text for input attribute */
+/* ugly way to change color to text for input attribute 
 
 input[placeholder='add phone'][id^=input_container_]::-webkit-input-placeholder{
     color:#0D7CE3;
@@ -336,19 +346,61 @@ input[placeholder='add phone'][id^=input_container_]:moz-input-placeholder{
     color:#0D7CE3;
 }
 
-/* ugly way to change color to text for input attribute */
+*/
+div[id^=add_more_info_container_]{
+    color:#0D7CE3;
+    text-align: left;
+}
 
-input[placeholder='add email'][id^=input_container_]::-webkit-input-placeholder{
-    color:#0D7CE3;
+.main_label_container{
+    border-bottom: 1px solid #7E7D82;
+    width:100%;
 }
-input[placeholder='add email'][id^=input_container_]::-moz-placeholder{
-    color:#0D7CE3;
+
+.label_and_input_left_container{
+    width:35%;
 }
-input[placeholder='add email'][id^=input_container_]::-ms-input-placeholder{
-    color:#0D7CE3;
+
+.minus_container{
+    color:red;
+    position: relative;
+    top: 0px;
+    left: -10px;
 }
-input[placeholder='add email'][id^=input_container_]:moz-input-placeholder{
-    color:#0D7CE3;
+
+.label_container{
+    font-size:1rem;
+}
+
+.fa-chevron-right{
+    color:#A9A9A9;
+    padding-left: 15px;
+    float: right;
+}
+
+
+.label_and_input_right_container{
+    width:55%;
+}
+
+.phone_input{
+    border-bottom: none;
+    border-left:1px solid #7E7D82;
+    padding-left:45px;
+    font-size:1rem;
+}
+
+#green_plus_container_2,
+#green_plus_container_3,
+#green_plus_container_4,
+#green_plus_container_5,
+#green_plus_container_13{
+    display: none;
+}
+
+#note_container{
+    font-size:35px;
+    padding-left: 35px;
 }
 
 /*media querry side by side fix*/
@@ -414,6 +466,9 @@ and (max-width : 1250px){
 /*media querry font fix*/
 @media only screen
 and (max-width : 965px){
+    #add_more_info_container_0{
+    font-size:1rem;
+}
     #top_row_element_0{
     font-size:1rem;
     }
@@ -423,6 +478,12 @@ and (max-width : 965px){
     #top_row_element_2{
     font-size:3rem;
     }
+    #phone_input{
+        
+        padding-left:27px;
+        font-size:1rem;
+    }
+    
 }
 
 /*media querry font fix*/
@@ -440,10 +501,82 @@ and (max-width : 900px){
     }
 }
 
+/*for portrait*/
+@media only screen 
+and (max-width : 500px){
+   #contact_container{
+    width:auto;
+    height:auto;
+}
+    
+    #top_row_container{
+    font-size:1.5rem;
+    position:relative;
+    top:25%;
+    }
+     #top_row_element_0{
+     margin:5% 0 0 4%;
+ }
+ #top_row_element_1{
+        position: relative;
+        right: 1%;
+        top:44%;
+ }
+
+ 
+ #top_row_element_2{
+     font-size:200%;
+     position: relative;
+     left:0%;
+     top:44%;
+ }
+ #search{
+    margin:.3rem;
+    height:80%;
+ }
+ #search_icon{
+     top:1%;
+     left:1%;
+ }
+    #right_column_letters_container{
+        top:20%;
+        left:96%;
+        font-size:12px;
+    }
+    #new_contact_container{
+        width:auto;
+        height:auto;
+    }
+    #second_top_row_container{
+        font-size:1.4rem;
+    }
+    #cancel_button{
+        position:relative;
+        top:30%;
+        right:4%;
+    }
+    #new_contact{
+        position: relative;
+        top:30%;
+    }
+    #done_button{
+        position: relative;
+        top:30%;
+        left:8%;
+    }
+    #add_photo_circle{
+        width:6rem;
+        height:6rem;
+        margin:-14% 0 0 2%;
+    }
+     .first_last_company{
+      font-size:1rem;
+  }
+}
 
 /* media querry smartphone portrait*/
 @media only screen 
-and (max-width : 500px) {
+and (max-width : 400px) {
  #contact_container{
     width:auto;
     height:auto;
@@ -470,7 +603,7 @@ and (max-width : 500px) {
  }
  #search_icon{
      left:3%;
-     top:10%;
+     top:14%;
  }
  #new_contact_container{
     width:100%;
@@ -524,7 +657,7 @@ and (max-width : 250px){
      font-size:22px;
  }
  #search_icon{
-     top:9%;
+     top:12%;
      left:4%;
      font-size:24px;
  }
@@ -568,26 +701,3 @@ and (min-device-width : 320px)
 and (max-device-width : 568px) {}*/
 
 /*
-
-
-
-
-
-
-
-
-
-
-/*toggle*/
-/*.on{*/
-/*    position: fixed;*/
-/*}*/
-/*.off{*/
-/*    position:relative;*/
-/*}*/
-
-
-
-
-
-
