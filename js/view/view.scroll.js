@@ -1,8 +1,8 @@
-     window.onscroll=function(){
+ var onscroll=function(){
     window.sticky_header();
 };
 
-window.sticky_header=function(){
+var sticky_header=function(){
     var fixed_heads=document.getElementsByClassName('fixed_header');
     for(i=0;i<fixed_heads.length;i++){
         var header=fixed_heads[i];
@@ -88,4 +88,6 @@ function findPosX(obj)
     else if(obj.y)
         curtop += obj.y;
     return curtop;
-  } 
+  };  
+  
+  

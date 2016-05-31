@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded',function(event){
    });
    
    load('view/view.scroll.js',function(){
-       
+       sticky_header();
    });
    
     
