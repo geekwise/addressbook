@@ -11,6 +11,8 @@ get_element('search_icon').setAttribute('class','fa fa-search');
 create_containers('input','search',get_element('search_container'));
 
 get_element('search').setAttribute('placeholder','Search');
+get_element('search').setAttribute('data-filter','services');
+
 
 create_containers('div','search_cancel',get_element('search_container'));
 get_element('search_cancel').textContent = 'Cancel';
