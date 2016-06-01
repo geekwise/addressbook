@@ -1,3 +1,4 @@
+
 /*
 
 Addressbook | Portfolio
@@ -23,6 +24,14 @@ body{
     font-size:65.2%;
     font-family: 'Karla', sans-serif;
 }
+
+/* start of HTML p tag */
+
+p[data-name=default]{
+    display:none;
+}
+
+/* end of HTML p tag */
 
 div{
     display: inline-block;
