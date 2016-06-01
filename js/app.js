@@ -1,7 +1,15 @@
+/**
+ * @project jsmvc (javascript model view controller)
+ * @author Jennifer Tablett <geekwise-jennifer_tablett@gmail.com> and Kao Thao <geekwise-kao-thao@gmail.com>
+ * @geekwiseacademy EDC accelerated apprenticeship workshop
+ */
+ 
 var get_element = function(id){
     return document.getElementById(id);
 }
 
+
+// creating script tags in the head tag to link files together
 var load = function(url,callback){
 
     var main_script = document.querySelectorAll('[data-script=\'app.js\']')[0];
@@ -16,17 +24,14 @@ var load = function(url,callback){
     script.type = 'text/javascript';
     script.async = false;
 
-
     script.addEventListener('load',function(event){
-
         callback(null,event);
-
     },false);
-
 
     main_script.parentNode.insertBefore(script, main_script);
 }
 
+//  When DOM is loaded, call load function to create script tags in the head tag
 document.addEventListener('DOMContentLoaded',function(event){
     
     load('controller/controller.js',function(){
@@ -37,25 +42,52 @@ document.addEventListener('DOMContentLoaded',function(event){
         
     });
     
-    load('view/view.js',function() {
+    load('view/view.functions.js',function() {
         
     });
     
-    load('view/view.add.photo.js',function() {
+    load('view/view.functions.called.js',function() {
         
     });
     
-   load('view/view.search.js',function(){
+    load('view/view.scroll.js',function(){
+       
+   });
+    
+    load('view/view.handler.js',function() {
+        
+    });
+    
+     load('view/view.search.js',function(){
        
    });
    
-   load('view/view.scroll.js',function(){
-       sticky_header();
-   });
-   
+    load('view/view.add.photo.js',function() {
+
+    });
     
     load('controller/create-name-containers.js',function() {
-        create_name_containers();
+    // function greyed out, not used (sample only):    create_name_containers();
     });
     
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

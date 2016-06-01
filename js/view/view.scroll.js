@@ -3,7 +3,7 @@
 };
 
 var sticky_header=function(){
-    var fixed_heads=document.getElementsByClassName('fixed_header');
+    var fixed_heads=document.getElementsByClassName('fixed_header');//look to make sure class is on kool's work
     for(i=0;i<fixed_heads.length;i++){
         var header=fixed_heads[i];
         var next_header=fixed_heads[i+1];
