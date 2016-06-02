@@ -1,13 +1,9 @@
 /*
-
 Addressbook | Portfolio
-
 Table of Contents
-
 1.0  Global Selectors_
 2.0  All Contact Display Screen
 3.0  New Contact Display Screen
-
 */
 
 /*
@@ -23,6 +19,14 @@ body{
     font-size:65.2%;
     font-family: 'Karla', sans-serif;
 }
+
+/* start of HTML p tag */
+
+p[data-name=default]{
+    display:none;
+}
+
+/* end of HTML p tag */
 
 div{
     display: inline-block;
@@ -49,18 +53,21 @@ input{
 #contact_container{
     background-color:white;
     width:40rem;
-    height:auto;
+    height:860px;
     text-align: center;
     box-shadow: 3px 3px 5px 3px grey;
+    position:relative;
 }
 
 #top_row_container{
     width:100%;
-    height:25%;
+    height:12.4%;
     margin-top:0rem;
     font-size:2.2rem;
     border-bottom: 1px solid #7E7D82;
     background-color:#F7F7F7;
+    position:absolute;
+    left:0;
 }
 
 #top_row_container > span{
@@ -93,6 +100,9 @@ input{
     height:3.5rem;
     background-color:#CAC9CE;
     border-bottom: 1px solid #B6B5B9;
+    position:absolute;
+    top:99px;
+    left:0;
 }
 
 #search{
@@ -111,8 +121,8 @@ input{
 }
 #search_icon { 
     position: absolute;
-    top: 9.8%;
-    left: 31%;
+    top: 30.8%;
+    left: 38%;
     font-size: 22px;
     color: #A9A9A9;
 }
@@ -132,9 +142,12 @@ input{
         -ms-transition:     opacity .5;
 }
 #names_container{
-    height:auto;
+    height:690px;
     width:96%;
     float:left;
+    position:relative;
+    top:170px;
+    overflow:scroll;
 }
 
 div[id^=abc_container_]{
@@ -151,7 +164,7 @@ p[id^=letter_container_]{
     height:3.5rem;
     padding-left:2rem;
     text-align: left;
-    width:99%;
+    width:100%;
 }
 
 p[id^=full_name_container_]{
@@ -177,9 +190,9 @@ p[id^=full_name_container_]{
     color: #0D7CE3;
     font-size:20px;
     font-weight: 600;
-    margin-top:4%;
-    position:fixed;
-    right:28.5%;
+    margin-top:30%;
+    position:absolute;
+    right:0;
     
 }
 
@@ -245,9 +258,25 @@ p[id^=full_name_container_]{
     float: left;
 }
 
-#add_photo_circle{
-    width:6rem;
+#add_photo_label{
+    width:7rem;
     height:6rem;
+    display: inline-block;
+    margin-top:18px;
+    border-radius:100%;
+    border: 2px solid #BDBDBD;
+    color:#0D7CE3;
+    font-size: 26px;
+    padding-top: 17px;
+}
+
+#camera_input{
+    display: none;
+}
+
+#add_photo_circle{
+    width:7.5rem;
+    height: 6.3rem;
     border: 2px solid #BDBDBD;
     border-radius:100%;
     position:relative;
@@ -275,7 +304,6 @@ p[id^=full_name_container_]{
     width:100%;
     height:auto;
     font-size:2.5rem;
-    
 }
 
 div[id^=add_more_info_container_]{
@@ -296,33 +324,20 @@ div[id^=add_more_info_container_]{
 .fa-plus-circle:before {
     content: "\f055";
     font-weight: 100;
-    font-style: oblique;
     color: green;
     top:5px;
     left:5px;
 }
 
-input[id^=input_container_]{
-    width:80%;
+#plus_and_add_containers_0{
+    width:100%;
     height:100%;
     float:left;
     font-size:2.5rem;
-    padding-left:1rem;
-    margin-top:13px;
-}
-/*
-#add_email_container{
-    width:80%;
-    height:100%;
-    float:left;
-    font-size:2.5rem;
-    padding-left:1rem;
     margin-top:13px;
 }
 
-*/
-/* ugly way to change color to text for input attribute */
-
+/* ugly way to change color to text for input attribute 
 input[placeholder='add phone'][id^=input_container_]::-webkit-input-placeholder{
     color:#0D7CE3;
 }
@@ -335,259 +350,252 @@ input[placeholder='add phone'][id^=input_container_]::-ms-input-placeholder{
 input[placeholder='add phone'][id^=input_container_]:moz-input-placeholder{
     color:#0D7CE3;
 }
-
-/* ugly way to change color to text for input attribute */
-
-input[placeholder='add email'][id^=input_container_]::-webkit-input-placeholder{
+*/
+div[id^=add_more_info_container_]{
     color:#0D7CE3;
-}
-input[placeholder='add email'][id^=input_container_]::-moz-placeholder{
-    color:#0D7CE3;
-}
-input[placeholder='add email'][id^=input_container_]::-ms-input-placeholder{
-    color:#0D7CE3;
-}
-input[placeholder='add email'][id^=input_container_]:moz-input-placeholder{
-    color:#0D7CE3;
+    text-align: left;
 }
 
-/*media querry side by side fix*/
-@media only screen 
-and (max-width : 1280px){
-    #contact_container{
-    width:39.8%;
-    height: auto;
-    float:left;
-    border-right:solid .2px #A9A9A9;
-    }
-    #top_row_element_0{
-       position: relative;
-       top:6%;
-       right:1%;
-   }
-   #top_row_element_1{
-       position: relative;
-       top:30%;
-       right:3%;
-   }
-   #top_row_element_2{
-       position: relative;
-       top:34%;
-       right:0%;
-   }
-   #right_column_letters_container{
-       right:59%;
-   }
-   #new_contact_container{
-    display:inline-block;
-    width:60%;
-    box-shadow:none;
-   } 
-}
-
-/*media querry font fix*/
-@media only screen
-and (max-width : 1250px){
-    #top_row_container{
-    font-size:1rem;
-   }
-   #top_row_element_0{
-       font-size:1rem;
-       position: relative;
-       top:30%;
-       right:3%;
-   }
-   #top_row_element_1{
-       font-size:1rem;
-       position: relative;
-       top:30%;
-       right:3%;
-   }
-   #top_row_element_2{
-       font-size:3.5rem;
-       position: relative;
-       top:34%;
-       right:-5%;
-   }
-}
-
-/*media querry font fix*/
-@media only screen
-and (max-width : 965px){
-    #top_row_element_0{
-    font-size:1rem;
-    }
-    #top_row_element_1{
-    font-size:1rem;
-    }
-    #top_row_element_2{
-    font-size:3rem;
-    }
-}
-
-/*media querry font fix*/
-@media only screen
-and (max-width : 900px){
-     #top_row_element_0{
-    font-size:1rem;
-    }
-    #top_row_element_1{
-    font-size:1rem;
-    margin: 1rem -22px 0 0;
-    }
-    #top_row_element_2{
-    font-size:2.5rem;
-    }
-}
-
-
-/* media querry smartphone portrait*/
-@media only screen 
-and (max-width : 500px) {
- #contact_container{
-    width:auto;
-    height:auto;
-    
- }
- #top_row_container{
-     font-size:1.2rem;
- }
- #top_row_element_0{
-     margin:4% 0 0 5%;
- }
- #top_row_element_1{
-        margin: 4% 0 0 0;
- }
-
- 
- #top_row_element_2{
-     font-size:200%;
-     margin:0 2rem 0 0;
- }
- #search{
-    margin:.3rem;
-    height:80%;
- }
- #search_icon{
-     left:3%;
-     top:10%;
- }
- #new_contact_container{
+.main_label_container{
+    border-bottom: 1px solid #7E7D82;
     width:100%;
- }
-  #right_column_letters_container{
-       right:0%;
-       margin-top: 5.7rem;
-   }
-  #second_top_row_container{
-      font-size:1.2rem;
-  } 
-  #cancel_button{
-      margin:2rem 0 0 20px;
-  }
-  #new_contact{
-       margin: 2rem 10px 0 0;
-  }
-  #done_button{
-    margin:33px 2.2rem 0 0rem;  
-  }
-  #add_photo_circle{
-    width: 4rem;
-    height: 4rem;
-    font-size: 14px;
-    line-height: 2em;
-    text-align: center;;
-  }
-  .first_last_company{
-      font-size:1rem;
-  }
- 
 }
 
-@media only screen 
-and (max-width : 250px){
-   #top_row_element_0{
-     margin:6% 0 0 5%;
-     
- }
- #top_row_element_1{
-    margin: 6% 5% 0 0;
- }
+.label_and_input_left_container{
+    width:35%;
+    font-size:1rem;
+}
 
- 
- #top_row_element_2{
-     font-size:200%;
-     margin:-2% 8% 0 0;
- } 
- #search{
-     margin-top:2%;
-     font-size:22px;
- }
- #search_icon{
-     top:9%;
-     left:4%;
-     font-size:24px;
- }
- #search_cancel{
-     margin:5% 0 0 -5%;
-     font-size:23px;
- }
- #right_column_letters_container{
-     font-size:20px;
-     top:2%;
-     left:92%;
- }
- #cancel_button{
-     top:12%;
-     left:-5%;
- }
- #new_contact{
-     top:12%;
-     left:2%;
- }
- #done_button{
-     top:12%;
-     right: 2%;
- }
+.minus_container{
+    color:red;
+    position: relative;
+    top: 0px;
+    left: -10px;
+}
+
+.label_container{
+    font-size:1rem;
+}
+
+.fa-chevron-right{
+    color:#A9A9A9;
+    padding-left: 15px;
+    float: right;
+}
+
+div[id^=chevron_container_]{
+    padding-right: 5px;
 }
 
 
+.label_and_input_right_container{
+    width:55%;
+}
 
+.phone_input{
+    border-bottom: none;
+    border-left:1px solid #7E7D82;
+    padding-left:45px;
+    font-size:1rem;
+}
 
+#green_plus_container_2,
+#green_plus_container_3,
+#green_plus_container_4,
+#green_plus_container_5,
+#green_plus_container_13{
+    display: none;
+}
 
+#note_container{
+    font-size:35px;
+    padding-left: 35px;
+}
 
+/* media query redo starts */
+@media only screen and 
+(max-width : 700px){
+    
+    
+    #contact_container{
+    width:auto;
+    font-size:1.3rem;
+    }
+    #top_row_container{
+    font-size:1.3rem;
+    height:7%;
+    }
+    #top_row_element_0{
+        margin:0;
+        position: relative;
+        top: 16px;
+        left: 13px;
+    }
+    #top_row_element_1{
+        margin:0;
+        position: relative;
+        top: 16px;
+    }
+    #top_row_element_2{
+        font-size:3rem;
+        margin-top:-6px;
+    }
+    #search_container{
+        top:61px;
+    }
+    #search_icon{
+        position:relative;
+        top: 7px;
+        left: 40%;
+        font-size: 16px;
+        z-index: 1;
+    }
+    #search{
+        font-size:1.3rem;
+        position: relative;
+        left: -8px;
+        margin: 0;
+        top: 9px;
+    }
+    #names_container{
+        top:118px;
+    }
+    div[id^=abc_container_]{
+        font-size:1.6rem;
+    }
+    .inner_contact_container{
+        font-size:1.6rem;
+        margin-top:0;
+        padding-bottom: 0.5rem;
+    }
+    p[id^=letter_container_]{
+        height:2.5rem;
+    }
+    
+    #right_column_letters_container{
+        font-size:14px;
+        margin: 0;
+        position: relative;
+        top: 137px;
+    }
+}
 
+@media only screen and (max-width : 580px){
+    #search_icon{
+        left:38%;
+    }
+}
 
+@media only screen and (max-width : 460px){
+    #search_icon{
+        left:36%;
+    }
+}
 
+@media only screen and (max-width : 380px){
+    #search_icon{
+        left:34%;
+    }
+}
 
+@media only screen and (max-width : 322px){
+    #search_icon{
+        left:32%;
+    }
+}
 
+@media only screen and (max-width : 320px){
+    #search_icon{
+        left: 32%;
+        top: 7px;
+    }
+    #search{
+        left: -8px;
+        top: 9px;
+    }
+}
 
-/*media querry iphone 5
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) {}*/
+@media only screen and (max-width : 314px){
+    #search_icon{
+        left: -16%;
+        top: 12px;
+    }
+    #search{
+        left: 0px;
+        top: -14px;
+    }
+}
 
-/*
+@media only screen and (max-width : 265px){
+   #top_row_container {
+        font-size: 1rem;
+        height: 6%;
+    }
+    #top_row_element_0{
+        left: 3px;
+    }
+    #top_row_element_2 {
+        font-size: 2rem;
+        margin-top: 4px;
+    }
+    #search_container {
+        top: 53px;
+    }
+    #search {
+        font-size: 1rem;
+        left: -6px;
+        top: 9px;
+    }
+    #search_icon{
+        font-size:12px;
+        left: 32%;
+        top: 8px;
+    }
+    #names_container {
+        top: 110px;
+    }
+    div[id^=abc_container_] {
+        font-size: 1.3rem;
+    }
+    .inner_contact_container {
+        font-size: 1.3rem;
+    }
+    #right_column_letters_container{
+        font-size:10px;
+    }
+}
 
+@media only screen and (max-width : 240px){
+    #search {
+        font-size: 1rem;
+        left: 0px;
+        top: -17px;
+    }
+    #search_icon {
+        font-size: 12px;
+        left: -18%;
+        top: 9px;
+    }
+}
 
-
-
-
-
-
-
-
-
-/*toggle*/
-/*.on{*/
-/*    position: fixed;*/
-/*}*/
-/*.off{*/
-/*    position:relative;*/
-/*}*/
-
-
-
-
-
-
+@media only screen and (max-width : 226px){
+    #top_row_element_0 {
+        left: 1px;
+    }
+    #search_icon {
+        left: -24%;
+    }
+    p[id^=letter_container_]{
+        padding-left:.5rem;
+    }
+    div[id^=abc_container_]{
+        font-size:.8rem;
+    }
+    .inner_contact_container{
+        margin-left: .5rem;
+        font-size:.8rem;
+    }
+    #right_column_letters_container {
+        font-size: 7px;
+    }
+}
