@@ -31,6 +31,26 @@ plus_button.textContent = '+';
 click_plus_button();
 
 create_abc_containers();
+
+// get_element('letter_container_0').style.position = 'fixed';
+// get_element('letter_container_0').style.left = '0';
+// get_element('names_container').addEventListener('scroll',function(event){
+    
+//     if(get_element('names_container').scrollTop >= 0){
+//         get_element('letter_container_0').style.position = 'absolute';
+//         get_element('letter_container_0').style.top = '0';
+//         get_element('letter_container_0').style.left = '0';
+//         get_element('letter_container_0').offset().top = 40;
+//     };
+// });
+
+// var scroll_names_container = function () {
+    
+//     get_element('letter_container_0').style.position = 'absolute';
+//     get_element('letter_container_0').offset().top = 110;
+// };
+
+
 create_right_column_letters();
 
 create_containers('p','hastag',get_element('right_column_letters_container'));

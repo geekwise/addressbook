@@ -20,8 +20,13 @@ var create_multi_elements = function(number_of_top_row_element,element_type,elem
 //  when search input field is clicked, it's width will decrease, float to left and display cancel button
 var click_search = function(){
         get_element('search').addEventListener('click', function(){
-            this.style.width = '50%';
+            get_element('search_icon').style.left = '13%';
+            
+            
+            get_element('search_icon').style.transition = '.5s ease';
             this.style.float = 'left';
+            this.style.width = '50%';
+            
             get_element('search_cancel').style.display = 'inline-block';
         });
     };
@@ -30,7 +35,14 @@ var click_search = function(){
 var click_cancel_button = function(){
     get_element('search_cancel').addEventListener('click',function(){
        this.style.display = 'none';
+       
        get_element('search').style.width = '95%';
+       
+       get_element('search_icon').style.left = '38%';
+       if(get_element('search').style.width === '95%'){
+           get_element('search_icon').style.transition = '0s';
+           get_element('search').style.float = 'none';
+       };    
     });
 };
 
