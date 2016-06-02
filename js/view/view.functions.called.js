@@ -2,7 +2,7 @@ create_containers('div','contact_container',document.body);
 create_containers('div','top_row_container',get_element('contact_container'));
 
 create_multi_elements(3,'span','top_row_element_',get_element('top_row_container'));
-create_containers('div','search_container',get_element('contact_container'));
+create_containers('div','search_container',get_element('top_row_container'));
 create_containers('div','names_container',get_element('contact_container'));
 create_containers('div','right_column_letters_container',get_element('contact_container'));
 
