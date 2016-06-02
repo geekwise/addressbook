@@ -5,6 +5,7 @@
 
 //  create containers or elements in general to place contents
 var create_containers = function(container_element,container_id,container_parent){
+    var container_parent = container_parent;
     var container = document.createElement(container_element);
     container.setAttribute('id',container_id);
     container_parent.appendChild(container);

@@ -36,7 +36,10 @@ get_element('hastag').textContent = '#';
 // create array for all the letter_container id's
 
 create_inner_contact_container();
-    
+   //search fix
+//   for (var i=0; i>26; i++){
+//         get_element('inner_contact_container_'+i).setAttribute('data-search','stuff'+i);
+//     };
 // Creating New Contact display screen
 
 create_containers('div','new_contact_container',document.body);
