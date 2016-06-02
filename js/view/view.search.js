@@ -15,15 +15,17 @@ create_containers('div','search_cancel',get_element('search_container'));
        
        this.style.display = 'none';
        get_element('search').style.width = '95%';
+       get_element('search').value='';
     });
     
-   
+
     //trying to make the search work
 
 //should work but does not
-//     var find_names = function(){
-// 	  var input_filter = get_element('search_container');
-//       input_filter.addEventListener("keyup", function(){
+    var find_names = function(){
+	  var input_filter = get_element('search_container');
+      input_filter.addEventListener("keyup", function(){
+          console.log(event.keycode);
 //   	    var input_value = this.value, i;
 //   	    console.log(input_value);
 //         var filter_list = document.getElementById(this.dataset.filter);
@@ -37,8 +39,8 @@ create_containers('div','search_cancel',get_element('search_container'));
 //             	_this.style.display = "block";
 //              }
 //           }
-//          });
-//     };
+          });
+    };
 
 //works on fiddle
 //   (function(){
