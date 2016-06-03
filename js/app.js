@@ -50,9 +50,19 @@ document.addEventListener('DOMContentLoaded',function(event){
         
     });
     
-    load('view/view.handler.js',function() {
+    load('view/view.scroll.js',function() {
         
     });
+    
+    load('view/view.search.js',function() {
+        
+    });
+    
+    // === may use this when refactoring handler functions === //
+    
+    // load('view/view.handler.js',function() {
+        
+    // });
     
     load('view/view.add.photo.js',function() {
 

@@ -2,15 +2,22 @@ create_containers('div','contact_container',document.body);
 create_containers('div','top_row_container',get_element('contact_container'));
 
 create_multi_elements(3,'span','top_row_element_',get_element('top_row_container'));
-create_containers('div','search_container',get_element('contact_container'));
+
+// === parent to search container changed from contact container, search function is now partially working ===//
+create_containers('div','search_container',get_element('top_row_container'));
 create_containers('div','names_container',get_element('contact_container'));
 create_containers('div','right_column_letters_container',get_element('contact_container'));
 
 create_containers('span','search_icon',get_element('search_container'));
-get_element('search_icon').setAttribute('class','fa fa-search');
+
+//  removed search icon because it was breaking, will leave it removed or fix it later
+//  get_element('search_icon').setAttribute('class','fa fa-search');
 create_containers('input','search',get_element('search_container'));
 
 get_element('search').setAttribute('placeholder','Search');
+get_element('search').setAttribute('type','Search');
+get_element('search').setAttribute('results','');
+get_element('search').setAttribute('data-filter','services');
 
 create_containers('div','search_cancel',get_element('search_container'));
 get_element('search_cancel').textContent = 'Cancel';
