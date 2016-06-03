@@ -5,6 +5,7 @@
 
 //  create containers or elements in general to place contents
 var create_containers = function(container_element,container_id,container_parent){
+
     var container = document.createElement(container_element);
     container.setAttribute('id',container_id);
     container_parent.appendChild(container);
@@ -74,6 +75,7 @@ var create_abc_containers = function(){
         var abc_container = document.getElementById('abc_container_' + i);
         var letter_container = document.createElement('p');
         letter_container.setAttribute('id','letter_container_'+i);
+
         letter_container.textContent = split_alphabet[i];
         
         abc_container.appendChild(letter_container); 

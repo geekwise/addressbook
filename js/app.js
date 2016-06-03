@@ -15,6 +15,7 @@ var load = function(url,callback){
     var main_script = document.querySelectorAll('[data-script=\'app.js\']')[0];
     var script = document.createElement('script');
 
+
     if(/^http|https/.test(url)){
             script.src = url;
     }else{

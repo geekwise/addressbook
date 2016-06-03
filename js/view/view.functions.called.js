@@ -126,4 +126,5 @@ create_containers('div','right_input_section_container_div',get_element('second_
     
     create_containers('input','note_container',get_element('input_container_13'));
     get_element('note_container').setAttribute('placeholder','Note');
+
     
