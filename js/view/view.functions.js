@@ -5,7 +5,7 @@
 
 //  create containers or elements in general to place contents
 var create_containers = function(container_element,container_id,container_parent){
-    var container_parent = container_parent;
+
     var container = document.createElement(container_element);
     container.setAttribute('id',container_id);
     container_parent.appendChild(container);
@@ -18,6 +18,34 @@ var create_multi_elements = function(number_of_top_row_element,element_type,elem
     };
 };
 
+//  when search input field is clicked, it's width will decrease, float to left and display cancel button
+var click_search = function(){
+        get_element('search').addEventListener('click', function(){
+            get_element('search_icon').style.left = '13%';
+            
+            
+            get_element('search_icon').style.transition = '.5s ease';
+            this.style.float = 'left';
+            this.style.width = '50%';
+            
+            get_element('search_cancel').style.display = 'inline-block';
+        });
+    };
+    
+//  when cancel button is clicked, it will display as none and search field width will increase
+var click_cancel_button = function(){
+    get_element('search_cancel').addEventListener('click',function(){
+       this.style.display = 'none';
+       
+       get_element('search').style.width = '95%';
+       
+       get_element('search_icon').style.left = '38%';
+       if(get_element('search').style.width === '95%'){
+           get_element('search_icon').style.transition = '0s';
+           get_element('search').style.float = 'none';
+       };    
+    });
+};
 
 //  when plus button is clicked, it will display the New Contact display screen
 var click_plus_button = function(){
@@ -47,7 +75,7 @@ var create_abc_containers = function(){
         var abc_container = document.getElementById('abc_container_' + i);
         var letter_container = document.createElement('p');
         letter_container.setAttribute('id','letter_container_'+i);
-        letter_container.setAttribute('class','fixed_header')
+
         letter_container.textContent = split_alphabet[i];
         
         abc_container.appendChild(letter_container); 

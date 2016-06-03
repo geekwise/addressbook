@@ -1,5 +1,5 @@
 /**
- * @project jsmvc (javascript model view controller)
+ * @project addressbook (javascript model view controller)
  * @author Jennifer Tablett <geekwise-jennifer_tablett@gmail.com> and Kao Thao <geekwise-kao-thao@gmail.com>
  * @geekwiseacademy EDC accelerated apprenticeship workshop
  */
@@ -14,6 +14,7 @@ var load = function(url,callback){
 
     var main_script = document.querySelectorAll('[data-script=\'app.js\']')[0];
     var script = document.createElement('script');
+
 
     if(/^http|https/.test(url)){
             script.src = url;
@@ -34,7 +35,7 @@ var load = function(url,callback){
 //  When DOM is loaded, call load function to create script tags in the head tag
 document.addEventListener('DOMContentLoaded',function(event){
     
-    load('controller/controller.js',function(){
+    load('controller.js',function(){
         
     });
     
@@ -50,19 +51,20 @@ document.addEventListener('DOMContentLoaded',function(event){
         
     });
     
-    load('view/view.scroll.js',function(){
-       
-   });
-
-//not currently in use
-    //('view/view.handler.js',function() {
+    load('view/view.scroll.js',function() {
         
-    //});
+    });
     
-     load('view/view.search.js',function(){
-       
-   });
-   
+    load('view/view.search.js',function() {
+        
+    });
+    
+    // === may use this when refactoring handler functions === //
+    
+    // load('view/view.handler.js',function() {
+        
+    // });
+    
     load('view/view.add.photo.js',function() {
 
     });
@@ -72,20 +74,6 @@ document.addEventListener('DOMContentLoaded',function(event){
     });
     
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
