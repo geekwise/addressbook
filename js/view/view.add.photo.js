@@ -1,3 +1,4 @@
+
 // code to create add photo element and make a feature to take a picture with the laptop camera
 
 var create_element = function (element_name, element_attributes) {

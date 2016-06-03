@@ -2,23 +2,31 @@ create_containers('div','contact_container',document.body);
 create_containers('div','top_row_container',get_element('contact_container'));
 
 create_multi_elements(3,'span','top_row_element_',get_element('top_row_container'));
+
+// === parent to search container changed from contact container, search function is now partially working ===//
 create_containers('div','search_container',get_element('top_row_container'));
 create_containers('div','names_container',get_element('contact_container'));
 create_containers('div','right_column_letters_container',get_element('contact_container'));
 
 create_containers('span','search_icon',get_element('search_container'));
-//get_element('search_icon').setAttribute('class','fa fa-search');
+
+//  removed search icon because it was breaking, will leave it removed or fix it later
+//  get_element('search_icon').setAttribute('class','fa fa-search');
 create_containers('input','search',get_element('search_container'));
 
 get_element('search').setAttribute('placeholder','Search');
-get_element('search').setAttribute('data-filter','services');
 get_element('search').setAttribute('type','Search');
 get_element('search').setAttribute('results','');
-
+get_element('search').setAttribute('data-filter','services');
 
 create_containers('div','search_cancel',get_element('search_container'));
 get_element('search_cancel').textContent = 'Cancel';
 
+//search input animation
+
+click_cancel_button();
+
+click_search();
 
 get_element('top_row_element_0').textContent = 'Groups';;
 get_element('top_row_element_1').textContent = 'All Contacts';;
@@ -30,6 +38,26 @@ plus_button.textContent = '+';
 click_plus_button();
 
 create_abc_containers();
+
+// get_element('letter_container_0').style.position = 'fixed';
+// get_element('letter_container_0').style.left = '0';
+// get_element('names_container').addEventListener('scroll',function(event){
+    
+//     if(get_element('names_container').scrollTop >= 0){
+//         get_element('letter_container_0').style.position = 'absolute';
+//         get_element('letter_container_0').style.top = '0';
+//         get_element('letter_container_0').style.left = '0';
+//         get_element('letter_container_0').offset().top = 40;
+//     };
+// });
+
+// var scroll_names_container = function () {
+    
+//     get_element('letter_container_0').style.position = 'absolute';
+//     get_element('letter_container_0').offset().top = 110;
+// };
+
+
 create_right_column_letters();
 
 create_containers('p','hastag',get_element('right_column_letters_container'));
@@ -38,10 +66,7 @@ get_element('hastag').textContent = '#';
 // create array for all the letter_container id's
 
 create_inner_contact_container();
-   //search fix
-//   for (var i=0; i>26; i++){
-//         get_element('inner_contact_container_'+i).setAttribute('data-search','stuff'+i);
-//     };
+    
 // Creating New Contact display screen
 
 create_containers('div','new_contact_container',document.body);
@@ -70,7 +95,7 @@ create_containers('div','right_input_section_container_div',get_element('second_
     };
     
     click_top_cancel_button();
-    live_filter();
+    
 // Creating input elements for:  First Name, Last Name, and Company    
 
     create_multi_elements(3,'input','right_input_',get_element('right_input_section_container_div'));
@@ -101,5 +126,5 @@ create_containers('div','right_input_section_container_div',get_element('second_
     
     create_containers('input','note_container',get_element('input_container_13'));
     get_element('note_container').setAttribute('placeholder','Note');
-    
+
     
