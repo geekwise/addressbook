@@ -1,3 +1,4 @@
+
 /*
 Addressbook | Portfolio
 Table of Contents
@@ -101,7 +102,7 @@ input{
     background-color:#CAC9CE;
     border-bottom: 1px solid #B6B5B9;
     position:absolute;
-    top:99px;
+    top:108px;
     left:0;
 }
 
@@ -453,9 +454,9 @@ div[id^=chevron_container_]{
     #search{
         font-size:1.3rem;
         position: relative;
-        left: -8px;
+        left: 0px;
         margin: 0;
-        top: 9px;
+        top: 10px;
     }
     #names_container{
         top:118px;
@@ -510,8 +511,7 @@ div[id^=chevron_container_]{
         top: 7px;
     }
     #search{
-        left: -8px;
-        top: 9px;
+        
     }
 }
 
@@ -519,10 +519,6 @@ div[id^=chevron_container_]{
     #search_icon{
         left: -16%;
         top: 12px;
-    }
-    #search{
-        left: 0px;
-        top: -14px;
     }
 }
 
@@ -543,8 +539,6 @@ div[id^=chevron_container_]{
     }
     #search {
         font-size: 1rem;
-        left: -6px;
-        top: 9px;
     }
     #search_icon{
         font-size:12px;
@@ -568,8 +562,6 @@ div[id^=chevron_container_]{
 @media only screen and (max-width : 240px){
     #search {
         font-size: 1rem;
-        left: 0px;
-        top: -17px;
     }
     #search_icon {
         font-size: 12px;
@@ -599,3 +591,4 @@ div[id^=chevron_container_]{
         font-size: 7px;
     }
 }
+

@@ -70,7 +70,7 @@ create_containers('div','right_input_section_container_div',get_element('second_
     };
     
     click_top_cancel_button();
-    
+    live_filter();
 // Creating input elements for:  First Name, Last Name, and Company    
 
     create_multi_elements(3,'input','right_input_',get_element('right_input_section_container_div'));
@@ -101,3 +101,5 @@ create_containers('div','right_input_section_container_div',get_element('second_
     
     create_containers('input','note_container',get_element('input_container_13'));
     get_element('note_container').setAttribute('placeholder','Note');
+    
+    

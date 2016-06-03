@@ -1,7 +1,4 @@
-create_containers('div','search_cancel',get_element('search_container'));
-     get_element('search_cancel').textContent = 'Cancel';
-    
-    //search input animation
+//search input animation
     get_element( 'search' ).addEventListener( 'click', function() {
         
         this.style.width = '50%';
@@ -45,7 +42,7 @@ create_containers('div','search_cancel',get_element('search_container'));
 console.log('view.search.js EOF');
 
 //works on fiddle 
-  var live_filter = (function(){
+  var live_filter = function(){
  	var input_filter = document.querySelector("[data-filter]");
   input_filter.addEventListener("keyup", function(){
   	var input_value = this.value, i;
@@ -62,4 +59,4 @@ console.log('view.search.js EOF');
       }
     }
   });
- })();
+ };
