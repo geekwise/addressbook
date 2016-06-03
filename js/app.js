@@ -1,76 +1,71 @@
-var data_urls = window.location.origin+'/js/data_urls.js';
-var load_js_library = 'https://cdnjs.cloudflare.com/ajax/libs/load.js/1316434407/load-min.js';
-var papa_parse_js_library = 'https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js';
-var csv_data;
-
-
-var load_csv_data = function(url){
-    Papa.parse(url,{
-    	download: true,
-    	header: true,
-    	complete: function(results) {
-    		console.log(results);
-    		csv_data = results;
-    	}
-    });
+/**
+ * @project addressbook (javascript model view controller)
+ * @author Jennifer Tablett <geekwise-jennifer_tablett@gmail.com> and Kao Thao <geekwise-kao-thao@gmail.com>
+ * @geekwiseacademy EDC accelerated apprenticeship workshop
+ */
+ 
+var get_element = function(id){
+    return document.getElementById(id);
 }
 
 
+// creating script tags in the head tag to link files together
+var load = function(url,callback){
 
-var load_scripts = function(){
-    
-    load(data_urls).thenRun(function(){
-       
-       
-       
-       load(papa_parse_js_library,contact_first_name_url,contact_last_name_url).thenRun(function(){
-           
-                  console.log(first_name); 
-                  console.log(last_name);
-                  console.log(Papa);
-                  //load_csv_data(csv_data);
-                  load_csv_data('https://rawgit.com/geekwise/951f5d5c1033d7128576/raw/a88f47d666df13c29da5232a092a80756ffc784d/app_data.csv');
-                  
+    var main_script = document.querySelectorAll('[data-script=\'app.js\']')[0];
+    var script = document.createElement('script');
 
-       })
-       
-        
-    })
-    
-    
+    if(/^http|https/.test(url)){
+            script.src = url;
+    }else{
+            script.src = 'js/' + url;
+    }
+
+    script.type = 'text/javascript';
+    script.async = false;
+
+    script.addEventListener('load',function(event){
+        callback(null,event);
+    },false);
+
+    main_script.parentNode.insertBefore(script, main_script);
 }
 
-
-var attach_script = function(url, callback) {
-	
-	var script_element = document.createElement('script');
-	var first_script = document.getElementsByTagName('script')[0];
-	
-	//script_element.src = '//' + url;
-	script_element.src = url;
-	
-  	if(callback){
-		script_element.addEventListener('load',function(event){
-				callback(null, event);
-		},false);
-	}
-	
-	first_script.parentNode.insertBefore(script_element,first_script);
-
-}
-
-
+//  When DOM is loaded, call load function to create script tags in the head tag
 document.addEventListener('DOMContentLoaded',function(event){
-
-            
-
-            attach_script(load_js_library,function(){
-                    
-                    //console.log('load.js ready');
-                    load_scripts();
-
-            });        
-
     
+    load('controller.js',function(){
+        
+    });
+    
+    load('model.js',function(){
+        
+    });
+    
+    load('view/view.functions.js',function() {
+        
+    });
+    
+    load('view/view.functions.called.js',function() {
+        
+    });
+    
+    load('view/view.handler.js',function() {
+        
+    });
+    
+    load('view/view.add.photo.js',function() {
+
+    });
+    
+    load('controller/create-name-containers.js',function() {
+    // function greyed out, not used (sample only):    create_name_containers();
+    });
     
 });
+
+
+
+
+
+
