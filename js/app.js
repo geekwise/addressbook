@@ -53,10 +53,11 @@ document.addEventListener('DOMContentLoaded',function(event){
     load('view/view.scroll.js',function(){
        
    });
-    
-    load('view/view.handler.js',function() {
+
+//not currently in use
+    //('view/view.handler.js',function() {
         
-    });
+    //});
     
      load('view/view.search.js',function(){
        

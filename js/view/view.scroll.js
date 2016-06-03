@@ -1,4 +1,4 @@
- var onscroll=function(){
+  var onscroll=function(){
     window.sticky_header();
 };
 
@@ -88,6 +88,4 @@ function findPosX(obj)
     else if(obj.y)
         curtop += obj.y;
     return curtop;
-  };  
-  
-  
+  };
