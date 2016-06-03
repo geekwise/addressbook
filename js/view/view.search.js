@@ -43,12 +43,14 @@ console.log('view.search.js EOF');
 
 //works on fiddle 
   var live_filter = function(){
+      //console.log(this);
  	var input_filter = document.querySelector("[data-filter]");
+ 	//console.log('input_filter');
   input_filter.addEventListener("keyup", function(){
   	var input_value = this.value, i;
+  	//console.log('input_value');
     var filter_list = document.getElementById(this.dataset.filter);
     var filter_item = filter_list.querySelectorAll("p");
-    return('p');
     for (i = 0; i < filter_item.length; i++) {
     		var _this = filter_item[i];
         var phrase = _this.innerHTML + _this.id; 
