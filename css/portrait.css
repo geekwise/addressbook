@@ -1,0 +1,149 @@
+/*
+Addressbook | Portrait (Media Query) CSS Directory
+Table of Contents
+ 1.0  Max-width = 700px
+ 2.0  Max-width = 265px
+ 3.0  Max-width = 240px
+ 4.0  Max-width = 226px
+*/
+
+/* =====================
+   1.0 Max-width = 700px
+   
+   ===================== */
+   
+@media only screen and 
+(max-width : 700px){
+    
+    
+    #contact_container{
+    width:auto;
+    font-size:1.3rem;
+    }
+    #top_row_container{
+    font-size:1.3rem;
+    height:7%;
+    }
+    #top_row_element_0{
+        margin:0;
+        position: relative;
+        top: 16px;
+        left: 13px;
+    }
+    #top_row_element_1{
+        margin:0;
+        position: relative;
+        top: 16px;
+    }
+    #top_row_element_2{
+        font-size:3rem;
+        margin-top:-6px;
+    }
+    #search_container{
+        top:61px;
+    }
+    #search{
+        font-size:1.3rem;
+        position: relative;
+        left: 0px;
+        margin: 0;
+        top: 14px;
+    }
+    #names_container{
+        top:134px;
+    }
+    div[id^=abc_container_]{
+        font-size:1.6rem;
+    }
+    .inner_contact_container{
+        font-size:1.6rem;
+        margin-top:0;
+        padding-bottom: 0.5rem;
+    }
+    p[id^=letter_container_]{
+        height:2.5rem;
+    }
+    
+    #right_column_letters_container{
+        font-size:14px;
+        margin: 0;
+        position: relative;
+        top: 137px;
+    }
+}
+
+
+
+/* =====================
+   2.0 Max-width = 265px
+   
+   ===================== */
+
+@media only screen and (max-width : 265px){
+   #top_row_container {
+        font-size: 1rem;
+        height: 6%;
+    }
+    #top_row_element_0{
+        left: 3px;
+    }
+    #top_row_element_2 {
+        font-size: 2rem;
+        margin-top: 4px;
+    }
+    #search_container {
+        top: 53px;
+        height:56px;
+    }
+    #search {
+        font-size: 1rem;
+        top:10px;
+    }
+    #names_container {
+        top: 110px;
+    }
+    div[id^=abc_container_] {
+        font-size: 1.3rem;
+    }
+    .inner_contact_container {
+        font-size: 1.3rem;
+    }
+    #right_column_letters_container{
+        font-size:10px;
+    }
+}
+
+/* =====================
+   3.0 Max-width = 240px
+   
+   ===================== */
+
+@media only screen and (max-width : 240px){
+    #search {
+        font-size: 1rem;
+    }
+}
+
+/* ======================
+   4.0 Max-width = 226px
+   
+   ====================== */
+
+@media only screen and (max-width : 226px){
+    #top_row_element_0 {
+        left: 1px;
+    }
+    p[id^=letter_container_]{
+        padding-left:.5rem;
+    }
+    div[id^=abc_container_]{
+        font-size:.8rem;
+    }
+    .inner_contact_container{
+        margin-left: .5rem;
+        font-size:.8rem;
+    }
+    #right_column_letters_container {
+        font-size: 7px;
+    }
+}
