@@ -1,5 +1,4 @@
 var update_contact = function(){
-<<<<<<< HEAD
     get_element('done_button').addEventListener('click',function(event){
         
         for(i in split_alphabet){
@@ -49,11 +48,3 @@ var update_contact = function(){
         // }else{
         //     get_element('right_input_2').value = get_element('right_input_2').value;
         // };
-=======
-    var first_name_input = get_element('right_input_0');
-    
-    first_name_input.addEventListener('keydown',function(event){
-        
-    });
-};
->>>>>>> 444ec25d6ee3116f0219ccaedba29c357d824dbe
