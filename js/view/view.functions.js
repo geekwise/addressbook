@@ -75,7 +75,7 @@ var create_abc_containers = function(){
         var abc_container = document.getElementById('abc_container_' + i);
         var letter_container = document.createElement('p');
         letter_container.setAttribute('id','letter_container_'+i);
-
+        letter_container.setAttribute('class','fixed_header');
         letter_container.textContent = split_alphabet[i];
         
         abc_container.appendChild(letter_container); 

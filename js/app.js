@@ -51,6 +51,10 @@ document.addEventListener('DOMContentLoaded',function(event){
         
     });
     
+    load('view/view.update.js',function() {
+        update_contact();
+    });
+    
     load('view/view.scroll.js',function() {
         
     });
