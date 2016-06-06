@@ -3,7 +3,7 @@
  * file used to store functions for addressbook web app 
 */
 
-//  create containers or elements in general to place contents
+/** create containers or elements in general to place contents*/
 var create_containers = function(container_element,container_id,container_parent){
 
     var container = document.createElement(container_element);
@@ -11,14 +11,14 @@ var create_containers = function(container_element,container_id,container_parent
     container_parent.appendChild(container);
 };
 
-//  create multiple elements at the same time, which will be appended to same parent
+/**create multiple elements at the same time, which will be appended to same parent*/
 var create_multi_elements = function(number_of_top_row_element,element_type,element_id,element_parent){
     for(var i=0; i<number_of_top_row_element; i++){
         create_containers(element_type,element_id+i,element_parent);
     };
 };
 
-//  when search input field is clicked, it's width will decrease, float to left and display cancel button
+/**  when search input field is clicked, it's width will decrease, float to left and display cancel button*/
 var click_search = function(){
         get_element('search').addEventListener('click', function(){
             get_element('search_icon').style.left = '13%';
@@ -32,7 +32,7 @@ var click_search = function(){
         });
     };
     
-//  when cancel button is clicked, it will display as none and search field width will increase
+/**when cancel button is clicked, it will display as none and search field width will increase*/
 var click_cancel_button = function(){
     get_element('search_cancel').addEventListener('click',function(){
        this.style.display = 'none';
@@ -47,7 +47,7 @@ var click_cancel_button = function(){
     });
 };
 
-//  when plus button is clicked, it will display the New Contact display screen
+/**when plus button is clicked, it will display the New Contact display screen*/
 var click_plus_button = function(){
         plus_button.addEventListener('click',function(event){
           get_element('new_contact_container').style.display = 'inline-block';
@@ -57,18 +57,18 @@ var click_plus_button = function(){
         });
     };
 
-//  adding text content to containers, visible next to plus symbol
+/**adding text content to containers, visible next to plus symbol*/
 var add_text_content = function (){
     for(var i=0; i<add_info_array.length; i++){
         get_element('add_container_'+i).textContent = add_info_array[i];
     };
 }; 
 
-// alphabetical letters for the abc containers
+/**alphabetical letters for the abc containers*/
     var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var split_alphabet = alphabet.split('');
     
-// create the left side letters and containers for the contacts 
+/**create the left side letters and containers for the contacts*/ 
 var create_abc_containers = function(){
     for(var i=0; i<26; i++){
         create_containers('div','abc_container_' + i,get_element('names_container'));
@@ -82,7 +82,7 @@ var create_abc_containers = function(){
     };
 };
 
-//  create the right column for the blue alphabet letters
+/**create the right column for the blue alphabet letters*/
 var create_right_column_letters = function(){
     for(var i=0; i<26; i++){
         create_containers('p','right_column_letters_'+i,get_element('right_column_letters_container'));
@@ -91,7 +91,7 @@ var create_right_column_letters = function(){
     };
 };
 
-// create pre-populated names from an array and display it on the All Contact display screen
+/**create pre-populated names from an array and display it on the All Contact display screen*/
 var create_inner_contact_container = function(){
     for(i in split_alphabet){
         var current_letter = split_alphabet[i];
@@ -112,24 +112,24 @@ var create_inner_contact_container = function(){
     };
 };
 
-//  to add text content to 'cancel' button, 'New Contact' label, and 'done' button
+/**to add text content to 'cancel' button, 'New Contact' label, and 'done' button*/
 var update_element_properties = function(id,text_content,new_id){
     get_element(id).textContent = text_content;
     get_element(id).setAttribute('id',new_id);
 };
 
-//  need comment, used function in view.function.js file
+/** need comment, used function in view.function.js file*/
 var cancel_button = function(){
     return get_element('cancel_button');
 };
 
-//  this will create the desired placeholder for the inputs in the New Contact display screen
+/**this will create the desired placeholder for the inputs in the New Contact display screen*/
 var change_input_attributes = function(id,new_id,attribute_value){
     get_element(id).setAttribute('placeholder',attribute_value);
     get_element(id).setAttribute('class',new_id);
 };
 
-//  creates button (includes green plus sign), eventually when clicked will add more info for new contact 
+/**  creates button (includes green plus sign), eventually when clicked will add more info for new contact */
 var create_plus_containers = function(){
     for(var i=0; i<get_element('add_other_info_container').childElementCount; i++){
         create_containers('div','plus_and_add_containers_'+i,get_element('add_more_info_container_'+i));
@@ -140,7 +140,7 @@ var create_plus_containers = function(){
     };
 };
 
-//create containers after clicking on add phone button on New Contact display screen
+/**create containers after clicking on add phone button on New Contact display screen*/
 var create_label_containers = function(label_type){
     
     for(var i=0; i<9; i++){
@@ -168,24 +168,24 @@ var create_label_containers = function(label_type){
      };
 };
 
-//  these containers are displayed as none, and will be inline-block when add phone button is clicked
+/**  these containers are displayed as none, and will be inline-block when add phone button is clicked*/
 var display_none_main_label_container = function(){
     for(var i=0; i<get_element('add_more_info_container_0').childElementCount; i++){
         get_element('main_label_container_'+i).style.display = 'none';
     };
 };
 
-// create click event to display containers for adding more information
+/** create click event to display containers for adding more information*/
 var click_to_add_phone = function(){
     var click = 0;
     var add_phone_button = get_element('plus_and_add_containers_0');
     
-    //  when clicked, option will appear where you can add phone number for that particular category
+    /**  when clicked, option will appear where you can add phone number for that particular category*/
     add_phone_button.addEventListener("click", function (event) {
         
         click++;
         
-        //  1000 is an arbitrary number, not expecting user to click on add phone more than 1000 times
+        /**  1000 is an arbitrary number, not expecting user to click on add phone more than 1000 times*/
         for(var i=0; i<1000; i++){
             if(click == i+1){
         		get_element('main_label_container_'+i).style.display = 'inline-block';
