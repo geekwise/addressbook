@@ -15,8 +15,12 @@ var update_contact = function(){
                 var new_contact_container = document.createElement('p');
                 new_contact_container.setAttribute('class','inner_contact_container');
                 new_contact_container.textContent = get_element('right_input_0').value + ' ' + get_element('right_input_1').value;
+<<<<<<< HEAD
                 new_contact_array.push(new_contact_container.textContent);
                     // \w{1,}\b
+=======
+                
+>>>>>>> 767d6982b5566b47916a92bbaed8ebb97f02e565
                 current_abc_container.appendChild(new_contact_container);
                 
             };
@@ -99,3 +103,29 @@ var click_on_first_name_field = function(){
 
 
 
+<<<<<<< HEAD
+=======
+// ***greyed out line 6-26: the if statement was not working as expected in the above done button handler
+        
+        // var first_name = prompt('Please enter first name','E.g. Imageek');
+        // var last_name = prompt('Please enter last name','E.g. Forlife');
+        // var company_name = prompt('Please enter company name','E.g. Geekwise');
+
+        // if(get_element('right_input_0').value === ''){
+        //     get_element('right_input_0').value = first_name;
+        // }else{
+        //     get_element('right_input_0').value = get_element('right_input_0').value;
+        // };
+        
+        // if(get_element('right_input_1').value === ''){
+        //     get_element('right_input_1').value = last_name;
+        // }else{
+        //     get_element('right_input_1').value = get_element('right_input_1').value;
+        // };
+        
+        // if(get_element('right_input_2').value === ''){
+        //     get_element('right_input_2').value = company_name;
+        // }else{
+        //     get_element('right_input_2').value = get_element('right_input_2').value;
+        // };
+>>>>>>> 767d6982b5566b47916a92bbaed8ebb97f02e565

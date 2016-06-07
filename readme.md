@@ -3,7 +3,7 @@
 
 Table of Contents
 --------------------------------------
-### Last Updated @ 05-10-2016
+### Last Updated @ 06-06-2016
 
 
 1. To Do List
@@ -34,20 +34,22 @@ To Do
     [ ]- edit `photos
     [ ]- edit `groups
 4. [ ] [Refactoring]
-    [ ]- refactor current javascript using functions
+    [x]- refactor current javascript using functions
 5. [ ] [README]
     [ ]- **MAINTAIN TO DO LIST**
     [ ]- add links to table of content
 6. [ ] [Add Scroll]
     [x]- sticky header for each letter navigation **A-Z**
     [x]- each `navigation` header slides under previous header when scroll reaches top
-    [ ]- `contact name` slides under header
+    [x]- `contact name` slides under header
 7. [ ]- media querry
     [x]-combine contact to front page during landscape
     [ ]-font size front page
     [ ]-font size contact page
     [ ]-nav bar realligned
-
+8.[]-documentation
+    []-fix all documentation to standard
+    []-give javascript documentation to make it readable
 APP Features
 --------------------------------------
 
