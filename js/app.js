@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     load('view/view.update.js',function() {
         update_contact();
+        click_on_first_name_field();
     });
     
     load('view/view.scroll.js',function() {
