@@ -9,7 +9,7 @@ var get_element = function(id){
 }
 
 
-// creating script tags in the head tag to link files together
+/** creating script tags in the head tag to link files together*/
 var load = function(url,callback){
 
     var main_script = document.querySelectorAll('[data-script=\'app.js\']')[0];
@@ -32,7 +32,7 @@ var load = function(url,callback){
     main_script.parentNode.insertBefore(script, main_script);
 }
 
-//  When DOM is loaded, call load function to create script tags in the head tag
+/**  When DOM is loaded, call load function to create script tags in the head tag*/
 document.addEventListener('DOMContentLoaded',function(event){
     
     load('controller.js',function(){
@@ -68,6 +68,10 @@ document.addEventListener('DOMContentLoaded',function(event){
     // load('view/view.handler.js',function() {
         
     // });
+    
+    load('view/view.delete.phonenumber.js',function(){});
+    
+    
     
     load('view/view.add.photo.js',function() {
 
