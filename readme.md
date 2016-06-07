@@ -174,7 +174,7 @@ Device Testing
 
 Team Information
 ----------
-[geekwise](https://github.com/geekwise)
+[Geekwise](https://github.com/geekwise)
 
 [Kao Thao](https://github.com/geekwise-kao-thao)
 

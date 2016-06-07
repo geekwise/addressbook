@@ -1,9 +1,11 @@
 /*
 Addressbook | Main CSS Directory
 Table of Contents
+
 1.0  Global Selectors
 2.0  All Contact Display Screen
 3.0  New Contact Display Screen
+4.0  Colors
 */
 
 /* ====================
@@ -418,3 +420,19 @@ div[id^=chevron_container_]{
     font-size:35px;
     padding-left: 35px;
 }
+
+
+
+/* ===============================
+
+   4.0  Colors
+   
+   =============================== */
+
+/*
+#BDBDBD = lightgrey (Done Button)
+#0D7CE3 = iphone sky blue
+
+*/
+
+

@@ -1,4 +1,5 @@
 var new_contact_array = [];
+var split_string;
 
 var update_contact = function(){
     get_element('done_button').addEventListener('click',function(event){
@@ -15,20 +16,48 @@ var update_contact = function(){
                 new_contact_container.setAttribute('class','inner_contact_container');
                 new_contact_container.textContent = get_element('right_input_0').value + ' ' + get_element('right_input_1').value;
                 new_contact_array.push(new_contact_container.textContent);
-                
-                var regex_new_names = new RegExp('\w{1,}\b','gi');
-                
-                for(var i=0; i<new_contact_array.length; i++){
-                    //new_contact_array[i] = new_contact_array[i].match(regex_new_names).charAt(0).toUpperCase() + new_contact_array[i].substr(1);
                     // \w{1,}\b
-                    
-                    console.log(new_contact_array);
-                };
-                
-                    
                 current_abc_container.appendChild(new_contact_container);
+                
             };
         };
+
+    
+
+        var regex_new_names = new RegExp('\\w{1,}\\b','gi');
+        var regex_new_name_matches = new_contact_array[0].match(regex_new_names);
+console.log(regex_new_name_matches);
+        var capitalize_first_letter = function(word){
+             var lower_to_upper = function(match){
+                 return match.toUpperCase();
+             };
+             //convert to self executing function lower_to_upper() at a later time;
+             return word.replace(/\b\w/gi,lower_to_upper)
+        };
+        
+        var replace_array_item = function(array_name,array_position,new_array_content){
+            return array_name[array_position] = new_array_content;
+        };
+        
+        for(var i=0; i < new_contact_array.length; i++){
+          console.log(
+              capitalize_first_letter( new_contact_array[i] )
+          );
+          
+          replace_array_item(new_contact_array,i,
+            capitalize_first_letter( new_contact_array[i])
+          );
+          
+        };
+         
+          
+        
+
+        console.log(new_contact_array);
+
+        
+        
+        
         get_element('right_input_0').value = null;
         get_element('right_input_1').value = null;
         get_element('right_input_2').value = null;
@@ -37,27 +66,36 @@ var update_contact = function(){
         get_element('new_contact_container').style.display = 'none';
     });
 };
+// var capitalize_each_word = function () {
+//     new_contact_array[0].charAt(0).toUpperCase() + string.slice(1);
+// }
+// console.log(new_contact_array);
 
-// ***greyed out line 6-26: the if statement was not working as expected in the above done button handler
+var click_on_first_name_field = function(){
+    var first_name_field = get_element('right_input_0');
+    var last_name_field = get_element('right_input_1');
+    var company_name_field = get_element('right_input_2');
+    var done_button = get_element('done_button');
+    
+    // for(var i=0; i<3; i++){
+        get_element('right_input_0').addEventListener('keydown',function(event){
+            for(var i=0; i<500; i++){
+                if(event.keyCode === i && event.keyCode != 8){
+                    done_button.style.color = '#0D7CE3'; // #0D7CE3 = iphone sky blue
+                };
+            };
+        });
         
-        // var first_name = prompt('Please enter first name','E.g. Imageek');
-        // var last_name = prompt('Please enter last name','E.g. Forlife');
-        // var company_name = prompt('Please enter company name','E.g. Geekwise');
+        first_name_field.addEventListener('keyup',function(event){
+            if(first_name_field.value.length === 0 ){
+                done_button.style.color = '#BDBDBD'; // lightgrey
+            };
+        });
+        
+    //};
+    
+};
 
-        // if(get_element('right_input_0').value === ''){
-        //     get_element('right_input_0').value = first_name;
-        // }else{
-        //     get_element('right_input_0').value = get_element('right_input_0').value;
-        // };
-        
-        // if(get_element('right_input_1').value === ''){
-        //     get_element('right_input_1').value = last_name;
-        // }else{
-        //     get_element('right_input_1').value = get_element('right_input_1').value;
-        // };
-        
-        // if(get_element('right_input_2').value === ''){
-        //     get_element('right_input_2').value = company_name;
-        // }else{
-        //     get_element('right_input_2').value = get_element('right_input_2').value;
-        // };
+
+
+
