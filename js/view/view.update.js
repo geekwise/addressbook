@@ -14,6 +14,9 @@ var update_contact = function(){
                 var new_contact_container = document.createElement('p');
                 new_contact_container.setAttribute('class','inner_contact_container');
                 new_contact_container.textContent = get_element('right_input_0').value + ' ' + get_element('right_input_1').value;
+<<<<<<< HEAD
+                
+=======
                 new_contact_array.push(new_contact_container.textContent);
                 
                 var regex_new_names = new RegExp('\w{1,}\b','gi');
@@ -26,6 +29,7 @@ var update_contact = function(){
                 };
                 
                     
+>>>>>>> 6388d701175d0573ea2dc696eec5ef70fcfc0843
                 current_abc_container.appendChild(new_contact_container);
             };
         };
@@ -60,4 +64,8 @@ var update_contact = function(){
         //     get_element('right_input_2').value = company_name;
         // }else{
         //     get_element('right_input_2').value = get_element('right_input_2').value;
+<<<<<<< HEAD
         // };
+=======
+        // };
+>>>>>>> 6388d701175d0573ea2dc696eec5ef70fcfc0843
